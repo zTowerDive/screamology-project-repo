@@ -1,19 +1,34 @@
 class_name PlayerController extends CharacterBody3D
 
 
+@onready var _camera_pivot: Node3D = %CameraPivot
+@onready var _pivot_start_position : float = _camera_pivot.position.y
 @onready var _camera: Camera3D = %Camera
+@onready var camera: Camera3D = %Camera
+@onready var _collision_shape: CollisionShape3D = %CollisionShape3D
+@onready var _collsion_shape_start_height : float = _collision_shape.shape.height
+@onready var _crouch_ceiling_cast: ShapeCast3D = %CrouchCeilingCast
 
 
-@export_range(0.001, 5.0) var look_sensitivty := 2.5
+@export_range(0.001, 5.0) var look_sensitivty := 0.005
 
 
 @export_category("Ground Movement")
 @export_range(1.0, 10.0, 0.1) var max_speed_jog := 4.0
 @export_range(1.0, 15.0, 0.1) var max_speed_sprint := 7.0
+@export_range(1.0, 10.0, 0.1) var max_speed_crouch := 2.0
 @export_range(1.0, 100.0, 0.1) var acceleration_jog := 15.0
 @export_range(1.0, 100.0, 0.1) var acceleration_sprint := 25.0
 @export_range(1.0, 100.0, 0.1) var deceleration := 12.0
 
+@export_category("Air Movement")
+@export_range(1.0, 50.0, 0.1) var gravity := 17.0
+@export_range(1.0, 50.0, 0.1) var max_fall_speed := 20.0
+@export_range(1.0, 20.0, 0.1) var jump_velocity := 8.0
+
+
+var is_crouching : bool = false:
+	set = set_is_crouching
 
 
 func _ready() -> void:
@@ -47,6 +62,7 @@ func _physics_process(delta: float) -> void:
 	var movement_direction_2d := input_direction_2d.rotated(-1.0 * _camera.global_rotation.y)
 	var movement_direction_3d := Vector3(movement_direction_2d.x, 0.0, movement_direction_2d.y)
 	
+	## Checks if the player made an intentional movement and sets the player's speed
 	var player_wants_to_move := movement_direction_2d.length() > 0.1
 	if player_wants_to_move:
 		var max_speed := max_speed_jog
@@ -54,6 +70,8 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_pressed("sprint"):
 			max_speed = max_speed_sprint
 			acceleration = acceleration_sprint
+		if is_crouching:
+			max_speed = max_speed_crouch
 		
 		var velocity_ground_plane := Vector3(velocity.x, 0.0, velocity.z)
 		var velocity_change := acceleration * delta
@@ -69,7 +87,32 @@ func _physics_process(delta: float) -> void:
 		velocity.z = velocity_ground_plane.z
 	
 	
+	## If the player is on the floor, set the player crouching if the button is pressed
+	if is_on_floor():
+		set_is_crouching(Input.is_action_pressed("crouch"))
+	
+	## Adds gravity
+	if not is_on_floor():
+		velocity.y -= gravity * delta
+		velocity.y = maxf(velocity.y, -max_fall_speed)
+	
+	## Handles player jump
+	if is_on_floor() and Input.is_action_just_pressed("jump") and not is_crouching:
+		velocity.y = jump_velocity
+	
+	## Stores the last state of the player when they left the ground
+	var  was_in_air := not is_on_floor() 
+	## Gets the falling speed from the absolut value of the player's current y velocity
+	var fall_speed := absf(velocity.y)
+	
 	move_and_slide()
+	
+	## Checks if the Player left the ground in the last frame and is on the floor now
+	var just_landed := was_in_air and is_on_floor()
+	
+	## If the player just landed, play the impact animation
+	if just_landed:
+		play_landing_animation(fall_speed)
 
 
 func _rotate_camera_by(look_offset_2d: Vector2) -> void:
@@ -81,3 +124,40 @@ func _rotate_camera_by(look_offset_2d: Vector2) -> void:
 	_camera.rotation.x = clampf(_camera.rotation.x, -1.0 * MAX_VERTICAL_ANGLE, MAX_VERTICAL_ANGLE)
 	
 	_camera.orthonormalize()
+
+
+func play_landing_animation(fall_speed: float) -> void:
+	var impact_intensity := fall_speed / max_fall_speed
+	
+	var impact_tween := create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	impact_tween.tween_property(_camera_pivot, "position:y", _camera_pivot.position.y - 0.2 * impact_intensity, 0.06)
+	impact_tween.tween_property(_camera_pivot, "position:y", _pivot_start_position, 0.1)
+
+
+func set_is_crouching(new_value: bool) -> void:
+	if is_crouching == new_value:
+		return
+	
+	if new_value == false:
+		_crouch_ceiling_cast.force_shapecast_update()
+		if _crouch_ceiling_cast.is_colliding():
+			return
+	
+	is_crouching = new_value
+	
+	if is_crouching:
+		_collision_shape.shape.height = _collsion_shape_start_height / 2.0
+	else:
+		_collision_shape.shape.height = _collsion_shape_start_height
+	
+	_collision_shape.position.y = _collision_shape.shape.height / 2.0
+	
+	var target_pivot_height := 0.0
+	
+	if is_crouching:
+		target_pivot_height = _pivot_start_position * 0.7
+	else:
+		target_pivot_height = _pivot_start_position
+		
+	var pivot_tween := create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	pivot_tween.tween_property(_camera_pivot, "position:y", target_pivot_height, 0.25)
