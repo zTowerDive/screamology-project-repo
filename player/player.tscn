@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://kuvpnycyrn05"]
 
 [ext_resource type="Script" uid="uid://c6ngnaaugpmtf" path="res://player/player_controller.gd" id="1_oul6g"]
+[ext_resource type="PackedScene" uid="uid://0hjioifqgatd" path="res://interactibles/interact_detection.tscn" id="2_rkbax"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kqu6x"]
 radius = 0.3
@@ -25,6 +26,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
 
 [node name="Camera" type="Camera3D" parent="CameraPivot" unique_id=1923220385]
 unique_name_in_owner = true
+
+[node name="InteractDetection" parent="CameraPivot/Camera" unique_id=722238907 instance=ExtResource("2_rkbax")]
 
 [node name="CrouchCeilingCast" type="ShapeCast3D" parent="." unique_id=271533372]
 unique_name_in_owner = true

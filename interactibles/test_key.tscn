@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://w71hw82urkwy"]
+
+[ext_resource type="Script" uid="uid://ba3mgjc3ii5n1" path="res://interactibles/test_key.gd" id="1_11yl4"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3vm4d"]
+height = 0.6884292
+radius = 0.6479492
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_82myc"]
+albedo_color = Color(0, 0.6156863, 0, 1)
+
+[node name="test_key" type="Area3D" unique_id=254245436]
+collision_layer = 5
+script = ExtResource("1_11yl4")
+prompt = "Pick up Green Key"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=904868197]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.31387442, 0)
+shape = SubResource("CylinderShape3D_3vm4d")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=1917684390]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29662776, 0)
+radius = 0.3305664
+height = 0.62841797
+material = SubResource("StandardMaterial3D_82myc")

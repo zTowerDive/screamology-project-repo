@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://kuvpnycyrn05" path="res://player/player.tscn" id="1_ellb7"]
 [ext_resource type="PackedScene" uid="uid://bk71u0t4o8r46" path="res://interactibles/test_door.tscn" id="2_y1qy8"]
+[ext_resource type="PackedScene" uid="uid://w71hw82urkwy" path="res://interactibles/test_key.tscn" id="3_7p8k5"]
+[ext_resource type="PackedScene" uid="uid://4dbt38yy64ny" path="res://interactibles/test_door_locked.tscn" id="4_kqan6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y1qy8"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -75,3 +77,9 @@ material = SubResource("StandardMaterial3D_ellb7")
 
 [node name="TESTDoor" parent="." unique_id=552822026 instance=ExtResource("2_y1qy8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3348103, 0.46453762, -11.745009)
+
+[node name="test_key" parent="." unique_id=254245436 instance=ExtResource("3_7p8k5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5955215, 0, -11.422611)
+
+[node name="TESTDoor_locked" parent="." unique_id=919733671 instance=ExtResource("4_kqan6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.585445, 0.5, -11.095875)

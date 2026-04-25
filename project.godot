@@ -15,6 +15,10 @@ run/main_scene="uid://dho6c53sr2gqc"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+KeyRing="*uid://dbcqccrg1e47x"
+
 [input]
 
 look_left={

@@ -1,12 +1,10 @@
 class_name Interactible3D extends Area3D
 
-signal interacted_with
-
+@export var prompt: String = "Interact"
+#signal interacted_with
 
 func _init() -> void:
 	monitoring = false
 
-
-
 func interact() -> void:
-	interacted_with.emit()
+	print("Interacted with")

@@ -1,23 +1,24 @@
-[gd_scene format=3 uid="uid://bk71u0t4o8r46"]
+[gd_scene format=3 uid="uid://4dbt38yy64ny"]
 
-[ext_resource type="Script" uid="uid://c0lar2wec3jy7" path="res://interactibles/test_door.gd" id="1_rspca"]
+[ext_resource type="Script" uid="uid://ctkpsa3p45xu2" path="res://interactibles/test_door_locked.gd" id="1_hwnuk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qpiyq"]
 size = Vector3(1.0644531, 2.0341797, 0.24389648)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cvhce"]
-albedo_color = Color(0, 0, 1, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hwnuk"]
+albedo_color = Color(3.5616756e-06, 0.6153194, 1.732707e-06, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_cvhce"]
-material = SubResource("StandardMaterial3D_cvhce")
+material = SubResource("StandardMaterial3D_hwnuk")
 size = Vector3(0.5, 1, 0.1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n20nv"]
 size = Vector3(3.2480469, 2.142334, 0.48828125)
 
-[node name="TESTDoor" type="Area3D" unique_id=552822026]
+[node name="TESTDoor_locked" type="Area3D" unique_id=552822026]
 collision_layer = 5
-script = ExtResource("1_rspca")
+script = ExtResource("1_hwnuk")
+prompt = "Open Door"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=10699860]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
