@@ -9,5 +9,5 @@ func _ready() -> void:
 			
 			var player := body as PlayerController
 			
-			player.turn_camera_towards(marker_3d.global_position, 1.0)
+			player.turn_camera_towards(marker_3d.global_position, .5)
 	)

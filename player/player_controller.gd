@@ -140,7 +140,7 @@ func play_landing_animation(fall_speed: float) -> void:
 	impact_tween.tween_property(_camera_pivot, "position:y", _camera_pivot.position.y - 0.2 * impact_intensity, 0.06)
 	impact_tween.tween_property(_camera_pivot, "position:y", _pivot_start_position, 0.1)
 
-## Function rotates the Player's Camera and pivot to a target position over a duration
+## Function rotates the Player's Camera node to a target position over a duration
 func turn_camera_towards(target_global_position: Vector3, turn_duration: float) -> void:
 	var angle_to_target : float = global_position.angle_to(target_global_position)
 	
@@ -154,7 +154,7 @@ func turn_camera_towards(target_global_position: Vector3, turn_duration: float) 
 			looked_at.emit()
 	)
 
-## Function animates the Player to a target position of type Vector3
+## Function animates the Player's global_position to a target position of type over a duration
 func walk_towards(target_global_position: Vector3, duration: float) -> void:
 	var tween := create_tween()
 	tween.tween_property(self, "global_position", target_global_position, duration)

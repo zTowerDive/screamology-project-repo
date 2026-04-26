@@ -35,9 +35,9 @@ shadow_enabled = true
 environment = SubResource("Environment_kqan6")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=648275777]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -18.07837)
 use_collision = true
-size = Vector3(30, 1, 30)
+size = Vector3(30, 1, 66.15674)
 
 [node name="Player" parent="." unique_id=1496450164 instance=ExtResource("1_djxo2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 10)
@@ -106,7 +106,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.585445, 0.5, -11.095875)
 door_key = NodePath("../test_key")
 
 [node name="JumpScareTest" parent="." unique_id=1541913166 instance=ExtResource("5_avwfh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.763985, 0, 8.400452)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.763985, 0, 14.494961)
 
 [node name="TestLight" parent="." unique_id=1898915381 instance=ExtResource("6_5aomj")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -9.259735, 2.9643798, 0.21989715)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=1732954722]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 11.305601, 0.43607473, -27.090412)
+use_collision = true
+radius = 5.0
+height = 40.0
+sides = 12
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCylinder3D" unique_id=516878888]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.062278e-08, 4.2228594)
+operation = 2
+size = Vector3(12.124023, 49.40039, 7.587036)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCylinder3D" unique_id=413606369]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.7816262e-08, -0.407588)
+operation = 2
+radius = 4.055176
+height = 40.0
+sides = 12
+
+[editable path="JumpScareTest"]
