@@ -8,7 +8,6 @@ var _is_on := true
 
 func _ready() -> void:
 	_is_on = true
-	_spot_light.light_projector = null
 
 ## Toggle the light's visible property when the player presses the "flashlight" input
 func _unhandled_input(event: InputEvent) -> void:

@@ -12,8 +12,13 @@ sky_material = SubResource("ProceduralSkyMaterial_r4efh")
 [sub_resource type="Environment" id="Environment_ab6x4"]
 background_mode = 2
 sky = SubResource("Sky_julpx")
+ambient_light_energy = 0.5
 tonemap_mode = 2
 glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.09948314, 0.112274684, 0.13217887, 1)
+fog_light_energy = 0.42
+fog_density = 0.1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bun6k"]
 albedo_color = Color(0, 0, 0, 1)

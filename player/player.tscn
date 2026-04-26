@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://0hjioifqgatd" path="res://interactibles/interact_detection.tscn" id="2_rkbax"]
 [ext_resource type="PackedScene" uid="uid://btk66p4xb6j01" path="res://assets/environment/flashlight.glb" id="3_g1dw6"]
 [ext_resource type="Script" uid="uid://ci7sx2i5y5t56" path="res://player/flashlight_controller.gd" id="4_qjkh3"]
-[ext_resource type="Texture2D" uid="uid://d2ky4klnlqy14" path="res://common/Doge.webp" id="4_yw30f"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kqu6x"]
 radius = 0.3
@@ -41,12 +40,11 @@ script = ExtResource("4_qjkh3")
 unique_name_in_owner = true
 transform = Transform3D(0.9869683, -0.113410644, -0.11415697, -0.11341071, 0.013031706, -0.99346286, 0.114156894, 0.99346286, -1.0430813e-07, 0.03050536, 0.26547605, 0.007398486)
 light_color = Color(0.9764706, 0.972549, 0.36862746, 1)
-light_energy = 16.0
-light_projector = ExtResource("4_yw30f")
+light_energy = 5.0
 shadow_enabled = true
 distance_fade_enabled = true
-spot_range = 6.196021
-spot_angle = 21.819405
+spot_range = 30.0
+spot_angle = 25.0
 
 [node name="CrouchCeilingCast" type="ShapeCast3D" parent="." unique_id=271533372]
 unique_name_in_owner = true
