@@ -1,5 +1,7 @@
 class_name PlayerController extends CharacterBody3D
 
+## Signal is emitted from the walk_towards function
+signal walked_to
 
 @onready var _camera_pivot: Node3D = %CameraPivot
 @onready var _pivot_start_position : float = _camera_pivot.position.y
@@ -138,9 +140,18 @@ func play_landing_animation(fall_speed: float) -> void:
 func turn_camera_towards(target_global_position: Vector3) -> void:
 	pass
 
-
+## Function animates the Player to a target position of type Vector3
 func walk_towards(target_global_position: Vector3) -> void:
-	pass
+	var direction := global_position.direction_to(target_global_position)
+	var distance := global_position.distance_to(target_global_position)
+	var duration := distance / (max_speed_jog * 0.2)
+	
+	var tween := create_tween()
+	tween.tween_property(self, "global_position", target_global_position, duration)
+	tween.finished.connect(
+		func() -> void:
+			walked_to.emit()
+	)
 #endregion
 
 func set_is_crouching(new_value: bool) -> void:
