@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://btk66p4xb6j01"
-path="res://.godot/imported/flashlight.glb-bde48cca46ca1398c82864b087297b11.scn"
+uid="uid://br1iy0cmxiych"
+path="res://.godot/imported/horse_statue.glb-e827863ed7a16b41731b4ef2f3a6328e.scn"
 
 [deps]
 
-source_file="res://Assets/environment/flashlight.glb"
-dest_files=["res://.godot/imported/flashlight.glb-bde48cca46ca1398c82864b087297b11.scn"]
+source_file="res://Assets/environment/horse_statue.glb"
+dest_files=["res://.godot/imported/horse_statue.glb-e827863ed7a16b41731b4ef2f3a6328e.scn"]
 
 [params]
 
