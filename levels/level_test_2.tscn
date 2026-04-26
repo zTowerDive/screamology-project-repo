@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://cqu2l5171xkn2"]
+
+[ext_resource type="PackedScene" uid="uid://kuvpnycyrn05" path="res://player/player.tscn" id="1_djxo2"]
+[ext_resource type="PackedScene" uid="uid://bk71u0t4o8r46" path="res://interactibles/test_door.tscn" id="2_avwfh"]
+[ext_resource type="PackedScene" uid="uid://w71hw82urkwy" path="res://interactibles/test_key.tscn" id="3_5aomj"]
+[ext_resource type="PackedScene" uid="uid://4dbt38yy64ny" path="res://interactibles/test_door_locked.tscn" id="4_n2d81"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y1qy8"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_7p8k5"]
+sky_material = SubResource("ProceduralSkyMaterial_y1qy8")
+
+[sub_resource type="Environment" id="Environment_kqan6"]
+background_mode = 2
+sky = SubResource("Sky_7p8k5")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ellb7"]
+albedo_color = Color(0.19434929, 0.19434926, 0.19434926, 1)
+
+[node name="LevelTEST" type="Node3D" unique_id=354338376]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=43477658]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_color = Color(0.47788018, 0.47788012, 0.47788012, 1)
+light_energy = 0.25
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1485439396]
+environment = SubResource("Environment_kqan6")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=648275777]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+size = Vector3(30, 1, 30)
+
+[node name="Player" parent="." unique_id=1496450164 instance=ExtResource("1_djxo2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 10)
+max_speed_sprint = 9.0
+deceleration = 30.0
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1014654965]
+use_collision = true
+size = Vector3(5, 5, 5)
+material = SubResource("StandardMaterial3D_ellb7")
+
+[node name="room_med" type="CSGBox3D" parent="." unique_id=941450450]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.276, 1.5, 0.01)
+use_collision = true
+size = Vector3(8, 3, 5)
+material = SubResource("StandardMaterial3D_ellb7")
+
+[node name="room_m_cutout" type="CSGBox3D" parent="room_med" unique_id=416599992]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2231965, 0)
+operation = 2
+use_collision = true
+size = Vector3(7.5, 2.5, 4.5)
+material = SubResource("StandardMaterial3D_ellb7")
+
+[node name="door_cutout" type="CSGBox3D" parent="room_med" unique_id=1172539643]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9615822, -0.033828974, 2.317639)
+operation = 2
+use_collision = true
+size = Vector3(1, 2, 0.38848877)
+material = SubResource("StandardMaterial3D_ellb7")
+
+[node name="TESTDoor" parent="room_med/door_cutout" unique_id=552822026 instance=ExtResource("2_avwfh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0069589615, -0.5020815, 0.0370965)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="room_med" unique_id=1140039245]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.1854477, -1.4581907, 2.014362)
+polygon = PackedVector2Array(-1.232485, 0.0123384595, -0.8190088, 0.25836748, -0.49976158, 0.42560107, -0.4735868, -0.018887758)
+depth = 1.5
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=270304598]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1231594, 1.0916724, 0)
+use_collision = true
+size = Vector3(5, 5, 5)
+material = SubResource("StandardMaterial3D_ellb7")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=1936402072]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1231594, 1.971468, 3.2705078)
+use_collision = true
+size = Vector3(5, 5, 5)
+material = SubResource("StandardMaterial3D_ellb7")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=1836759180]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9729776, 2.904358, 7.012182)
+use_collision = true
+size = Vector3(5, 5, 5)
+material = SubResource("StandardMaterial3D_ellb7")
+
+[node name="TESTDoor" parent="." unique_id=1560559999 instance=ExtResource("2_avwfh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3341637, 0.48382163, -12.451287)
+
+[node name="test_key" parent="." unique_id=254245436 instance=ExtResource("3_5aomj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78154135, -12.144505)
+
+[node name="TESTDoor_locked" parent="." unique_id=919733671 node_paths=PackedStringArray("door_key") instance=ExtResource("4_n2d81")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.585445, 0.5, -11.095875)
+door_key = NodePath("../test_key")

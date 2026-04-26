@@ -31,7 +31,7 @@ mesh = SubResource("BoxMesh_cvhce")
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=2051913660]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.5, 0)
 operation = 2
-size = Vector3(1.5, 1, 0.2)
+size = Vector3(1.5, 1, 0.1)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D" unique_id=858056722]
 operation = 2
