@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogueItem" format=3 uid="uid://m1y8gtebwv1r"]
+
+[ext_resource type="Script" uid="uid://c838pqmfd8h22" path="res://dialogue_items/dialogue_item.gd" id="1_l8qpa"]
+
+[resource]
+script = ExtResource("1_l8qpa")
+text = "LOREM IPSUM SOMETHING SOMETHING"
+metadata/_custom_type_script = "uid://c838pqmfd8h22"
