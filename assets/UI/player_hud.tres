@@ -1,0 +1,19 @@
+[gd_resource type="Theme" format=3 uid="uid://c74vybnpmvy4l"]
+
+[ext_resource type="FontFile" uid="uid://wc7lmkw5i5rg" path="res://assets/UI/fonts/Razor Keen.otf" id="1_nokaj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_julpx"]
+bg_color = Color(0.11489678, 0.11489683, 0.11489671, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[resource]
+RichTextLabel/font_sizes/normal_font_size = 32
+RichTextLabel/fonts/normal_font = ExtResource("1_nokaj")
+RichTextLabel/styles/normal = SubResource("StyleBoxFlat_julpx")

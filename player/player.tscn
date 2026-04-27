@@ -32,19 +32,29 @@ unique_name_in_owner = true
 [node name="InteractDetection" parent="CameraPivot/Camera" unique_id=722238907 instance=ExtResource("2_rkbax")]
 target_position = Vector3(0, 0, -1.5)
 
-[node name="flashlight" parent="CameraPivot/Camera" unique_id=158668716 instance=ExtResource("3_g1dw6")]
-transform = Transform3D(0.49673137, -0.05707846, -2.957587e-09, 0.0073030223, 0.06355531, 0.4958905, -0.05660933, -0.49264872, 0.063973516, 0.15823364, -0.09289968, -0.05842927)
+[node name="Flashlight" type="Node3D" parent="CameraPivot/Camera" unique_id=1618354]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15823364, -0.09457886, -0.05842927)
 script = ExtResource("4_qjkh3")
+light_deactivation_chance = 0.5
 
-[node name="SpotLight3D" type="SpotLight3D" parent="CameraPivot/Camera/flashlight" unique_id=362384493]
+[node name="flashlight" parent="CameraPivot/Camera/Flashlight" unique_id=158668716 instance=ExtResource("3_g1dw6")]
+transform = Transform3D(0.49673137, -0.05707846, -2.957587e-09, 0.0073030223, 0.06355531, 0.4958905, -0.05660933, -0.49264872, 0.063973516, 0, 0, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="CameraPivot/Camera/Flashlight" unique_id=362384493]
 unique_name_in_owner = true
-transform = Transform3D(0.9869683, -0.113410644, -0.11415697, -0.11341071, 0.013031706, -0.99346286, 0.114156894, 0.99346286, -1.0430813e-07, 0.03050536, 0.26547605, 0.007398486)
-light_color = Color(0.9764706, 0.972549, 0.36862746, 1)
-light_energy = 5.0
+transform = Transform3D(0.9934628, -0.11415688, -4.820631e-08, 0.113218635, 0.98529744, -0.12794714, 0.014606096, 0.1271107, 0.991781, 0, 0.02076403, -0.13204001)
+light_color = Color(0.9892078, 0.99490505, 0.7441434, 1)
+light_energy = 10.0
 shadow_enabled = true
 distance_fade_enabled = true
 spot_range = 30.0
+spot_attenuation = 2.0
 spot_angle = 25.0
+
+[node name="LightToggleTimer" type="Timer" parent="CameraPivot/Camera/Flashlight" unique_id=1846884927]
+unique_name_in_owner = true
+wait_time = 6.5
+autostart = true
 
 [node name="CrouchCeilingCast" type="ShapeCast3D" parent="." unique_id=271533372]
 unique_name_in_owner = true
