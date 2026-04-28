@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/ambience_low_r.ogg-ac6c809c8e9e34ea324aefd5bb
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4
