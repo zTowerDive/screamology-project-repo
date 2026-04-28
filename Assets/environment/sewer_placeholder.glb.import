@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bfhfvqmdlvxdh"
-path="res://.godot/imported/sewer_placeholder.glb-4095f7c687d11286fdb8b9892310fe83.scn"
+path="res://.godot/imported/sewer_placeholder.glb-8c91bf68f76f792511dfc0660f3071be.scn"
 
 [deps]
 
-source_file="res://Assets/environment/sewer_placeholder.glb"
-dest_files=["res://.godot/imported/sewer_placeholder.glb-4095f7c687d11286fdb8b9892310fe83.scn"]
+source_file="res://assets/environment/sewer_placeholder.glb"
+dest_files=["res://.godot/imported/sewer_placeholder.glb-8c91bf68f76f792511dfc0660f3071be.scn"]
 
 [params]
 
