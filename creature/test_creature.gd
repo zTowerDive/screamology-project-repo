@@ -2,6 +2,8 @@ class_name CreatureController extends CharacterBody3D
 
 @onready var _vision_area: VisionArea3D = %VisionArea3D
 @onready var _mesh: Node3D = $Sketchfab_Scene
+@onready var _jump_scare_test: JumpScareTest = %JumpScareTest
+@onready var _creature_audio_player: AudioStreamPlayer3D = %CreatureAudioPlayer
 
 @onready var _wander_timer: Timer = %WanderTimer
 @onready var _stare_timer: Timer = %StareTimer
@@ -100,7 +102,9 @@ func set_current_state(new_state: State) -> void:
 			velocity = Vector3.ZERO
 		
 		State.StateScare:
-			pass
+			velocity = Vector3.ZERO
+			_creature_audio_player.play()
+			_creature_audio_player.finished.connect(get_tree().reload_current_scene)
 
 #endregion
 
@@ -119,6 +123,9 @@ func process_chase_state(delta: float) -> void:
 	
 	if _vision_area.player_lost.get_connections().is_empty():
 		_vision_area.player_lost.connect(set_current_state.bind(State.StateWander))
+	
+	if _jump_scare_test.player_entered.get_connections().is_empty():
+		_jump_scare_test.player_entered.connect(set_current_state.bind(State.StateScare))
 
 
 func process_wander_state(delta: float) -> void:

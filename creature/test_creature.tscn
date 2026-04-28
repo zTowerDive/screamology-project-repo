@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://c3axnf5rouqi7" path="res://creature/vision_area_3d.gd" id="2_o85cb"]
 [ext_resource type="PackedScene" uid="uid://c7ditx2immkxd" path="res://creature/halo_3_the_god_rat.glb" id="3_o85cb"]
 [ext_resource type="Script" uid="uid://di0oiqivykek5" path="res://common/jump_scare_test.gd" id="4_cnju8"]
+[ext_resource type="AudioStream" uid="uid://d0khgirktditg" path="res://assets/Audio/Sfx/bababooey-sound-effect.mp3" id="5_8crex"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lcr6j"]
 radius = 0.75
@@ -46,6 +47,7 @@ wait_time = 3.0
 one_shot = true
 
 [node name="JumpScareTest" type="Area3D" parent="." unique_id=1631936822 node_paths=PackedStringArray("marker_3d")]
+unique_name_in_owner = true
 script = ExtResource("4_cnju8")
 marker_3d = NodePath("../HeadMarker")
 metadata/_custom_type_script = "uid://di0oiqivykek5"
@@ -58,4 +60,6 @@ debug_color = Color(0, 1, 0, 1)
 [node name="HeadMarker" type="Marker3D" parent="." unique_id=1705934245]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8171239, 0.9235599)
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=266184244]
+[node name="CreatureAudioPlayer" type="AudioStreamPlayer3D" parent="." unique_id=266184244]
+unique_name_in_owner = true
+stream = ExtResource("5_8crex")
