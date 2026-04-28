@@ -1,6 +1,6 @@
 [gd_resource type="Theme" format=3 uid="uid://c74vybnpmvy4l"]
 
-[ext_resource type="FontFile" uid="uid://wc7lmkw5i5rg" path="res://assets/UI/fonts/Razor Keen.otf" id="1_nokaj"]
+[ext_resource type="FontFile" uid="uid://wc7lmkw5i5rg" path="res://Assets/UI/fonts/Razor Keen.otf" id="1_nokaj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_julpx"]
 bg_color = Color(0.11489678, 0.11489683, 0.11489671, 1)
