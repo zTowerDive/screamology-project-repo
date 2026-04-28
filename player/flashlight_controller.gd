@@ -41,10 +41,9 @@ func set_in_on(new_value: bool) -> void:
 	_is_on = new_value
 	_spot_light.visible = _is_on
 
-
+## Calculates a random number between 0 and 1 and disables the _spot_light
 func calculate_light_state()-> void:
 	var chance : float = randf()
-	print(chance)
 	
 	if chance < light_deactivation_chance:
 		set_in_on(false)

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://uw20430w7yy"]
+
+[ext_resource type="Script" uid="uid://cg5c3wry76rdg" path="res://creature/test_creature.gd" id="1_o85cb"]
+[ext_resource type="Script" uid="uid://c3axnf5rouqi7" path="res://creature/vision_area_3d.gd" id="2_o85cb"]
+[ext_resource type="PackedScene" uid="uid://c7ditx2immkxd" path="res://creature/halo_3_the_god_rat.glb" id="3_o85cb"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lcr6j"]
+radius = 0.75
+height = 2.817871
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lcr6j"]
+size = Vector3(4.821289, 8.1698, 4.071289)
+
+[node name="TESTCreature" type="CharacterBody3D" unique_id=455156690]
+script = ExtResource("1_o85cb")
+speed = 12.0
+
+[node name="BodyCollisionShape" type="CollisionShape3D" parent="." unique_id=497028178]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1, -0.28869903)
+shape = SubResource("CapsuleShape3D_lcr6j")
+
+[node name="VisionArea3D" type="Area3D" parent="." unique_id=209573275]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.61306036, 0.6898302)
+script = ExtResource("2_o85cb")
+
+[node name="VisionShape3D" type="CollisionShape3D" parent="VisionArea3D" unique_id=2133402175]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.5351561, 4.1650996)
+shape = SubResource("BoxShape3D_lcr6j")
+debug_color = Color(0.9647059, 0, 0.4862745, 1)
+
+[node name="Sketchfab_Scene" parent="." unique_id=1109674394 instance=ExtResource("3_o85cb")]
+transform = Transform3D(-1.7484557e-07, 0, -9.794775, 0, 9.6473875, 0, 4.0000005, 0, -4.281432e-07, 0, 0.16337323, 0)
+
+[node name="WanderTimer" type="Timer" parent="." unique_id=182747547]
+unique_name_in_owner = true
+one_shot = true

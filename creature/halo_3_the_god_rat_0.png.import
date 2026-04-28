@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2ky4klnlqy14"
-path.s3tc="res://.godot/imported/Doge.webp-b010b633d1e272833fb744e3414a9852.s3tc.ctex"
+uid="uid://bsg7vh2qp2soi"
+path.s3tc="res://.godot/imported/halo_3_the_god_rat_0.png-81d01810c065327fc5d859c410366164.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "b4e08fdd5b7ea55d5ab0f8115fe89433"
+}
 
 [deps]
 
-source_file="res://common/Doge.webp"
-dest_files=["res://.godot/imported/Doge.webp-b010b633d1e272833fb744e3414a9852.s3tc.ctex"]
+source_file="res://creature/halo_3_the_god_rat_0.png"
+dest_files=["res://.godot/imported/halo_3_the_god_rat_0.png-81d01810c065327fc5d859c410366164.s3tc.ctex"]
 
 [params]
 

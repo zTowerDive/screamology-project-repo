@@ -2,7 +2,7 @@ class_name PlayerController extends CharacterBody3D
 
 ## Signal that gets emitted from the walk_towards function
 signal walked_to
-## Siignal that gets emitted from the turn_camera_towards function
+## Signal that gets emitted from the turn_camera_towards function
 signal looked_at
 
 @onready var _camera_pivot: Node3D = %CameraPivot
@@ -12,6 +12,7 @@ signal looked_at
 @onready var _collision_shape: CollisionShape3D = %CollisionShape3D
 @onready var _collsion_shape_start_height : float = _collision_shape.shape.height
 @onready var _crouch_ceiling_cast: ShapeCast3D = %CrouchCeilingCast
+@onready var _animation_player: AnimationPlayer = %AnimationPlayer
 
 
 @export_range(0.001, 5.0) var look_sensitivty := 0.005
@@ -33,6 +34,9 @@ signal looked_at
 
 var is_crouching : bool = false:
 	set = set_is_crouching
+
+var animation_name : String = "":
+	set = set_animation_name
 
 #region Virtual Functions
 func _ready() -> void:
@@ -90,6 +94,11 @@ func _physics_process(delta: float) -> void:
 		velocity.x = velocity_ground_plane.x
 		velocity.z = velocity_ground_plane.z
 	
+	## If the player is on the floor and is walking set the current animation to "head_bob"
+	if is_on_floor() and velocity.length() > 0.0:
+		set_animation_name("head_bob")
+	else:
+		_animation_player.stop()
 	
 	## If the player is on the floor, set the player crouching if the button is pressed
 	if is_on_floor():
@@ -157,10 +166,12 @@ func turn_camera_towards(target_global_position: Vector3, turn_duration: float) 
 ## Function animates the Player's global_position to a target position of type over a duration
 func walk_towards(target_global_position: Vector3, duration: float) -> void:
 	var tween := create_tween()
+	_animation_player.play("head_bob")
 	tween.tween_property(self, "global_position", target_global_position, duration)
 	tween.finished.connect(
 		func() -> void:
 			walked_to.emit()
+			_animation_player.stop()
 	)
 #endregion
 
@@ -192,4 +203,14 @@ func set_is_crouching(new_value: bool) -> void:
 		
 	var pivot_tween := create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	pivot_tween.tween_property(_camera_pivot, "position:y", target_pivot_height, 0.25)
+
+## Function sets the current animation in the AnimationPlayer node
+func set_animation_name(anim_name: String) -> void:
+	if _animation_player.current_animation == anim_name:
+		return
+	
+	if _animation_player == null:
+		return
+	
+	_animation_player.current_animation = anim_name
 #endregion
