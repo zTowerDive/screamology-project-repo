@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://cwtjwucuargxl"]
+
+[ext_resource type="Texture2D" uid="uid://c76xvnafwbbkk" path="res://Assets/UI/images/slider/slider_on.png" id="1_il1rd"]
+[ext_resource type="Texture2D" uid="uid://b7mi62j0lead3" path="res://Assets/UI/images/slider/ui_slider_handler.png" id="1_pnh27"]
+[ext_resource type="Script" uid="uid://c50ct8dt4lajl" path="res://Assets/UI/ui_slider.gd" id="1_vkvyg"]
+[ext_resource type="Texture2D" uid="uid://dw5agh4w3vs1j" path="res://Assets/UI/images/slider/slider_in.png" id="2_vkvyg"]
+
+[node name="UiSlider" type="Control" unique_id=1557353711 node_paths=PackedStringArray("_textslider", "_slider", "_knob", "_knob_")]
+layout_mode = 3
+anchor_top = 0.4
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+script = ExtResource("1_vkvyg")
+_textslider = NodePath("TextureProgressBar")
+_slider = NodePath("HSlider")
+_knob = NodePath("KnobTexture")
+_knob_ = NodePath("KnobTexture/KnobTexture")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=570329948]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+step = 0.1
+nine_patch_stretch = true
+texture_under = ExtResource("1_il1rd")
+texture_progress = ExtResource("2_vkvyg")
+
+[node name="KnobTexture" type="TextureRect" parent="." unique_id=520912198]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.02
+anchor_top = -0.1
+anchor_right = 0.02
+anchor_bottom = 1.1
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("1_pnh27")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="KnobTexture" type="TextureRect" parent="KnobTexture" unique_id=1829427846]
+self_modulate = Color(1.61, 1.61, 1.61, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("1_pnh27")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HSlider" type="HSlider" parent="." unique_id=1488687927]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[connection signal="value_changed" from="HSlider" to="." method="_on_h_slider_value_changed"]

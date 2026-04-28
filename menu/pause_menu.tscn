@@ -2,11 +2,35 @@
 
 [ext_resource type="Texture2D" uid="uid://bniouffglnlw7" path="res://Assets/UI/images/pause/ui_pause_bg_0.png" id="1_vy7sn"]
 [ext_resource type="FontFile" uid="uid://wc7lmkw5i5rg" path="res://Assets/UI/fonts/Razor Keen.otf" id="2_5ijvr"]
-[ext_resource type="Script" uid="uid://dbn8xadgxcv7x" path="res://menu/AutoSizeLabel.gd" id="2_lgp46"]
+[ext_resource type="Script" uid="uid://bgkcxfm7uyepa" path="res://pause/script/pauseuibuttons.gd" id="2_cls0b"]
+[ext_resource type="Script" uid="uid://dbn8xadgxcv7x" path="res://pause/script/AutoSizeLabel.gd" id="2_lgp46"]
+[ext_resource type="Texture2D" uid="uid://c76hhi4gp66rk" path="res://Assets/UI/images/pause/ui_underscore.png" id="4_eo5y5"]
 [ext_resource type="Texture2D" uid="uid://chmns8b7xajof" path="res://Assets/UI/images/pause/ui_pause_bg_1.png" id="4_yvytn"]
-[ext_resource type="Texture2D" uid="uid://b8l8o5kjmptl4" path="res://Assets/UI/images/pause/ui_pause_backButton.png" id="5_cdtl2"]
+[ext_resource type="Texture2D" uid="uid://cbgpdufaplt73" path="res://Assets/UI/images/buttons/ui_uncheckButton.png" id="5_gulp2"]
+[ext_resource type="Texture2D" uid="uid://c6jkr2n2ekn1r" path="res://Assets/UI/images/buttons/ui_checkButton.png" id="5_j3ibt"]
+[ext_resource type="Texture2D" uid="uid://bc7xwyuyo2htb" path="res://Assets/UI/images/buttons/ui_toCheckButton.png" id="6_oavyi"]
+[ext_resource type="PackedScene" uid="uid://cwtjwucuargxl" path="res://Assets/UI/ui_slider.tscn" id="7_n4x21"]
+[ext_resource type="Script" uid="uid://dwybv504jujgg" path="res://pause/check_button.gd" id="8_nueu6"]
+[ext_resource type="Texture2D" uid="uid://bu6gvs0oy7qch" path="res://Assets/UI/images/buttons/ui_uncheckButton_uncheck.png" id="9_0776l"]
+[ext_resource type="Texture2D" uid="uid://b1u76p04fer8i" path="res://Assets/UI/images/buttons/ui_pause_backButton.png" id="9_j3ibt"]
+[ext_resource type="Script" uid="uid://b2046ox50p3ye" path="res://pause/script/back_button.gd" id="10_85exe"]
+[ext_resource type="Texture2D" uid="uid://l67m5eoankp" path="res://Assets/UI/images/buttons/ui_checkButton_check.png" id="10_eo5y5"]
+[ext_resource type="Texture2D" uid="uid://cy7r3pswv0drs" path="res://Assets/UI/images/buttons/ui_pause_backButton_backArrow.png" id="10_n4x21"]
+
+[sub_resource type="GDScript" id="GDScript_cls0b"]
+script/source = "extends Control
+@onready var background: TextureRect = $\"../background\"
+@export var sprite_paused : Texture2D
+
+
+func endAnimation()->void:
+	var tween = get_tree().create_tween()
+	tween.tween_property(background, \"rotation\", 0.0, 0.4)
+	print(background.rotation)
+"
 
 [node name="PauseMenu" type="Control" unique_id=1690461535]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,17 +39,29 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 
-[node name="Pause" type="TextureRect" parent="." unique_id=2057317472]
+[node name="background" type="TextureRect" parent="." unique_id=489493715]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.25
 anchor_top = 0.05
 anchor_right = 0.75
 anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("1_vy7sn")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="Pause" type="Control" parent="." unique_id=1925646933]
+layout_mode = 1
+anchor_left = 0.25
+anchor_top = 0.05
+anchor_right = 0.75
+anchor_bottom = 0.95
+pivot_offset_ratio = Vector2(0.5, 0.5)
+script = ExtResource("2_cls0b")
+sprite_options = ExtResource("4_yvytn")
 
 [node name="Paper" type="Control" parent="Pause" unique_id=760482458]
 layout_mode = 1
@@ -71,11 +107,11 @@ pivot_offset_ratio = Vector2(0.5, 0.5)
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.8
 pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_5ijvr")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 51
 text = "Resume"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -85,6 +121,18 @@ text_overrun_behavior = 3
 script = ExtResource("2_lgp46")
 max_font_size = 128
 metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
+
+[node name="TextureRect" type="TextureRect" parent="Pause/Paper/ResumeButton" unique_id=1091378837]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.7
+anchor_right = 0.8
+anchor_bottom = 1.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("4_eo5y5")
+expand_mode = 1
 
 [node name="OptionsButton" type="TextureButton" parent="Pause/Paper" unique_id=922429236]
 layout_mode = 1
@@ -99,11 +147,11 @@ pivot_offset_ratio = Vector2(0.5, 0.5)
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.8
 pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_5ijvr")
-theme_override_font_sizes/font_size = 55
+theme_override_font_sizes/font_size = 44
 text = "Options"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -113,6 +161,18 @@ text_overrun_behavior = 3
 script = ExtResource("2_lgp46")
 max_font_size = 128
 metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
+
+[node name="TextureRect" type="TextureRect" parent="Pause/Paper/OptionsButton" unique_id=748750255]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.7
+anchor_right = 0.75
+anchor_bottom = 1.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("4_eo5y5")
+expand_mode = 1
 
 [node name="QuitButton" type="TextureButton" parent="Pause/Paper" unique_id=1330954852]
 layout_mode = 1
@@ -127,11 +187,11 @@ pivot_offset_ratio = Vector2(0.5, 0.5)
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.8
 pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_5ijvr")
-theme_override_font_sizes/font_size = 43
+theme_override_font_sizes/font_size = 34
 text = "Leave"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -142,17 +202,28 @@ script = ExtResource("2_lgp46")
 max_font_size = 128
 metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
 
-[node name="Options" type="TextureRect" parent="." unique_id=255215109]
+[node name="TextureRect" type="TextureRect" parent="Pause/Paper/QuitButton" unique_id=966860447]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.7
+anchor_right = 0.7
+anchor_bottom = 1.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("4_eo5y5")
+expand_mode = 1
+
+[node name="Options" type="Control" parent="." unique_id=1811076651]
+visible = false
+layout_mode = 1
 anchor_left = 0.25
 anchor_top = 0.05
 anchor_right = 0.75
 anchor_bottom = 0.95
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("4_yvytn")
-expand_mode = 1
-stretch_mode = 5
+script = SubResource("GDScript_cls0b")
+sprite_paused = ExtResource("1_vy7sn")
 
 [node name="Paper" type="Control" parent="Options" unique_id=1459362790]
 layout_mode = 1
@@ -185,84 +256,194 @@ script = ExtResource("2_lgp46")
 max_font_size = 128
 metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
 
-[node name="SensitivityLabel" type="Label" parent="Options/Paper" unique_id=567245823]
-visible = false
+[node name="Sensitivity" type="Control" parent="Options/Paper" unique_id=83311342]
 layout_mode = 1
-offset_left = -328.5204
-offset_top = -114.362274
-offset_right = 117.479614
-offset_bottom = -46.362274
+anchor_left = 0.13
+anchor_top = 0.25
+anchor_right = 0.95
+anchor_bottom = 0.37
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
+
+[node name="AutoSizeLabel" type="Label" parent="Options/Paper/Sensitivity" unique_id=103647366]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.6
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_5ijvr")
+theme_override_font_sizes/font_size = 31
 text = "Mouse Sensitivity"
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("2_lgp46")
+metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
 
-[node name="SensitivitySlider" type="HSlider" parent="Options/Paper/SensitivityLabel" unique_id=369994254]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 464.0
-offset_top = 14.0
-offset_right = 789.0
-offset_bottom = 43.175
-scale = Vector2(1, 1.25)
-
-[node name="FullScreenLabel" type="Label" parent="Options/Paper" unique_id=1805770672]
-visible = false
+[node name="UiSlider" parent="Options/Paper/Sensitivity" unique_id=1557353711 instance=ExtResource("7_n4x21")]
 layout_mode = 1
-offset_left = -328.5204
-offset_top = -8.362274
-offset_right = -32.520386
-offset_bottom = 59.637726
+anchor_top = 0.5
+anchor_bottom = 1.0
+
+[node name="FullScreen" type="Control" parent="Options/Paper" unique_id=1409907128]
+layout_mode = 1
+anchor_left = 0.25
+anchor_top = 0.45
+anchor_right = 0.75
+anchor_bottom = 0.52
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="AutoSizeLabel" type="Label" parent="Options/Paper/FullScreen" unique_id=1522609748]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.7
+anchor_bottom = 1.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_5ijvr")
+theme_override_font_sizes/font_size = 30
 text = "Full Screen"
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("2_lgp46")
+metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
 
-[node name="CheckButton" type="CheckButton" parent="Options/Paper/FullScreenLabel" unique_id=1997802367]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 464.0
-offset_top = 14.0
-offset_right = 502.0
-offset_bottom = 60.0
-icon_alignment = 1
+[node name="CheckButton" type="TextureButton" parent="Options/Paper/FullScreen" unique_id=1898595515]
+self_modulate = Color(1.61, 1.61, 1.61, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.5258789e-05
+offset_bottom = -0.0128211975
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture_normal = ExtResource("5_gulp2")
+texture_hover = ExtResource("6_oavyi")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("8_nueu6")
+_sprite_check = Array[Texture2D]([ExtResource("9_0776l"), ExtResource("10_eo5y5")])
+_sprite_button = Array[Texture2D]([ExtResource("5_gulp2"), ExtResource("5_j3ibt")])
 
-[node name="VolumeLabel" type="Label" parent="Options/Paper" unique_id=931503095]
+[node name="Check" type="TextureRect" parent="Options/Paper/FullScreen/CheckButton" unique_id=1937464121]
+self_modulate = Color(1.61, 1.61, 1.61, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
+texture = ExtResource("9_0776l")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Volume" type="Control" parent="Options/Paper" unique_id=435838581]
+layout_mode = 1
+anchor_left = 0.13
+anchor_top = 0.6
+anchor_right = 0.95
+anchor_bottom = 0.72
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
+
+[node name="AutoSizeLabel" type="Label" parent="Options/Paper/Volume" unique_id=1291479739]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.6
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_5ijvr")
+theme_override_font_sizes/font_size = 31
+text = "Volume"
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("2_lgp46")
+metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
+
+[node name="VolumeSlider" type="HSlider" parent="Options/Paper/Volume" unique_id=97504318]
 visible = false
 layout_mode = 1
-offset_left = -328.5204
-offset_top = 97.637726
-offset_right = -142.52039
-offset_bottom = 165.63773
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="UiSlider" parent="Options/Paper/Volume" unique_id=887431142 instance=ExtResource("7_n4x21")]
+layout_mode = 1
+anchor_top = 0.5
+anchor_bottom = 1.0
+
+[node name="Apply" type="Control" parent="Options/Paper" unique_id=1634861108]
+layout_mode = 1
+anchor_left = 0.3
+anchor_top = 0.8
+anchor_right = 0.77
+anchor_bottom = 0.9
+offset_top = -3.0517578e-05
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="AutoSizeLabel" type="Label" parent="Options/Paper/Apply" unique_id=1655240294]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 1.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_5ijvr")
-text = "Volume"
+theme_override_font_sizes/font_size = 34
+text = "Apply??"
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("2_lgp46")
+metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
 
-[node name="VolumeSlider" type="HSlider" parent="Options/Paper/VolumeLabel" unique_id=1967405909]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 464.0
-offset_top = 12.0
-offset_right = 789.0
-offset_bottom = 41.175
-scale = Vector2(1, 1.25)
+[node name="CheckButton" type="TextureButton" parent="Options/Paper/Apply" unique_id=1711754826]
+self_modulate = Color(1.61, 1.61, 1.61, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.5258789e-05
+offset_bottom = -0.0128211975
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture_normal = ExtResource("5_gulp2")
+texture_hover = ExtResource("6_oavyi")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("8_nueu6")
+_sprite_check = Array[Texture2D]([ExtResource("9_0776l"), ExtResource("10_eo5y5")])
+_sprite_button = Array[Texture2D]([ExtResource("5_gulp2"), ExtResource("5_j3ibt")])
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Options/Paper" unique_id=215316839]
-visible = false
-layout_mode = 0
-offset_left = -62.520386
-offset_top = 192.63771
-offset_right = 193.47961
-offset_bottom = 267.6377
-
-[node name="ApplySettingsButton" type="Button" parent="Options/Paper/HBoxContainer" unique_id=24733327]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Apply"
-
-[node name="ExitSettingsButton" type="Button" parent="Options/Paper/HBoxContainer" unique_id=2011405850]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Back"
+[node name="Check" type="TextureRect" parent="Options/Paper/Apply/CheckButton" unique_id=2116611690]
+self_modulate = Color(1.61, 1.61, 1.61, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
+texture = ExtResource("9_0776l")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="BackButton" type="TextureButton" parent="Options" unique_id=151660821]
+self_modulate = Color(1.61, 1.61, 1.61, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.087000005
@@ -270,6 +451,61 @@ anchor_top = 0.069000006
 anchor_right = 0.18200001
 anchor_bottom = 0.163
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture_normal = ExtResource("5_cdtl2")
+texture_normal = ExtResource("9_j3ibt")
+texture_hover = ExtResource("6_oavyi")
 ignore_texture_size = true
 stretch_mode = 5
+script = ExtResource("10_85exe")
+sprite_paused = ExtResource("1_vy7sn")
+
+[node name="Arrow" type="TextureRect" parent="Options/BackButton" unique_id=1146980642]
+self_modulate = Color(1.6100625, 1.6100625, 1.6100625, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
+texture = ExtResource("10_n4x21")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AutoSizeLabel" type="Label" parent="Options" unique_id=1796582910]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.21800001
+anchor_top = 0.086
+anchor_right = 0.42700002
+anchor_bottom = 0.127
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_5ijvr")
+theme_override_font_sizes/font_size = 18
+text = "No Save Without Apply"
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("2_lgp46")
+metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
+
+[connection signal="mouse_entered" from="Pause/Paper/ResumeButton" to="Pause" method="_on_resume_button_mouse_entered"]
+[connection signal="mouse_exited" from="Pause/Paper/ResumeButton" to="Pause" method="_on_resume_button_mouse_exited"]
+[connection signal="pressed" from="Pause/Paper/ResumeButton" to="Pause" method="_on_resume_button_pressed"]
+[connection signal="mouse_entered" from="Pause/Paper/OptionsButton" to="Pause" method="_on_options_button_mouse_entered"]
+[connection signal="mouse_exited" from="Pause/Paper/OptionsButton" to="Pause" method="_on_options_button_mouse_exited"]
+[connection signal="pressed" from="Pause/Paper/OptionsButton" to="Pause" method="_on_options_button_pressed"]
+[connection signal="mouse_entered" from="Pause/Paper/QuitButton" to="Pause" method="_on_quit_button_mouse_entered"]
+[connection signal="mouse_exited" from="Pause/Paper/QuitButton" to="Pause" method="_on_quit_button_mouse_exited"]
+[connection signal="pressed" from="Pause/Paper/QuitButton" to="Pause" method="_on_quit_button_pressed"]
+[connection signal="mouse_entered" from="Options/Paper/FullScreen/CheckButton" to="Options/Paper/FullScreen/CheckButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Options/Paper/FullScreen/CheckButton" to="Options/Paper/FullScreen/CheckButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="Options/Paper/FullScreen/CheckButton" to="Options/Paper/FullScreen/CheckButton" method="_on_pressed"]
+[connection signal="mouse_entered" from="Options/Paper/Apply/CheckButton" to="Options/Paper/Apply/CheckButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Options/Paper/Apply/CheckButton" to="Options/Paper/Apply/CheckButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="Options/Paper/Apply/CheckButton" to="Options/Paper/Apply/CheckButton" method="_on_pressed"]
+[connection signal="mouse_entered" from="Options/BackButton" to="Options/BackButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Options/BackButton" to="Options/BackButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="Options/BackButton" to="Options/BackButton" method="_on_pressed"]

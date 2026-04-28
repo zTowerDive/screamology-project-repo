@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu4rd7djkav0k"
-path="res://.godot/imported/main_menu_placeholder.webp-6f1efdcdb4c9e5c6f15e956f381b215c.ctex"
+uid="uid://bu6gvs0oy7qch"
+path="res://.godot/imported/ui_uncheckButton_uncheck.png-c2edbd66648ccf3fe2ae9aa4f9ea945b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/images/main_menu_placeholder.webp"
-dest_files=["res://.godot/imported/main_menu_placeholder.webp-6f1efdcdb4c9e5c6f15e956f381b215c.ctex"]
+source_file="res://Assets/UI/images/buttons/ui_uncheckButton_uncheck.png"
+dest_files=["res://.godot/imported/ui_uncheckButton_uncheck.png-c2edbd66648ccf3fe2ae9aa4f9ea945b.ctex"]
 
 [params]
 
