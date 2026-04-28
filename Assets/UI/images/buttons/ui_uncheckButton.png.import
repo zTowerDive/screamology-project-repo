@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cbgpdufaplt73"
-path="res://.godot/imported/ui_uncheckButton.png-cae24ff27931b5ca8d26935ca2eb6120.ctex"
+path="res://.godot/imported/ui_uncheckButton.png-e83d5bc81a9df883291ebeb4a856fd39.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/images/buttons/ui_uncheckButton.png"
-dest_files=["res://.godot/imported/ui_uncheckButton.png-cae24ff27931b5ca8d26935ca2eb6120.ctex"]
+source_file="res://Assets/UI/images/buttons/ui_uncheckButton.png"
+dest_files=["res://.godot/imported/ui_uncheckButton.png-e83d5bc81a9df883291ebeb4a856fd39.ctex"]
 
 [params]
 
