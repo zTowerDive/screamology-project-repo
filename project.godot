@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Screamology Project Repo"
-run/main_scene="uid://dho6c53sr2gqc"
+run/main_scene="uid://bvvf1paeke0x4"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
