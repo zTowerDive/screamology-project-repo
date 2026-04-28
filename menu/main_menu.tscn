@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bvvf1paeke0x4"]
 
-[ext_resource type="Theme" uid="uid://cplw3is77dpud" path="res://assets/UI/main_menu_theme.tres" id="1_f5okj"]
-[ext_resource type="Script" uid="uid://caorop8pm7uw" path="res://menu/main_menu.gd" id="2_1x3cv"]
-[ext_resource type="Texture2D" uid="uid://bu4rd7djkav0k" path="res://assets/UI/images/main_menu_placeholder.webp" id="2_o5w3e"]
-[ext_resource type="FontFile" uid="uid://wc7lmkw5i5rg" path="res://assets/UI/fonts/Razor Keen.otf" id="4_1x3cv"]
+[ext_resource type="Theme" uid="uid://cplw3is77dpud" path="res://Assets/UI/main_menu_theme.tres" id="1_f5okj"]
+[ext_resource type="Script" uid="uid://caorop8pm7uw" path="res://pause/script/main_menu.gd" id="2_1x3cv"]
+[ext_resource type="Texture2D" uid="uid://bu4rd7djkav0k" path="res://Assets/UI/images/main_menu_placeholder.webp" id="2_o5w3e"]
+[ext_resource type="FontFile" uid="uid://wc7lmkw5i5rg" path="res://Assets/UI/fonts/Razor Keen.otf" id="4_1x3cv"]
 
 [node name="MainMenu" type="Control" unique_id=1764507766]
 layout_mode = 3

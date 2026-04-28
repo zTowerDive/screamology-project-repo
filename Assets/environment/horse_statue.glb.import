@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://br1iy0cmxiych"
-path="res://.godot/imported/horse_statue.glb-1325bd611e3c2f17c499da130fb93bbd.scn"
+path="res://.godot/imported/horse_statue.glb-e827863ed7a16b41731b4ef2f3a6328e.scn"
 
 [deps]
 
-source_file="res://assets/environment/horse_statue.glb"
-dest_files=["res://.godot/imported/horse_statue.glb-1325bd611e3c2f17c499da130fb93bbd.scn"]
+source_file="res://Assets/environment/horse_statue.glb"
+dest_files=["res://.godot/imported/horse_statue.glb-e827863ed7a16b41731b4ef2f3a6328e.scn"]
 
 [params]
 
