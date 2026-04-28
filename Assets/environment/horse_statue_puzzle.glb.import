@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dlethve88aakx"
-path="res://.godot/imported/battery.glb-1042e6fd81d805b261ee7078ad0ceb09.scn"
+uid="uid://bx5sulwhqpeu7"
+path="res://.godot/imported/horse_statue_puzzle.glb-505b5f701f662c99bbb15762e9c28629.scn"
 
 [deps]
 
-source_file="res://Assets/environment/battery.glb"
-dest_files=["res://.godot/imported/battery.glb-1042e6fd81d805b261ee7078ad0ceb09.scn"]
+source_file="res://Assets/environment/horse_statue_puzzle.glb"
+dest_files=["res://.godot/imported/horse_statue_puzzle.glb-505b5f701f662c99bbb15762e9c28629.scn"]
 
 [params]
 

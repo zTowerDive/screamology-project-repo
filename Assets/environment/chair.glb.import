@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dlethve88aakx"
-path="res://.godot/imported/battery.glb-1042e6fd81d805b261ee7078ad0ceb09.scn"
+uid="uid://y6bgc14vhr0q"
+path="res://.godot/imported/chair.glb-ad3b6d319eff7fe1563dc22c8f66d536.scn"
 
 [deps]
 
-source_file="res://Assets/environment/battery.glb"
-dest_files=["res://.godot/imported/battery.glb-1042e6fd81d805b261ee7078ad0ceb09.scn"]
+source_file="res://Assets/environment/chair.glb"
+dest_files=["res://.godot/imported/chair.glb-ad3b6d319eff7fe1563dc22c8f66d536.scn"]
 
 [params]
 
