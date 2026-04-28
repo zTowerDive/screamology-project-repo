@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c3dmpo4m4rfrq" path="res://props/test_light.tscn" id="6_h03q2"]
 [ext_resource type="PackedScene" uid="uid://bh8fwuegv73fg" path="res://interactibles/test_dialogue_change.tscn" id="7_ocbyp"]
 [ext_resource type="PackedScene" uid="uid://uw20430w7yy" path="res://creature/test_creature.tscn" id="8_1tb0x"]
+[ext_resource type="PackedScene" uid="uid://bs728rq3npwbp" path="res://menu/pause_menu.tscn" id="9_wv5ik"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y1qy8"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -42,7 +43,7 @@ use_collision = true
 size = Vector3(100, 1, 100)
 
 [node name="Player" parent="." unique_id=1496450164 instance=ExtResource("1_4kkmv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4337387, 0.475852, -0.9049654)
 max_speed_sprint = 9.0
 deceleration = 30.0
 
@@ -137,5 +138,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.84131527, 1.4707565, 12.449
 
 [node name="TESTCreature" parent="." unique_id=455156690 instance=ExtResource("8_1tb0x")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10.751169, -0.100000024, 10.386627)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1039958342]
+
+[node name="PauseMenu" parent="CanvasLayer" unique_id=1690461535 instance=ExtResource("9_wv5ik")]
 
 [editable path="JumpScareTest"]

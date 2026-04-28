@@ -26,6 +26,7 @@ mesh = SubResource("CapsuleMesh_agjal")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1677105194]
 stream = ExtResource("1_agjal")
+volume_db = -27.879
 autoplay = true
 max_distance = 3.0
 

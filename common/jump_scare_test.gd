@@ -1,5 +1,8 @@
 class_name JumpScareTest extends Area3D
-@onready var marker_3d: Marker3D = $Marker3D
+
+signal player_entered
+
+@export var marker_3d: Marker3D
 
 func _ready() -> void:
 	body_entered.connect(
@@ -9,5 +12,6 @@ func _ready() -> void:
 			
 			var player := body as PlayerController
 			
-			player.turn_camera_towards(marker_3d.global_position, .5)
+			player_entered.emit()
+			player.turn_camera_towards(marker_3d.global_position, 1.0)
 	)

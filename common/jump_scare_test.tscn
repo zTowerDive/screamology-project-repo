@@ -5,8 +5,9 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_2f5ml"]
 size = Vector3(3, 3, 3)
 
-[node name="JumpScareTest" type="Area3D" unique_id=1541913166]
+[node name="JumpScareTest" type="Area3D" unique_id=1541913166 node_paths=PackedStringArray("marker_3d")]
 script = ExtResource("1_olavw")
+marker_3d = NodePath("Marker3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1942673746]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8608861, 0)

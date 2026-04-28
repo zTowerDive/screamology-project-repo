@@ -50,8 +50,11 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	if is_mouse_button and not is_mouse_captured:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	elif  is_escape_pressed and not is_mouse_captured:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	elif is_escape_pressed and is_mouse_captured:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	
 	
 	if (event is InputEventMouseMotion and is_mouse_captured):
 		var look_offset_2d : Vector2 = event.screen_relative * look_sensitivty 
@@ -151,17 +154,10 @@ func play_landing_animation(fall_speed: float) -> void:
 
 ## Function rotates the Player's Camera node to a target position over a duration
 func turn_camera_towards(target_global_position: Vector3, turn_duration: float) -> void:
-	var angle_to_target : float = global_position.angle_to(target_global_position)
+	var tween := create_tween()
 	
-	var tween := create_tween().set_parallel()
-	
-	tween.tween_property(_camera, "rotation:x", angle_to_target, turn_duration)
-	tween.tween_property(_camera, "rotation:y", angle_to_target, turn_duration)
-	
-	tween.finished.connect(
-		func() -> void:
-			looked_at.emit()
-	)
+	tween.tween_method(_camera.look_at, _camera.global_position, target_global_position, turn_duration)
+
 
 ## Function animates the Player's global_position to a target position of type over a duration
 func walk_towards(target_global_position: Vector3, duration: float) -> void:

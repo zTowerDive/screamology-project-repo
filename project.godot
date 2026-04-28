@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 KeyRing="*uid://dbcqccrg1e47x"
+GameSettings="*uid://vodnnre2x4tp"
 
 [input]
 

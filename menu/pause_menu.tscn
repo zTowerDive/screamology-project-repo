@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://bs728rq3npwbp"]
 
-[ext_resource type="Texture2D" uid="uid://bniouffglnlw7" path="res://Assets/UI/images/pause/ui_pause_bg_0.png" id="1_vy7sn"]
-[ext_resource type="FontFile" uid="uid://wc7lmkw5i5rg" path="res://Assets/UI/fonts/Razor Keen.otf" id="2_5ijvr"]
-[ext_resource type="Script" uid="uid://dbn8xadgxcv7x" path="res://menu/AutoSizeLabel.gd" id="2_lgp46"]
-[ext_resource type="Texture2D" uid="uid://chmns8b7xajof" path="res://Assets/UI/images/pause/ui_pause_bg_1.png" id="4_yvytn"]
-[ext_resource type="Texture2D" uid="uid://b8l8o5kjmptl4" path="res://Assets/UI/images/pause/ui_pause_backButton.png" id="5_cdtl2"]
+[ext_resource type="Script" uid="uid://dob7idjvadtyj" path="res://menu/pause_menu.gd" id="1_cdtl2"]
+[ext_resource type="Texture2D" uid="uid://bniouffglnlw7" path="res://assets/UI/images/pause/ui_pause_bg_0.png" id="1_vy7sn"]
+[ext_resource type="FontFile" uid="uid://wc7lmkw5i5rg" path="res://assets/UI/fonts/Razor Keen.otf" id="2_5ijvr"]
+[ext_resource type="Script" path="res://menu/AutoSizeLabel.gd" id="2_lgp46"]
+[ext_resource type="Texture2D" uid="uid://chmns8b7xajof" path="res://assets/UI/images/pause/ui_pause_bg_1.png" id="4_yvytn"]
+[ext_resource type="Texture2D" uid="uid://b8l8o5kjmptl4" path="res://assets/UI/images/pause/ui_pause_backButton.png" id="5_cdtl2"]
 
 [node name="PauseMenu" type="Control" unique_id=1690461535]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,6 +16,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
+script = ExtResource("1_cdtl2")
 
 [node name="Pause" type="TextureRect" parent="." unique_id=2057317472]
 layout_mode = 1
@@ -23,6 +26,7 @@ anchor_top = 0.05
 anchor_right = 0.75
 anchor_bottom = 0.95
 pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
 texture = ExtResource("1_vy7sn")
 expand_mode = 1
 stretch_mode = 5
@@ -34,6 +38,7 @@ anchor_top = 0.062000003
 anchor_right = 0.708
 anchor_bottom = 0.94500005
 pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
 
 [node name="Title" type="Label" parent="Pause/Paper" unique_id=353381692]
 layout_mode = 1
@@ -56,9 +61,9 @@ clip_text = true
 text_overrun_behavior = 3
 script = ExtResource("2_lgp46")
 max_font_size = 128
-metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
 
 [node name="ResumeButton" type="TextureButton" parent="Pause/Paper" unique_id=381364033]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.1
@@ -84,9 +89,9 @@ clip_text = true
 text_overrun_behavior = 3
 script = ExtResource("2_lgp46")
 max_font_size = 128
-metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
 
 [node name="OptionsButton" type="TextureButton" parent="Pause/Paper" unique_id=922429236]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.1
@@ -112,9 +117,9 @@ clip_text = true
 text_overrun_behavior = 3
 script = ExtResource("2_lgp46")
 max_font_size = 128
-metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
 
 [node name="QuitButton" type="TextureButton" parent="Pause/Paper" unique_id=1330954852]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.1
@@ -140,9 +145,9 @@ clip_text = true
 text_overrun_behavior = 3
 script = ExtResource("2_lgp46")
 max_font_size = 128
-metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
 
 [node name="Options" type="TextureRect" parent="." unique_id=255215109]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.25
@@ -183,7 +188,6 @@ clip_text = true
 text_overrun_behavior = 3
 script = ExtResource("2_lgp46")
 max_font_size = 128
-metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
 
 [node name="SensitivityLabel" type="Label" parent="Options/Paper" unique_id=567245823]
 visible = false
@@ -205,7 +209,6 @@ offset_bottom = 43.175
 scale = Vector2(1, 1.25)
 
 [node name="FullScreenLabel" type="Label" parent="Options/Paper" unique_id=1805770672]
-visible = false
 layout_mode = 1
 offset_left = -328.5204
 offset_top = -8.362274
@@ -224,7 +227,6 @@ offset_bottom = 60.0
 icon_alignment = 1
 
 [node name="VolumeLabel" type="Label" parent="Options/Paper" unique_id=931503095]
-visible = false
 layout_mode = 1
 offset_left = -328.5204
 offset_top = 97.637726
@@ -242,27 +244,8 @@ offset_right = 789.0
 offset_bottom = 41.175
 scale = Vector2(1, 1.25)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Options/Paper" unique_id=215316839]
-visible = false
-layout_mode = 0
-offset_left = -62.520386
-offset_top = 192.63771
-offset_right = 193.47961
-offset_bottom = 267.6377
-
-[node name="ApplySettingsButton" type="Button" parent="Options/Paper/HBoxContainer" unique_id=24733327]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Apply"
-
-[node name="ExitSettingsButton" type="Button" parent="Options/Paper/HBoxContainer" unique_id=2011405850]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Back"
-
 [node name="BackButton" type="TextureButton" parent="Options" unique_id=151660821]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.087000005

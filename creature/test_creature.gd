@@ -57,36 +57,40 @@ func set_current_state(new_state: State) -> void:
 	## Runs exit code based on last State
 	match previous_state:
 		State.StateIdle:
-			print("Now exiting State: ", State.StateIdle)
+			#print("Now exiting State: ", State.StateIdle)
+			pass
 		
 		State.StateChase:
-			print("Now exiting State: ", State.StateChase)
+			#print("Now exiting State: ", State.StateChase)
+			pass
 		
 		State.StateWander:
-			print("Now exiting State: ", State.StateWander)
+			#print("Now exiting State: ", State.StateWander)
 			_wander_timer.stop()
 		
 		State.StateLookAtPlayer: 
-			print("Now exiting State: ", State.StateLookAtPlayer)
+			#print("Now exiting State: ", State.StateLookAtPlayer)
 			_stare_timer.stop()
 	
 	## Runs entering code based on new State
 	match current_state:
 		State.StateIdle:
-			print("Now entering State: ", State.StateIdle)
+			#print("Now entering State: ", State.StateIdle)
+			pass
 		
 		State.StateChase:
-			print("Now entering State: ", State.StateChase)
+			#print("Now entering State: ", State.StateChase)
+			pass
 		
 		State.StateWander:
-			print("Now entering State: ", State.StateWander)
+			#print("Now entering State: ", State.StateWander)
 			_wander_timer.start()
 			var random_location := get_random_location(10.0, 30.0)
 			
 			walk_to_point(Vector3(random_location.x, 0.0, random_location.z), wander_speed)
 		
 		State.StateLookAtPlayer:
-			print("Now entering State: ", str(State.StateLookAtPlayer))
+			#print("Now entering State: ", str(State.StateLookAtPlayer))
 			_stare_timer.start()
 			
 			velocity = Vector3.ZERO
