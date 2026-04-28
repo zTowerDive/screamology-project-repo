@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c6jkr2n2ekn1r"
-path="res://.godot/imported/ui_checkButton.png-2eb0e8e80b6dbf0a07d85d5300793fe1.ctex"
+path="res://.godot/imported/ui_checkButton.png-8cde5af84671d504b42801d813d41869.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/images/buttons/ui_checkButton.png"
-dest_files=["res://.godot/imported/ui_checkButton.png-2eb0e8e80b6dbf0a07d85d5300793fe1.ctex"]
+source_file="res://Assets/UI/images/buttons/ui_checkButton.png"
+dest_files=["res://.godot/imported/ui_checkButton.png-8cde5af84671d504b42801d813d41869.ctex"]
 
 [params]
 

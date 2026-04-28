@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c76hhi4gp66rk"
-path="res://.godot/imported/ui_underscore.png-1a6befa252868939f35a3acb8e70754d.ctex"
+path="res://.godot/imported/ui_underscore.png-9816b87f6b81b6b0300ab352d081a69f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/images/pause/ui_underscore.png"
-dest_files=["res://.godot/imported/ui_underscore.png-1a6befa252868939f35a3acb8e70754d.ctex"]
+source_file="res://Assets/UI/images/pause/ui_underscore.png"
+dest_files=["res://.godot/imported/ui_underscore.png-9816b87f6b81b6b0300ab352d081a69f.ctex"]
 
 [params]
 

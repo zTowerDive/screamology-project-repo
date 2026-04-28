@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://d0khgirktditg"
-path="res://.godot/imported/bababooey-sound-effect.mp3-df2529bd662a0c3277b67d201d284412.mp3str"
+path="res://.godot/imported/bababooey-sound-effect.mp3-7d885eaed5c07195f36ff6b494534c8f.mp3str"
 
 [deps]
 
-source_file="res://assets/Audio/Sfx/bababooey-sound-effect.mp3"
-dest_files=["res://.godot/imported/bababooey-sound-effect.mp3-df2529bd662a0c3277b67d201d284412.mp3str"]
+source_file="res://Assets/Audio/Sfx/bababooey-sound-effect.mp3"
+dest_files=["res://.godot/imported/bababooey-sound-effect.mp3-7d885eaed5c07195f36ff6b494534c8f.mp3str"]
 
 [params]
 
