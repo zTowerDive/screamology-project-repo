@@ -16,7 +16,11 @@ func _ready() -> void:
 
 func set_game_volume(new_value: float) -> void:
 	volume = new_value
-	AudioServer.set_bus_volume_linear(0, volume)
+	if volume == 0:
+		AudioServer.set_bus_mute(0, true)
+	else:
+		AudioServer.set_bus_mute(0, false)
+		AudioServer.set_bus_volume_db(0, volume)
 	print("volume changed")
 
 

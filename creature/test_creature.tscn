@@ -11,7 +11,7 @@ radius = 0.75
 height = 2.817871
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lcr6j"]
-size = Vector3(22.354492, 37.595245, 12.529297)
+size = Vector3(7.5273438, 17.47718, 12.529297)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o85cb"]
 size = Vector3(2.9003906, 2.1089478, 3.5095215)
@@ -29,7 +29,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.61306036, 0.6898302)
 script = ExtResource("2_o85cb")
 
 [node name="VisionShape3D" type="CollisionShape3D" parent="VisionArea3D" unique_id=2133402175]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 5.7641597, 18.877823)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 5.764159, 8.818791)
 shape = SubResource("BoxShape3D_lcr6j")
 debug_color = Color(0.9647059, 0, 0.4862745, 1)
 

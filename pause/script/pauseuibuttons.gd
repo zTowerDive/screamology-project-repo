@@ -48,4 +48,5 @@ func _on_quit_button_mouse_exited() -> void:
 	texture_rect_quit.self_modulate = Color(1,1,1,0)
 
 func _on_quit_button_pressed() -> void:
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://menu/main_menu.tscn")

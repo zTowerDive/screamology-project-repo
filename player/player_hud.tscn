@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dnc76wltq5mm5"]
 
-[ext_resource type="Theme" uid="uid://c74vybnpmvy4l" path="res://assets/UI/player_hud.tres" id="1_r44wa"]
+[ext_resource type="Theme" uid="uid://c74vybnpmvy4l" path="res://Assets/UI/player_hud.tres" id="1_r44wa"]
 [ext_resource type="Script" uid="uid://5qvqxj6wncev" path="res://player/player_hud.gd" id="2_2j6sb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_julpx"]
@@ -24,21 +24,6 @@ grow_vertical = 2
 mouse_filter = 1
 theme = ExtResource("1_r44wa")
 script = ExtResource("2_2j6sb")
-
-[node name="StaminaBar" type="ProgressBar" parent="." unique_id=759550065]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 48.0
-offset_top = -282.0
-offset_right = 70.0
-offset_bottom = -64.0
-grow_vertical = 0
-value = 91.56
-fill_mode = 3
-show_percentage = false
 
 [node name="CurrentTaskLabel" type="RichTextLabel" parent="." unique_id=122834258]
 unique_name_in_owner = true

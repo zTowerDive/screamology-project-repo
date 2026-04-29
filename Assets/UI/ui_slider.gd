@@ -5,10 +5,12 @@ extends Control
 @export var _knob : TextureRect
 @export var _knob_ : TextureRect
 @export var isVolume:bool = false
+@export var isMouse:bool = false
 
 func _on_h_slider_value_changed(value: float) -> void:
 	_VisualChange(value)
-	if isVolume : AudioServer.set_bus_volume_linear(0, value)
+	if isVolume : GameSettings.set_game_volume(value)
+	if isMouse : GameSettings.set_look_sensitivity(value)
 
 func _ready() -> void:
 	if(_slider==null):
@@ -19,6 +21,9 @@ func _ready() -> void:
 		_knob = $KnobTexture
 	if(_knob_==null):
 		_knob_ = $KnobTexture/KnobTexture
+	if isMouse:
+		_slider.max_value = 2.5
+		_slider.min_value = 0.005
 	_textslider.max_value = _slider.max_value
 	_textslider.min_value = _slider.min_value
 	_textslider.step = _slider.step

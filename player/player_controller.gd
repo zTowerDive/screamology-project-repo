@@ -66,6 +66,9 @@ func _process(delta: float) -> void:
 	var look_offset_2d := joystick_look_input * look_sensitivty * delta
 	if joystick_look_input.length() > 0.5:
 		_rotate_camera_by(look_offset_2d)
+	
+	if look_sensitivty != GameSettings.look_sensitivity:
+		look_sensitivty = GameSettings.look_sensitivity
 
 
 func _physics_process(delta: float) -> void:

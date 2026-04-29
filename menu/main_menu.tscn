@@ -15,8 +15,9 @@
 [ext_resource type="Texture2D" uid="uid://l67m5eoankp" path="res://Assets/UI/images/buttons/ui_checkButton_check.png" id="12_8lj81"]
 [ext_resource type="Texture2D" uid="uid://c6jkr2n2ekn1r" path="res://Assets/UI/images/buttons/ui_checkButton.png" id="13_lbtey"]
 [ext_resource type="Texture2D" uid="uid://b1u76p04fer8i" path="res://Assets/UI/images/buttons/ui_pause_backButton.png" id="14_0wlwb"]
-[ext_resource type="Script" uid="uid://chicftuj8tn4x" path="res://menu/back_button_mainMenu.gd" id="16_5urqu"]
+[ext_resource type="Script" path="res://menu/back_button_mainMenu.gd" id="16_5urqu"]
 [ext_resource type="Texture2D" uid="uid://cy7r3pswv0drs" path="res://Assets/UI/images/buttons/ui_pause_backButton_backArrow.png" id="17_6kbw3"]
+[ext_resource type="AudioStream" uid="uid://bgmrjcp3p1ka1" path="res://Assets/Audio/Ambience/ambience_low.ogg" id="18_bnl5v"]
 
 [node name="MainMenu" type="Control" unique_id=1764507766]
 layout_mode = 3
@@ -42,8 +43,11 @@ stretch_mode = 5
 
 [node name="Main" type="Control" parent="." unique_id=732963676]
 layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 
 [node name="AutoSizeLabel" type="Label" parent="Main" unique_id=1061481439]
@@ -265,9 +269,11 @@ max_font_size = 158
 metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
 
 [node name="SensitivitySlider" parent="Options/Canvas/Paper/Sensitivity" unique_id=1557353711 instance=ExtResource("7_5urqu")]
+unique_name_in_owner = true
 layout_mode = 1
 anchor_top = 0.5
 anchor_bottom = 1.0
+isMouse = true
 
 [node name="FullScreen" type="Control" parent="Options/Canvas/Paper" unique_id=446478336]
 layout_mode = 1
@@ -297,6 +303,7 @@ max_font_size = 158
 metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
 
 [node name="CheckButton" type="TextureButton" parent="Options/Canvas/Paper/FullScreen" unique_id=1902737715]
+unique_name_in_owner = true
 self_modulate = Color(1.61, 1.61, 1.61, 1)
 layout_mode = 1
 anchors_preset = -1
@@ -352,9 +359,11 @@ max_font_size = 158
 metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
 
 [node name="VolumeSlider" parent="Options/Canvas/Paper/Volume" unique_id=1123208429 instance=ExtResource("7_5urqu")]
+unique_name_in_owner = true
 layout_mode = 1
 anchor_top = 0.5
 anchor_bottom = 1.0
+isVolume = true
 
 [node name="Apply" type="Control" parent="Options/Canvas/Paper" unique_id=1765185234]
 layout_mode = 1
@@ -439,6 +448,10 @@ pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("17_6kbw3")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1224136620]
+stream = ExtResource("18_bnl5v")
+autoplay = true
 
 [connection signal="mouse_entered" from="Options/Canvas/Paper/FullScreen/CheckButton" to="Options/Canvas/Paper/FullScreen/CheckButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Options/Canvas/Paper/FullScreen/CheckButton" to="Options/Canvas/Paper/FullScreen/CheckButton" method="_on_mouse_exited"]

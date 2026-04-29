@@ -106,7 +106,7 @@ func set_current_state(new_state: State) -> void:
 		State.StateScare:
 			velocity = Vector3.ZERO
 			_creature_audio_player.play()
-			_creature_audio_player.finished.connect(get_tree().reload_current_scene)
+			_creature_audio_player.finished.connect(get_tree().change_scene_to_file.bind("res://menu/main_menu.tscn"))
 			_vision_area.focused_body.set_physics_process(false)
 
 #endregion
