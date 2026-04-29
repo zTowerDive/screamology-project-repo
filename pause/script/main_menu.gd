@@ -14,6 +14,7 @@ var is_options_showing := false
 
 func _ready() -> void:
 	_connect_button_signals()
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _playbuttonMouseOn()->void:
 	pauseButton_texture_rect.self_modulate = Color(1,1,1,1)

@@ -8,6 +8,9 @@
 [ext_resource type="AudioStream" uid="uid://uuat8x1gogo0" path="res://Assets/Audio/Ambience/ambience_low_r.ogg" id="5_lstp0"]
 [ext_resource type="PackedScene" uid="uid://de3gp7b1a5yu0" path="res://menu/pause_menu.tscn" id="6_gfe6y"]
 [ext_resource type="Script" uid="uid://bb105xqv32uyu" path="res://kill_box.gd" id="8_vq5cs"]
+[ext_resource type="PackedScene" uid="uid://hpbabidoigar" path="res://Assets/environment/tabble.glb" id="9_y43jj"]
+[ext_resource type="PackedScene" uid="uid://b4xjwyv3v4b82" path="res://props/jump_pipe.tscn" id="10_y43jj"]
+[ext_resource type="PackedScene" uid="uid://dboj0xwla4b8x" path="res://props/pipe_walk_2.tscn" id="11_i4gch"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_54jcv"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -711,14 +714,16 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -49.
 mesh = SubResource("PlaneMesh_54jcv")
 
 [node name="Player" parent="." index="9" unique_id=1496450164 instance=ExtResource("2_3fsba")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.771976, -3.8146973e-06, 32.18702)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.247437, -4.2915344e-06, -2.6324964)
+jump_velocity = 6.0
 
 [node name="TESTCreature" parent="." index="10" unique_id=455156690 instance=ExtResource("3_q3sy1")]
 transform = Transform3D(1, 0, -5.7620454e-08, 0, 1, 0, 5.7620454e-08, 0, 1, -47.20227, 0.56424713, 2.6575737)
 chase_speed = 300.0
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="11" unique_id=1141670671]
+[node name="LightAudioPlayer" type="AudioStreamPlayer" parent="." index="11" unique_id=1141670671]
 stream = ExtResource("5_lstp0")
+volume_db = 1.0
 autoplay = true
 
 [node name="PauseMenu" parent="." index="16" unique_id=1690461535 instance=ExtResource("6_gfe6y")]
@@ -730,3 +735,14 @@ script = ExtResource("8_vq5cs")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="KillBox" index="0" unique_id=111775216]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6608887, -3.3154728, 0)
 shape = SubResource("BoxShape3D_u0lk2")
+
+[node name="props" type="Node3D" parent="." index="18" unique_id=547179201]
+
+[node name="tabble" parent="props" index="0" unique_id=1053680732 instance=ExtResource("9_y43jj")]
+transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, 17.703392, -1.847744e-06, 22.534935)
+
+[node name="jump_pipe" parent="." index="19" unique_id=2052717345 instance=ExtResource("10_y43jj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.461086, -1.5265381, -18.407701)
+
+[node name="pipe_walk2" parent="." index="20" unique_id=1109538389 instance=ExtResource("11_i4gch")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.455105, -0.2105875, -7.3227987)
