@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bh8fwuegv73fg" path="res://interactibles/test_dialogue_change.tscn" id="7_ocbyp"]
 [ext_resource type="PackedScene" uid="uid://uw20430w7yy" path="res://creature/test_creature.tscn" id="8_1tb0x"]
 [ext_resource type="PackedScene" uid="uid://c5fn77tp6ntus" path="res://interactibles/puzzle_circuit/circuit_puzzle.tscn" id="9_wv5ik"]
+[ext_resource type="PackedScene" path="res://menu/pause_menu.tscn" id="10_pq8oq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y1qy8"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -141,5 +142,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10.7
 
 [node name="circuit_puzzle_test" parent="." unique_id=517431748 instance=ExtResource("9_wv5ik")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.960658, 0.5, -5.967982)
+
+[node name="PauseMenu" parent="." unique_id=1690461535 instance=ExtResource("10_pq8oq")]
 
 [editable path="JumpScareTest"]
