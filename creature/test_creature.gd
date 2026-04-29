@@ -1,14 +1,17 @@
 class_name CreatureController extends CharacterBody3D
 
 @onready var _vision_area: VisionArea3D = %VisionArea3D
-@onready var _mesh: Node3D = $Sketchfab_Scene
+@onready var _mesh: Creature = %Sewer_Kelpie_30
 @onready var _jump_scare_test: JumpScareTest = %JumpScareTest
 @onready var _creature_audio_player: AudioStreamPlayer3D = %CreatureAudioPlayer
+@onready var _head_marker: Marker3D = $HeadMarker
+@onready var _ray_cast: RayCast3D = %RayCast
 
 @onready var _wander_timer: Timer = %WanderTimer
 @onready var _stare_timer: Timer = %StareTimer
+@onready var _idle_timer: Timer = %IdleTimer
 
-@export var chase_speed := 240.0
+@export var chase_speed := 400.0
 @export var wander_speed := 3.0
 
 enum State {
@@ -41,6 +44,8 @@ func _physics_process(delta: float) -> void:
 			process_wander_state(delta)
 		State.StateLookAtPlayer:
 			process_look_at_player_state(delta)
+		State.StateScare:
+			process_scare_state(delta)
 	
 	## Apply Gravity
 	if not is_on_floor():
@@ -63,7 +68,7 @@ func set_current_state(new_state: State) -> void:
 	match previous_state:
 		State.StateIdle:
 			#print("Now exiting State: ", State.StateIdle)
-			pass
+			_idle_timer.stop()
 		
 		State.StateChase:
 			#print("Now exiting State: ", State.StateChase)
@@ -84,14 +89,17 @@ func set_current_state(new_state: State) -> void:
 	match current_state:
 		State.StateIdle:
 			#print("Now entering State: ", State.StateIdle)
-			pass
+			_idle_timer.start()
+			velocity = Vector3.ZERO
+			_mesh.animation_player.play("G_Search")
 		
 		State.StateChase:
 			#print("Now entering State: ", State.StateChase)
-			pass
+			_mesh.animation_player.play("G_Run")
 		
 		State.StateWander:
 			#print("Now entering State: ", State.StateWander)
+			_mesh.animation_player.play("G_Walk")
 			_wander_timer.start()
 			var random_location := get_random_location(10.0, 30.0)
 			
@@ -100,21 +108,28 @@ func set_current_state(new_state: State) -> void:
 		State.StateLookAtPlayer:
 			#print("Now entering State: ", str(State.StateLookAtPlayer))
 			_stare_timer.start()
-			
+			_mesh.animation_player.stop()
 			velocity = Vector3.ZERO
 		
 		State.StateScare:
 			velocity = Vector3.ZERO
+			_mesh.animation_player.play("G_Attack")
 			_creature_audio_player.play()
 			_creature_audio_player.finished.connect(get_tree().change_scene_to_file.bind("res://menu/main_menu.tscn"))
 			_vision_area.focused_body.set_physics_process(false)
+			_vision_area.focused_body.global_position.y = _head_marker.global_position.y - 0.9
 
 #endregion
 
 
 #region State Processing Functions
 func process_idle_state(delta: float) -> void:
-	pass
+	
+	if _idle_timer.timeout.get_connections().is_empty():
+		_idle_timer.timeout.connect(set_current_state.bind(State.StateWander))
+	
+	if _jump_scare_test.player_entered.get_connections().is_empty():
+		_jump_scare_test.player_entered.connect(set_current_state.bind(State.StateScare))
 
 
 func process_chase_state(delta: float) -> void:
@@ -125,7 +140,7 @@ func process_chase_state(delta: float) -> void:
 	velocity = direction * chase_speed * delta
 	
 	if _vision_area.player_lost.get_connections().is_empty():
-		_vision_area.player_lost.connect(set_current_state.bind(State.StateWander))
+		_vision_area.player_lost.connect(set_current_state.bind(State.StateIdle))
 	
 	if _jump_scare_test.player_entered.get_connections().is_empty():
 		_jump_scare_test.player_entered.connect(set_current_state.bind(State.StateScare))
@@ -138,7 +153,10 @@ func process_wander_state(delta: float) -> void:
 		_vision_area.player_detected.connect(set_current_state.bind(State.StateLookAtPlayer))
 	
 	if _wander_timer.timeout.get_connections().is_empty():
-		_wander_timer.timeout.connect(set_current_state.bind(State.StateWander))
+		_wander_timer.timeout.connect(set_current_state.bind(State.StateIdle))
+	
+	if _ray_cast.is_colliding():
+		set_current_state(State.StateIdle)
 
 
 func process_look_at_player_state(delta) -> void:
@@ -146,10 +164,15 @@ func process_look_at_player_state(delta) -> void:
 	look_at(target_position, Vector3.UP, true)
 	
 	if _vision_area.player_lost.get_connections().is_empty():
-		_vision_area.player_lost.connect(set_current_state.bind(State.StateWander))
+		_vision_area.player_lost.connect(set_current_state.bind(State.StateIdle))
 	
 	if _stare_timer.timeout.get_connections().is_empty():
 		_stare_timer.timeout.connect(set_current_state.bind(State.StateChase))
+
+
+func process_scare_state(delta: float) -> void:
+	var target_position := _jump_scare_test.player.global_position - Vector3(0, 1.4, 0)
+	look_at(target_position, Vector3.UP, true)
 #endregion
 
 
@@ -158,7 +181,8 @@ func walk_to_point(target_location: Vector3, target_speed: float) -> void:
 	var direction_to_target := global_position.direction_to(target_location)
 	var desired_velocity := direction_to_target * target_speed
 	
-	velocity = desired_velocity
+	velocity.x = desired_velocity.x
+	velocity.z = desired_velocity.z
 
 
 func get_random_location(min_range: float, max_range: float) -> Vector3:
@@ -175,3 +199,6 @@ func clear_signal_connections() -> void:
 	
 	if not _vision_area.player_lost.get_connections().is_empty():
 		_vision_area.player_lost.disconnect(set_current_state)
+	
+	if not _creature_audio_player.finished.get_connections().is_empty():
+		_creature_audio_player.timeout.disconnect(get_tree().change_scene_to_file)
