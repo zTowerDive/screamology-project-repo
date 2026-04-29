@@ -14,7 +14,7 @@ config/name="A Sewed Neight"
 config/version="0.1"
 run/main_scene="uid://bvvf1paeke0x4"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="uid://hbuy6g1tvh0s"
+config/icon="res://icon.svg"
 
 [autoload]
 

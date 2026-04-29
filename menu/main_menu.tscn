@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://l67m5eoankp" path="res://Assets/UI/images/buttons/ui_checkButton_check.png" id="12_8lj81"]
 [ext_resource type="Texture2D" uid="uid://c6jkr2n2ekn1r" path="res://Assets/UI/images/buttons/ui_checkButton.png" id="13_lbtey"]
 [ext_resource type="Texture2D" uid="uid://b1u76p04fer8i" path="res://Assets/UI/images/buttons/ui_pause_backButton.png" id="14_0wlwb"]
-[ext_resource type="Script" uid="uid://chicftuj8tn4x" path="res://menu/back_button_mainMenu.gd" id="16_5urqu"]
+[ext_resource type="Script" path="res://menu/back_button_mainMenu.gd" id="16_5urqu"]
 [ext_resource type="Texture2D" uid="uid://cy7r3pswv0drs" path="res://Assets/UI/images/buttons/ui_pause_backButton_backArrow.png" id="17_6kbw3"]
 [ext_resource type="AudioStream" uid="uid://bgmrjcp3p1ka1" path="res://Assets/Audio/Ambience/ambience_low.ogg" id="18_bnl5v"]
 
