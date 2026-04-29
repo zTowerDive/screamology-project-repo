@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://uw20430w7yy" path="res://creature/test_creature.tscn" id="3_q3sy1"]
 [ext_resource type="Material" uid="uid://cfke4e6kbm8qc" path="res://levels/dirty_water.tres" id="4_lstp0"]
 [ext_resource type="AudioStream" uid="uid://uuat8x1gogo0" path="res://Assets/Audio/Ambience/ambience_low_r.ogg" id="5_lstp0"]
-[ext_resource type="PackedScene" uid="uid://de3gp7b1a5yu0" path="res://menu/pause_menu.tscn" id="6_gfe6y"]
+[ext_resource type="PackedScene" uid="uid://dtu27gc0x3fky" path="res://menu/pause_menu.tscn" id="6_gfe6y"]
 [ext_resource type="Script" uid="uid://bb105xqv32uyu" path="res://kill_box.gd" id="8_vq5cs"]
 [ext_resource type="PackedScene" uid="uid://hpbabidoigar" path="res://Assets/environment/tabble.glb" id="9_y43jj"]
 [ext_resource type="PackedScene" uid="uid://b4xjwyv3v4b82" path="res://props/jump_pipe.tscn" id="10_y43jj"]
@@ -718,7 +718,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.247437, -4.2915344e-06, -
 jump_velocity = 6.0
 
 [node name="TESTCreature" parent="." index="10" unique_id=455156690 instance=ExtResource("3_q3sy1")]
-transform = Transform3D(1, 0, -5.7620454e-08, 0, 1, 0, 5.7620454e-08, 0, 1, -47.20227, 0.56424713, 2.6575737)
+transform = Transform3D(1, 0, -5.7620454e-08, 0, 1, 0, 5.7620454e-08, 0, 1, -7.521282, -0.43575287, -11.453239)
 chase_speed = 300.0
 
 [node name="LightAudioPlayer" type="AudioStreamPlayer" parent="." index="11" unique_id=1141670671]

@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://fpgpdol44vub"]
 
 [ext_resource type="PackedScene" uid="uid://dw6o0v8egobde" path="res://creature/Sewer_Kelpie_30.glb" id="1_avthv"]
+[ext_resource type="Script" uid="uid://dr7tbwwqhst4w" path="res://creature/sewer_kelpie_30.gd" id="2_7yvcb"]
 
 [node name="Sewer_Kelpie_30" unique_id=651214621 instance=ExtResource("1_avthv")]
+script = ExtResource("2_7yvcb")
 
 [node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(1299427044) index="0" unique_id=61802348]
 bones/10/rotation = Quaternion(0.27256674, -5.717926e-07, -3.0547258e-07, 0.9621369)
