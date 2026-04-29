@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cr4k3ce7mh0px"
-path.s3tc="res://.godot/imported/chair_metalic-roughness.png-24647d288044dfd8147e254a206e9f28.s3tc.ctex"
+uid="uid://deoy4j8kr7wt1"
+path.s3tc="res://.godot/imported/flashlight_openPBR_shader2_Metallic-openPBR_shader2_Roughness.png-3d0b620e0862cd7ae7bb54cae8359a42.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "b8196835aa86f10f295bb741f43238bc"
+"md5": "5e41f709e0511250096b6dafed6148f8"
 }
 
 [deps]
 
-source_file="res://Assets/environment/textures/chair_metalic-roughness.png"
-dest_files=["res://.godot/imported/chair_metalic-roughness.png-24647d288044dfd8147e254a206e9f28.s3tc.ctex"]
+source_file="res://Assets/environment/textures/flashlight_openPBR_shader2_Metallic-openPBR_shader2_Roughness.png"
+dest_files=["res://.godot/imported/flashlight_openPBR_shader2_Metallic-openPBR_shader2_Roughness.png-3d0b620e0862cd7ae7bb54cae8359a42.s3tc.ctex"]
 
 [params]
 

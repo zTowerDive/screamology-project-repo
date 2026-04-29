@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qjgpl28i1lna"
-path.s3tc="res://.godot/imported/bottle_lambert6_Metallic-lambert6_Roughness.png-e057142d89b6cd8e4e0f5ba4167e4dd5.s3tc.ctex"
+uid="uid://xrelolp6qsl5"
+path.s3tc="res://.godot/imported/bottle_lambert6_Roughness.png-9d8adc554bce8ea1e2554d9959551c08.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/environment/textures/bottle_lambert6_Metallic-lambert6_Roughness.png"
-dest_files=["res://.godot/imported/bottle_lambert6_Metallic-lambert6_Roughness.png-e057142d89b6cd8e4e0f5ba4167e4dd5.s3tc.ctex"]
+source_file="res://Assets/environment/textures/bottle_lambert6_Roughness.png"
+dest_files=["res://.godot/imported/bottle_lambert6_Roughness.png-9d8adc554bce8ea1e2554d9959551c08.s3tc.ctex"]
 
 [params]
 

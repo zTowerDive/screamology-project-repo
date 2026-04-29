@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxomev381lngc"
-path.s3tc="res://.godot/imported/horse_statue_puzzle_lambert2_BaseColor.png-6bd1fd3b9c62c5c450907fbbb1707fff.s3tc.ctex"
+uid="uid://bhskh3g03ue5n"
+path.s3tc="res://.godot/imported/tabble_lambert12_Normal.png-fcd0ff28fd19c4a9ae5015c2ebe4ddf2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "8eeaca44f21b4aee6443a678de48c844"
+"md5": "2b0f3e7ab77ef3f76bca8e349264ad91"
 }
 
 [deps]
 
-source_file="res://Assets/environment/textures/horse_statue_puzzle_lambert2_BaseColor.png"
-dest_files=["res://.godot/imported/horse_statue_puzzle_lambert2_BaseColor.png-6bd1fd3b9c62c5c450907fbbb1707fff.s3tc.ctex"]
+source_file="res://Assets/environment/textures/tabble_lambert12_Normal.png"
+dest_files=["res://.godot/imported/tabble_lambert12_Normal.png-fcd0ff28fd19c4a9ae5015c2ebe4ddf2.s3tc.ctex"]
 
 [params]
 
@@ -25,12 +25,12 @@ compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=1
+roughness/src_normal="res://Assets/environment/tabble_lambert12_Normal.png"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxomev381lngc"
-path.s3tc="res://.godot/imported/horse_statue_puzzle_lambert2_BaseColor.png-6bd1fd3b9c62c5c450907fbbb1707fff.s3tc.ctex"
+uid="uid://dq7wldlkeod44"
+path.s3tc="res://.godot/imported/lockcode_openPBR_shader1_BaseColor.png-93522b3f3c76c3625de7960095aa1e0f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "8eeaca44f21b4aee6443a678de48c844"
+"md5": "51c107040ae4d48d6afee6cd706ecc71"
 }
 
 [deps]
 
-source_file="res://Assets/environment/textures/horse_statue_puzzle_lambert2_BaseColor.png"
-dest_files=["res://.godot/imported/horse_statue_puzzle_lambert2_BaseColor.png-6bd1fd3b9c62c5c450907fbbb1707fff.s3tc.ctex"]
+source_file="res://Assets/environment/textures/lockcode_openPBR_shader1_BaseColor.png"
+dest_files=["res://.godot/imported/lockcode_openPBR_shader1_BaseColor.png-93522b3f3c76c3625de7960095aa1e0f.s3tc.ctex"]
 
 [params]
 

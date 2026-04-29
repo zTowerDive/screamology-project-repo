@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://g8tp4ckicv4r"
-path="res://.godot/imported/level_map.glb-acb534a383667771e67d2d67a9ece4ff.scn"
+uid="uid://mlncpfdpq5a0"
+path="res://.godot/imported/hiding_locker.glb-19ad14d3e7a93c3c48b34989150f7664.scn"
 
 [deps]
 
-source_file="res://Assets/environment/level_map.glb"
-dest_files=["res://.godot/imported/level_map.glb-acb534a383667771e67d2d67a9ece4ff.scn"]
+source_file="res://Assets/environment/hiding_locker.glb"
+dest_files=["res://.godot/imported/hiding_locker.glb-19ad14d3e7a93c3c48b34989150f7664.scn"]
 
 [params]
 

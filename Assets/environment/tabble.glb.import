@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://2gf0ymo6frl6"
-path="res://.godot/imported/chair.glb-ad3b6d319eff7fe1563dc22c8f66d536.scn"
+uid="uid://hpbabidoigar"
+path="res://.godot/imported/tabble.glb-a5f85d55c870a53ad22e8bf0062bd99c.scn"
 
 [deps]
 
-source_file="res://Assets/environment/chair.glb"
-dest_files=["res://.godot/imported/chair.glb-ad3b6d319eff7fe1563dc22c8f66d536.scn"]
+source_file="res://Assets/environment/tabble.glb"
+dest_files=["res://.godot/imported/tabble.glb-a5f85d55c870a53ad22e8bf0062bd99c.scn"]
 
 [params]
 

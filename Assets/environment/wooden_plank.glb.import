@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://2gf0ymo6frl6"
-path="res://.godot/imported/chair.glb-ad3b6d319eff7fe1563dc22c8f66d536.scn"
+uid="uid://bw8h14pbxd0ay"
+path="res://.godot/imported/wooden_plank.glb-fd5c2f712d37705ad58bea99ddb0b02c.scn"
 
 [deps]
 
-source_file="res://Assets/environment/chair.glb"
-dest_files=["res://.godot/imported/chair.glb-ad3b6d319eff7fe1563dc22c8f66d536.scn"]
+source_file="res://Assets/environment/wooden_plank.glb"
+dest_files=["res://.godot/imported/wooden_plank.glb-fd5c2f712d37705ad58bea99ddb0b02c.scn"]
 
 [params]
 

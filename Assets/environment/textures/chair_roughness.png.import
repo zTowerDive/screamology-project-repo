@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxomev381lngc"
-path.s3tc="res://.godot/imported/horse_statue_puzzle_lambert2_BaseColor.png-6bd1fd3b9c62c5c450907fbbb1707fff.s3tc.ctex"
+uid="uid://dn61qe23ob6xl"
+path.s3tc="res://.godot/imported/chair_roughness.png-350777a3f8baa79fc7183fde3884faa3.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "8eeaca44f21b4aee6443a678de48c844"
+"md5": "7d907fa389c3964446f404158a5fceed"
 }
 
 [deps]
 
-source_file="res://Assets/environment/textures/horse_statue_puzzle_lambert2_BaseColor.png"
-dest_files=["res://.godot/imported/horse_statue_puzzle_lambert2_BaseColor.png-6bd1fd3b9c62c5c450907fbbb1707fff.s3tc.ctex"]
+source_file="res://Assets/environment/textures/chair_roughness.png"
+dest_files=["res://.godot/imported/chair_roughness.png-350777a3f8baa79fc7183fde3884faa3.s3tc.ctex"]
 
 [params]
 

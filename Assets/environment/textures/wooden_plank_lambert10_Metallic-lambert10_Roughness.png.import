@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxomev381lngc"
-path.s3tc="res://.godot/imported/horse_statue_puzzle_lambert2_BaseColor.png-6bd1fd3b9c62c5c450907fbbb1707fff.s3tc.ctex"
+uid="uid://c7nqu4qdn7h88"
+path.s3tc="res://.godot/imported/wooden_plank_lambert10_Metallic-lambert10_Roughness.png-2d49d7bbbb26f2bc7c4b3a4f5b7a2590.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "8eeaca44f21b4aee6443a678de48c844"
+"md5": "284f029bc58fe44e8736a07680be7f9f"
 }
 
 [deps]
 
-source_file="res://Assets/environment/textures/horse_statue_puzzle_lambert2_BaseColor.png"
-dest_files=["res://.godot/imported/horse_statue_puzzle_lambert2_BaseColor.png-6bd1fd3b9c62c5c450907fbbb1707fff.s3tc.ctex"]
+source_file="res://Assets/environment/textures/wooden_plank_lambert10_Metallic-lambert10_Roughness.png"
+dest_files=["res://.godot/imported/wooden_plank_lambert10_Metallic-lambert10_Roughness.png-2d49d7bbbb26f2bc7c4b3a4f5b7a2590.s3tc.ctex"]
 
 [params]
 

@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://010pv2roiasx"
-path.s3tc="res://.godot/imported/battery_openPBR_shader1_Metallic-openPBR_shader1_Roughness.png-b09bb813522b1522dde9c801df67c7aa.s3tc.ctex"
+uid="uid://bo5k7tram12pm"
+path.s3tc="res://.godot/imported/hiding_locker_lambert3_Metallic-lambert3_Roughness.png-c1409c96884748d08fa213ad62cf4f57.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "6e3f33ae7d40d7725a8116ea3e8bff25"
+"md5": "af9d6d9d63bbbcfd817e35486ec56793"
 }
 
 [deps]
 
-source_file="res://Assets/environment/textures/battery_openPBR_shader1_Metallic-openPBR_shader1_Roughness.png"
-dest_files=["res://.godot/imported/battery_openPBR_shader1_Metallic-openPBR_shader1_Roughness.png-b09bb813522b1522dde9c801df67c7aa.s3tc.ctex"]
+source_file="res://Assets/environment/textures/hiding_locker_lambert3_Metallic-lambert3_Roughness.png"
+dest_files=["res://.godot/imported/hiding_locker_lambert3_Metallic-lambert3_Roughness.png-c1409c96884748d08fa213ad62cf4f57.s3tc.ctex"]
 
 [params]
 

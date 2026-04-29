@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cyip2pxfjt4rq"]
+
+[ext_resource type="PackedScene" uid="uid://bhgep7fiog7x7" path="res://Assets/environment/flashlight.glb" id="1_0rmdj"]
+[ext_resource type="PackedScene" uid="uid://bx5sulwhqpeu7" path="res://Assets/environment/horse_statue_puzzle.glb" id="2_a5kse"]
+[ext_resource type="PackedScene" uid="uid://ddq1bxgppi13l" path="res://Assets/environment/lockcode.glb" id="3_a77vr"]
+[ext_resource type="PackedScene" uid="uid://vh5axdv66130" path="res://Assets/environment/battery.glb" id="4_rns7g"]
+[ext_resource type="PackedScene" uid="uid://c41j0xybdm5gy" path="res://Assets/environment/bottle.glb" id="5_wfy7v"]
+[ext_resource type="PackedScene" uid="uid://2gf0ymo6frl6" path="res://Assets/environment/chair.glb" id="6_c6pck"]
+[ext_resource type="PackedScene" uid="uid://2u1oyw2vhwls" path="res://Assets/environment/file_cabinet.glb" id="7_8qb48"]
+[ext_resource type="PackedScene" uid="uid://mlncpfdpq5a0" path="res://Assets/environment/hiding_locker.glb" id="8_3d4in"]
+[ext_resource type="PackedScene" uid="uid://dvd0vy3b1evrj" path="res://Assets/environment/ladder.glb" id="9_kfbni"]
+[ext_resource type="PackedScene" uid="uid://hpbabidoigar" path="res://Assets/environment/tabble.glb" id="10_s2nvs"]
+[ext_resource type="PackedScene" uid="uid://bw8h14pbxd0ay" path="res://Assets/environment/wooden_plank.glb" id="11_bjwr5"]
+
+[node name="Node3D" type="Node3D" unique_id=333949913]
+
+[node name="flashlight" parent="." unique_id=1650394439 instance=ExtResource("1_0rmdj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009133011, 0, -0.0012616515)
+
+[node name="horse_statue_puzzle" parent="." unique_id=518262722 instance=ExtResource("2_a5kse")]
+transform = Transform3D(4.010522, 0, 0, 0, 4.010522, 0, 0, 0, 4.010522, 0.0026884414, 0, 0.15770945)
+
+[node name="lockcode" parent="." unique_id=6645373 instance=ExtResource("3_a77vr")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.10665673, 0, -0.4506904)
+
+[node name="battery" parent="." unique_id=1387200495 instance=ExtResource("4_rns7g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0048624277, 0, 0.081590235)
+
+[node name="bottle2" parent="." unique_id=728561382 instance=ExtResource("5_wfy7v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00534606, 0, 0.26129466)
+
+[node name="chair2" parent="." unique_id=118646286 instance=ExtResource("6_c6pck")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.039660692, 0, -1.2023919)
+
+[node name="file_cabinet2" parent="." unique_id=1169560537 instance=ExtResource("7_8qb48")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.021790028, 0, -1.8829699)
+
+[node name="hiding_locker2" parent="." unique_id=557114809 instance=ExtResource("8_3d4in")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.03555882, 0, -3.0652006)
+
+[node name="ladder2" parent="." unique_id=1703732661 instance=ExtResource("9_kfbni")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001149714, 0, -4.3394094)
+
+[node name="tabble" parent="." unique_id=216953700 instance=ExtResource("10_s2nvs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18991446, 0, -5.511277)
+
+[node name="wooden_plank2" parent="." unique_id=308954112 instance=ExtResource("11_bjwr5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4901564, 0, -6.808299)

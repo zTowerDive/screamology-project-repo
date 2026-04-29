@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxomev381lngc"
-path.s3tc="res://.godot/imported/horse_statue_puzzle_lambert2_BaseColor.png-6bd1fd3b9c62c5c450907fbbb1707fff.s3tc.ctex"
+uid="uid://ymfticg51u6u"
+path.s3tc="res://.godot/imported/wooden_plank_lambert10_BaseColor.png-f13d54450417ddd27d27fc127ac0cdb3.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "8eeaca44f21b4aee6443a678de48c844"
+"md5": "8ae002b00a27abeea0ed54f0ef4b6231"
 }
 
 [deps]
 
-source_file="res://Assets/environment/textures/horse_statue_puzzle_lambert2_BaseColor.png"
-dest_files=["res://.godot/imported/horse_statue_puzzle_lambert2_BaseColor.png-6bd1fd3b9c62c5c450907fbbb1707fff.s3tc.ctex"]
+source_file="res://Assets/environment/textures/wooden_plank_lambert10_BaseColor.png"
+dest_files=["res://.godot/imported/wooden_plank_lambert10_BaseColor.png-f13d54450417ddd27d27fc127ac0cdb3.s3tc.ctex"]
 
 [params]
 
