@@ -11,38 +11,46 @@
 [ext_resource type="PackedScene" uid="uid://dvd0vy3b1evrj" path="res://Assets/environment/ladder.glb" id="9_kfbni"]
 [ext_resource type="PackedScene" uid="uid://hpbabidoigar" path="res://Assets/environment/tabble.glb" id="10_s2nvs"]
 [ext_resource type="PackedScene" uid="uid://bw8h14pbxd0ay" path="res://Assets/environment/wooden_plank.glb" id="11_bjwr5"]
+[ext_resource type="PackedScene" uid="uid://dsr7c5mr7ey1t" path="res://Assets/environment/test_floor.glb" id="12_a5kse"]
+[ext_resource type="PackedScene" uid="uid://g08868c6f8gj" path="res://Assets/environment/map test000.001.glb" id="13_a77vr"]
 
 [node name="Node3D" type="Node3D" unique_id=333949913]
 
 [node name="flashlight" parent="." unique_id=1650394439 instance=ExtResource("1_0rmdj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009133011, 0, -0.0012616515)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.447433, 0, -0.0012616515)
 
 [node name="horse_statue_puzzle" parent="." unique_id=518262722 instance=ExtResource("2_a5kse")]
-transform = Transform3D(4.010522, 0, 0, 0, 4.010522, 0, 0, 0, 4.010522, 0.0026884414, 0, 0.15770945)
+transform = Transform3D(4.010522, 0, 0, 0, 4.010522, 0, 0, 0, 4.010522, 29.459259, 0, 0.15770945)
 
 [node name="lockcode" parent="." unique_id=6645373 instance=ExtResource("3_a77vr")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.10665673, 0, -0.4506904)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 29.349915, 0, -0.4506904)
 
 [node name="battery" parent="." unique_id=1387200495 instance=ExtResource("4_rns7g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0048624277, 0, 0.081590235)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.461441, 0, 0.081590235)
 
 [node name="bottle2" parent="." unique_id=728561382 instance=ExtResource("5_wfy7v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00534606, 0, 0.26129466)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.461914, 0, 0.26129466)
 
 [node name="chair2" parent="." unique_id=118646286 instance=ExtResource("6_c6pck")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.039660692, 0, -1.2023919)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 29.416916, 0, -1.2023919)
 
 [node name="file_cabinet2" parent="." unique_id=1169560537 instance=ExtResource("7_8qb48")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.021790028, 0, -1.8829699)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.478363, 0, -1.8829699)
 
 [node name="hiding_locker2" parent="." unique_id=557114809 instance=ExtResource("8_3d4in")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.03555882, 0, -3.0652006)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 29.492126, 0, -3.0652006)
 
 [node name="ladder2" parent="." unique_id=1703732661 instance=ExtResource("9_kfbni")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001149714, 0, -4.3394094)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.457718, 0, -4.3394094)
 
 [node name="tabble" parent="." unique_id=216953700 instance=ExtResource("10_s2nvs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18991446, 0, -5.511277)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.646484, 0, -5.511277)
 
 [node name="wooden_plank2" parent="." unique_id=308954112 instance=ExtResource("11_bjwr5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4901564, 0, -6.808299)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.946732, 0, -6.808299)
+
+[node name="test_floor" parent="." unique_id=1158742906 instance=ExtResource("12_a5kse")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.0822, 0, -3.3226204)
+
+[node name="map test000_001" parent="." unique_id=1658657434 instance=ExtResource("13_a77vr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.684555, 0.30750084, 2.838791)
