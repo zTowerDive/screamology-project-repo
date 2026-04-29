@@ -31,7 +31,7 @@ var look_sensitivty := GameSettings.look_sensitivity
 @export_range(1.0, 50.0, 0.1) var max_fall_speed := 20.0
 @export_range(1.0, 20.0, 0.1) var jump_velocity := 8.0
 
-
+var is_visible : bool = true
 var is_crouching : bool = false:
 	set = set_is_crouching
 
@@ -183,6 +183,7 @@ func set_is_crouching(new_value: bool) -> void:
 			return
 	
 	is_crouching = new_value
+	is_visible = !is_crouching
 	
 	if is_crouching:
 		_collision_shape.shape.height = _collsion_shape_start_height / 2.0

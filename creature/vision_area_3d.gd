@@ -13,9 +13,11 @@ func _ready() -> void:
 			if body is not PlayerController:
 				return
 			
-			player_detected.emit()
+			var player := body as PlayerController
+			if player.is_visible:
+				player_detected.emit()
 			
-			focused_body = body as PlayerController
+			focused_body = player
 	)
 	
 	body_exited.connect(
@@ -30,3 +32,9 @@ func _ready() -> void:
 
 func get_focused_body() -> Node3D:
 	return focused_body
+
+
+func _physics_process(delta: float) -> void:
+	if focused_body != null:
+		if not focused_body.is_visible:
+			player_lost.emit()

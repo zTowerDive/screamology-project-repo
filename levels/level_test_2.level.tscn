@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bh8fwuegv73fg" path="res://interactibles/test_dialogue_change.tscn" id="7_ocbyp"]
 [ext_resource type="PackedScene" uid="uid://uw20430w7yy" path="res://creature/test_creature.tscn" id="8_1tb0x"]
 [ext_resource type="PackedScene" uid="uid://c5fn77tp6ntus" path="res://interactibles/puzzle_circuit/circuit_puzzle.tscn" id="9_wv5ik"]
-[ext_resource type="PackedScene" path="res://menu/pause_menu.tscn" id="10_pq8oq"]
+[ext_resource type="PackedScene" uid="uid://de3gp7b1a5yu0" path="res://menu/pause_menu.tscn" id="10_pq8oq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y1qy8"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
