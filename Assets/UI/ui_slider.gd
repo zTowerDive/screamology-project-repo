@@ -4,9 +4,11 @@ extends Control
 @export var _slider : HSlider
 @export var _knob : TextureRect
 @export var _knob_ : TextureRect
+@export var isVolume:bool = false
 
 func _on_h_slider_value_changed(value: float) -> void:
 	_VisualChange(value)
+	if isVolume : AudioServer.set_bus_volume_linear(0, value)
 
 func _ready() -> void:
 	if(_slider==null):

@@ -2,8 +2,21 @@
 
 [ext_resource type="Theme" uid="uid://cplw3is77dpud" path="res://Assets/UI/main_menu_theme.tres" id="1_f5okj"]
 [ext_resource type="Script" uid="uid://caorop8pm7uw" path="res://pause/script/main_menu.gd" id="2_1x3cv"]
-[ext_resource type="Texture2D" uid="uid://bu4rd7djkav0k" path="res://Assets/UI/images/main_menu_placeholder.webp" id="2_o5w3e"]
+[ext_resource type="Texture2D" uid="uid://cg2bmkxk8l0nl" path="res://Assets/UI/images/ui_bg_mainMenu.png" id="3_1x3cv"]
 [ext_resource type="FontFile" uid="uid://wc7lmkw5i5rg" path="res://Assets/UI/fonts/Razor Keen.otf" id="4_1x3cv"]
+[ext_resource type="Script" uid="uid://dbn8xadgxcv7x" path="res://pause/script/AutoSizeLabel.gd" id="4_jc45y"]
+[ext_resource type="Texture2D" uid="uid://brysulxfgkiaf" path="res://Assets/UI/images/pause/ui_underscore_.png" id="6_s8mfa"]
+[ext_resource type="PackedScene" uid="uid://cwtjwucuargxl" path="res://Assets/UI/ui_slider.tscn" id="7_5urqu"]
+[ext_resource type="Texture2D" uid="uid://chmns8b7xajof" path="res://Assets/UI/images/pause/ui_pause_bg_1.png" id="7_lb3k0"]
+[ext_resource type="Texture2D" uid="uid://cbgpdufaplt73" path="res://Assets/UI/images/buttons/ui_uncheckButton.png" id="8_bnl5v"]
+[ext_resource type="Texture2D" uid="uid://bc7xwyuyo2htb" path="res://Assets/UI/images/buttons/ui_toCheckButton.png" id="9_qkuil"]
+[ext_resource type="Script" uid="uid://dwybv504jujgg" path="res://pause/check_button.gd" id="10_pfmj8"]
+[ext_resource type="Texture2D" uid="uid://bu6gvs0oy7qch" path="res://Assets/UI/images/buttons/ui_uncheckButton_uncheck.png" id="11_iqufe"]
+[ext_resource type="Texture2D" uid="uid://l67m5eoankp" path="res://Assets/UI/images/buttons/ui_checkButton_check.png" id="12_8lj81"]
+[ext_resource type="Texture2D" uid="uid://c6jkr2n2ekn1r" path="res://Assets/UI/images/buttons/ui_checkButton.png" id="13_lbtey"]
+[ext_resource type="Texture2D" uid="uid://b1u76p04fer8i" path="res://Assets/UI/images/buttons/ui_pause_backButton.png" id="14_0wlwb"]
+[ext_resource type="Script" uid="uid://chicftuj8tn4x" path="res://menu/back_button_mainMenu.gd" id="16_5urqu"]
+[ext_resource type="Texture2D" uid="uid://cy7r3pswv0drs" path="res://Assets/UI/images/buttons/ui_pause_backButton_backArrow.png" id="17_6kbw3"]
 
 [node name="MainMenu" type="Control" unique_id=1764507766]
 layout_mode = 3
@@ -22,164 +35,417 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_o5w3e")
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("3_1x3cv")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="MainMenuPivot" type="Control" parent="." unique_id=1200173673]
-unique_name_in_owner = true
-anchors_preset = 0
-offset_left = 576.0
-offset_top = 320.0
-offset_right = 576.0
-offset_bottom = 320.0
-
-[node name="Label" type="Label" parent="MainMenuPivot" unique_id=663991163]
+[node name="Main" type="Control" parent="." unique_id=732963676]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -338.0
-offset_top = -239.0
-offset_right = 339.0
-offset_bottom = -143.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "NEIGHbourhood Sewage"
-horizontal_alignment = 1
-vertical_alignment = 1
+anchor_right = 1.0
+anchor_bottom = 1.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuPivot" unique_id=1628292907]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -109.0
-offset_top = -110.0
-offset_right = 109.0
-offset_bottom = 118.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ButtonPlay" type="Button" parent="MainMenuPivot/VBoxContainer" unique_id=1083209611]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 3
-text = "Play"
-
-[node name="ButtonOptions" type="Button" parent="MainMenuPivot/VBoxContainer" unique_id=859480276]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 3
-text = "Options"
-
-[node name="ButtonQuit" type="Button" parent="MainMenuPivot/VBoxContainer" unique_id=1881066812]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 3
-text = "Quit"
-
-[node name="OptionsMenuPivot" type="Control" parent="." unique_id=14819509]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 1103.0
-offset_top = -19.0
-offset_right = 1143.0
-offset_bottom = 21.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="OptionsMenuBackground" type="ColorRect" parent="OptionsMenuPivot" unique_id=865916725]
+[node name="AutoSizeLabel" type="Label" parent="Main" unique_id=1061481439]
+self_modulate = Color(1, 1, 1, 0.54901963)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.120659724
-anchor_top = 0.12345679
-anchor_right = 0.8793403
-anchor_bottom = 0.8765432
-offset_left = -421.8264
-offset_top = -228.93828
-offset_right = 433.8264
-offset_bottom = 197.93826
+anchor_left = 0.035
+anchor_top = 0.062000003
+anchor_right = 0.5
+anchor_bottom = 0.37100002
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 115
+text = "Game TITLe"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("4_jc45y")
+watch_text_change = true
+max_font_size = 156
+metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
+
+[node name="PlayButton" type="TextureButton" parent="Main" unique_id=78109597]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.35
+anchor_right = 0.5
+anchor_bottom = 0.55
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="AutoSizeLabel" type="Label" parent="Main/PlayButton" unique_id=1538199616]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.9
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.88235295)
-
-[node name="SensitivityLabel" type="Label" parent="OptionsMenuPivot/OptionsMenuBackground" unique_id=1927897146]
-layout_mode = 1
-offset_left = 58.0
-offset_top = 51.0
-offset_right = 504.0
-offset_bottom = 119.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_override_fonts/font = ExtResource("4_1x3cv")
+theme_override_font_sizes/font_size = 96
+text = "Play"
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("4_jc45y")
+max_font_size = 158
+metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
+
+[node name="TextureRect" type="TextureRect" parent="Main/PlayButton" unique_id=234366890]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.7
+anchor_right = 0.35
+anchor_bottom = 1.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("6_s8mfa")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="OptionsButton" type="TextureButton" parent="Main" unique_id=1520881901]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.6
+anchor_right = 0.5
+anchor_bottom = 0.75
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="AutoSizeLabel" type="Label" parent="Main/OptionsButton" unique_id=617383242]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.85
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("4_1x3cv")
+theme_override_font_sizes/font_size = 68
+text = "Options"
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("4_jc45y")
+max_font_size = 158
+metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
+
+[node name="TextureRect" type="TextureRect" parent="Main/OptionsButton" unique_id=897213483]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.6
+anchor_right = 0.3
+anchor_bottom = 1.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("6_s8mfa")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ExitButton" type="TextureButton" parent="Main" unique_id=631537225]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.85
+anchor_right = 0.5
+anchor_bottom = 0.95
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="AutoSizeLabel" type="Label" parent="Main/ExitButton" unique_id=1543800166]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("4_1x3cv")
+theme_override_font_sizes/font_size = 48
+text = "Exit"
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("4_jc45y")
+max_font_size = 158
+metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
+
+[node name="TextureRect" type="TextureRect" parent="Main/ExitButton" unique_id=1950882219]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.7
+anchor_right = 0.2
+anchor_bottom = 1.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("6_s8mfa")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Options" type="Control" parent="." unique_id=1521321099]
+layout_mode = 1
+anchor_left = 1.0
+anchor_right = 2.0
+anchor_bottom = 1.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="Canvas" type="TextureRect" parent="Options" unique_id=1420336586]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.05
+anchor_right = 0.75
+anchor_bottom = 0.95
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("7_lb3k0")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Paper" type="Control" parent="Options/Canvas" unique_id=833382916]
+layout_mode = 1
+anchor_left = 0.2
+anchor_top = 0.062000003
+anchor_right = 0.708
+anchor_bottom = 0.94500005
+offset_right = 3.0517578e-05
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="Title" type="Label" parent="Options/Canvas/Paper" unique_id=903149549]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.1
+anchor_right = 1.0
+anchor_bottom = 0.22
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 0.6862745)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("4_1x3cv")
+theme_override_font_sizes/font_size = 51
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("4_jc45y")
+max_font_size = 128
+metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
+
+[node name="Sensitivity" type="Control" parent="Options/Canvas/Paper" unique_id=1638228393]
+layout_mode = 1
+anchor_left = 0.13
+anchor_top = 0.25
+anchor_right = 0.93000007
+anchor_bottom = 0.35
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="AutoSizeLabel" type="Label" parent="Options/Canvas/Paper/Sensitivity" unique_id=1205204020]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.6
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_1x3cv")
+theme_override_font_sizes/font_size = 25
 text = "Mouse Sensitivity"
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("4_jc45y")
+min_font_size = 2
+max_font_size = 158
+metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
 
-[node name="SensitivitySlider" type="HSlider" parent="OptionsMenuPivot/OptionsMenuBackground/SensitivityLabel" unique_id=1466980901]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 464.0
-offset_top = 14.0
-offset_right = 789.0
-offset_bottom = 43.175
-scale = Vector2(1, 1.25)
-
-[node name="FullScreenLabel" type="Label" parent="OptionsMenuPivot/OptionsMenuBackground" unique_id=1357943352]
+[node name="SensitivitySlider" parent="Options/Canvas/Paper/Sensitivity" unique_id=1557353711 instance=ExtResource("7_5urqu")]
 layout_mode = 1
-offset_left = 58.0
-offset_top = 157.0
-offset_right = 354.0
-offset_bottom = 225.0
-theme_override_fonts/font = ExtResource("4_1x3cv")
-text = "Full Screen"
+anchor_top = 0.5
+anchor_bottom = 1.0
 
-[node name="CheckButton" type="CheckButton" parent="OptionsMenuPivot/OptionsMenuBackground/FullScreenLabel" unique_id=87927764]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 464.0
-offset_top = 14.0
-offset_right = 502.0
-offset_bottom = 60.0
-icon_alignment = 1
-
-[node name="VolumeLabel" type="Label" parent="OptionsMenuPivot/OptionsMenuBackground" unique_id=1217514041]
+[node name="FullScreen" type="Control" parent="Options/Canvas/Paper" unique_id=446478336]
 layout_mode = 1
-offset_left = 58.0
-offset_top = 263.0
-offset_right = 244.0
-offset_bottom = 331.0
+anchor_left = 0.25
+anchor_top = 0.43
+anchor_right = 0.75
+anchor_bottom = 0.5
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="AutoSizeLabel" type="Label" parent="Options/Canvas/Paper/FullScreen" unique_id=1267557511]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.6
+anchor_bottom = 1.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_1x3cv")
+theme_override_font_sizes/font_size = 30
+text = "Fullscreen"
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("4_jc45y")
+min_font_size = 2
+max_font_size = 158
+metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
+
+[node name="CheckButton" type="TextureButton" parent="Options/Canvas/Paper/FullScreen" unique_id=1902737715]
+self_modulate = Color(1.61, 1.61, 1.61, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6
+anchor_right = 1.0
+anchor_bottom = 1.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture_normal = ExtResource("8_bnl5v")
+texture_hover = ExtResource("9_qkuil")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("10_pfmj8")
+_sprite_check = Array[Texture2D]([ExtResource("11_iqufe"), ExtResource("12_8lj81")])
+_sprite_button = Array[Texture2D]([ExtResource("8_bnl5v"), ExtResource("13_lbtey")])
+
+[node name="Check" type="TextureRect" parent="Options/Canvas/Paper/FullScreen/CheckButton" unique_id=1966430861]
+self_modulate = Color(1.6100625, 1.6100625, 1.6100625, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("11_iqufe")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Volume" type="Control" parent="Options/Canvas/Paper" unique_id=858592454]
+layout_mode = 1
+anchor_left = 0.13
+anchor_top = 0.55
+anchor_right = 0.93000007
+anchor_bottom = 0.65
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="AutoSizeLabel" type="Label" parent="Options/Canvas/Paper/Volume" unique_id=18952826]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.6
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_1x3cv")
+theme_override_font_sizes/font_size = 25
 text = "Volume"
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("4_jc45y")
+min_font_size = 2
+max_font_size = 158
+metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
 
-[node name="VolumeSlider" type="HSlider" parent="OptionsMenuPivot/OptionsMenuBackground/VolumeLabel" unique_id=329504378]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 464.0
-offset_top = 12.0
-offset_right = 789.0
-offset_bottom = 41.175
-scale = Vector2(1, 1.25)
+[node name="VolumeSlider" parent="Options/Canvas/Paper/Volume" unique_id=1123208429 instance=ExtResource("7_5urqu")]
+layout_mode = 1
+anchor_top = 0.5
+anchor_bottom = 1.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="OptionsMenuPivot/OptionsMenuBackground" unique_id=592814893]
-layout_mode = 0
-offset_left = 324.0
-offset_top = 358.0
-offset_right = 580.0
-offset_bottom = 433.0
+[node name="Apply" type="Control" parent="Options/Canvas/Paper" unique_id=1765185234]
+layout_mode = 1
+anchor_left = 0.25
+anchor_top = 0.8
+anchor_right = 0.75
+anchor_bottom = 0.9
+pivot_offset_ratio = Vector2(0.5, 0.5)
 
-[node name="ApplySettingsButton" type="Button" parent="OptionsMenuPivot/OptionsMenuBackground/HBoxContainer" unique_id=1943182810]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Apply"
+[node name="AutoSizeLabel" type="Label" parent="Options/Canvas/Paper/Apply" unique_id=1814834695]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.6
+anchor_bottom = 1.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_1x3cv")
+theme_override_font_sizes/font_size = 43
+text = "Apply??"
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("4_jc45y")
+min_font_size = 2
+max_font_size = 158
+metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
 
-[node name="ExitSettingsButton" type="Button" parent="OptionsMenuPivot/OptionsMenuBackground/HBoxContainer" unique_id=1293684834]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Back"
+[node name="CheckButton" type="TextureButton" parent="Options/Canvas/Paper/Apply" unique_id=1607202524]
+self_modulate = Color(1.61, 1.61, 1.61, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6
+anchor_right = 1.0
+anchor_bottom = 1.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture_normal = ExtResource("8_bnl5v")
+texture_hover = ExtResource("9_qkuil")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("10_pfmj8")
+_sprite_check = Array[Texture2D]([ExtResource("11_iqufe"), ExtResource("12_8lj81")])
+_sprite_button = Array[Texture2D]([ExtResource("8_bnl5v"), ExtResource("13_lbtey")])
+
+[node name="Check" type="TextureRect" parent="Options/Canvas/Paper/Apply/CheckButton" unique_id=493065238]
+self_modulate = Color(1.6100625, 1.6100625, 1.6100625, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("11_iqufe")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BackButton" type="TextureButton" parent="Options/Canvas" unique_id=1924160223]
+self_modulate = Color(1.6100625, 1.6100625, 1.6100625, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.087000005
+anchor_top = 0.069000006
+anchor_right = 0.18200001
+anchor_bottom = 0.163
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture_normal = ExtResource("14_0wlwb")
+texture_hover = ExtResource("9_qkuil")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("16_5urqu")
+
+[node name="Arrow" type="TextureRect" parent="Options/Canvas/BackButton" unique_id=1521915887]
+self_modulate = Color(1.6100625, 1.6100625, 1.6100625, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("17_6kbw3")
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="mouse_entered" from="Options/Canvas/Paper/FullScreen/CheckButton" to="Options/Canvas/Paper/FullScreen/CheckButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Options/Canvas/Paper/FullScreen/CheckButton" to="Options/Canvas/Paper/FullScreen/CheckButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="Options/Canvas/Paper/FullScreen/CheckButton" to="Options/Canvas/Paper/FullScreen/CheckButton" method="_on_pressed"]
+[connection signal="mouse_entered" from="Options/Canvas/Paper/Apply/CheckButton" to="Options/Canvas/Paper/Apply/CheckButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Options/Canvas/Paper/Apply/CheckButton" to="Options/Canvas/Paper/Apply/CheckButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="Options/Canvas/Paper/Apply/CheckButton" to="Options/Canvas/Paper/Apply/CheckButton" method="_on_pressed"]
+[connection signal="mouse_entered" from="Options/Canvas/BackButton" to="Options/Canvas/BackButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Options/Canvas/BackButton" to="Options/Canvas/BackButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="Options/Canvas/BackButton" to="Options/Canvas/BackButton" method="_on_pressed"]
