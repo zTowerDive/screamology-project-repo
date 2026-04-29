@@ -4,14 +4,12 @@ class_name CreatureController extends CharacterBody3D
 @onready var _mesh: Node3D = $Sketchfab_Scene
 @onready var _jump_scare_test: JumpScareTest = %JumpScareTest
 @onready var _creature_audio_player: AudioStreamPlayer3D = %CreatureAudioPlayer
-@onready var _raycast_pivot: Node3D = %RaycastPivot
 
 @onready var _wander_timer: Timer = %WanderTimer
 @onready var _stare_timer: Timer = %StareTimer
 
 @export var chase_speed := 240.0
 @export var wander_speed := 3.0
-@export var avoidance_strength := 21000.0
 
 enum State {
 	StateLookAtPlayer,
@@ -135,6 +133,7 @@ func process_chase_state(delta: float) -> void:
 
 func process_wander_state(delta: float) -> void:
 	
+	
 	if _vision_area.player_detected.get_connections().is_empty():
 		_vision_area.player_detected.connect(set_current_state.bind(State.StateLookAtPlayer))
 	
@@ -158,7 +157,6 @@ func walk_to_point(target_location: Vector3, target_speed: float) -> void:
 	look_at(target_location, Vector3.UP, true)
 	var direction_to_target := global_position.direction_to(target_location)
 	var desired_velocity := direction_to_target * target_speed
-	desired_velocity += calculate_avoidance_force()
 	
 	velocity = desired_velocity
 
@@ -177,17 +175,3 @@ func clear_signal_connections() -> void:
 	
 	if not _vision_area.player_lost.get_connections().is_empty():
 		_vision_area.player_lost.disconnect(set_current_state)
-
-
-func calculate_avoidance_force() -> Vector3:
-	var avoidance_force := Vector3.ZERO
-	
-	for raycast: RayCast3D in _raycast_pivot.get_children():
-		if raycast.is_colliding():
-			var collision_position := raycast.get_collision_point()
-			var direction_away_from_obstacle := collision_position.direction_to(raycast.global_position)
-			var force := direction_away_from_obstacle * avoidance_strength
-		
-			avoidance_force += force
-	
-	return avoidance_force

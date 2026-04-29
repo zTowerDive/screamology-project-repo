@@ -11,7 +11,7 @@ radius = 0.75
 height = 2.817871
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lcr6j"]
-size = Vector3(22.354492, 51.545956, 12.529297)
+size = Vector3(22.354492, 37.595245, 12.529297)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o85cb"]
 size = Vector3(2.9003906, 2.1089478, 3.5095215)
@@ -26,11 +26,10 @@ shape = SubResource("CapsuleShape3D_lcr6j")
 [node name="VisionArea3D" type="Area3D" parent="." unique_id=209573275]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.61306036, 0.6898302)
-visible = false
 script = ExtResource("2_o85cb")
 
 [node name="VisionShape3D" type="CollisionShape3D" parent="VisionArea3D" unique_id=2133402175]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 5.76416, 25.853178)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 5.7641597, 18.877823)
 shape = SubResource("BoxShape3D_lcr6j")
 debug_color = Color(0.9647059, 0, 0.4862745, 1)
 
@@ -49,7 +48,6 @@ one_shot = true
 
 [node name="JumpScareTest" type="Area3D" parent="." unique_id=1631936822 node_paths=PackedStringArray("marker_3d")]
 unique_name_in_owner = true
-visible = false
 script = ExtResource("4_cnju8")
 marker_3d = NodePath("../HeadMarker")
 metadata/_custom_type_script = "uid://di0oiqivykek5"
@@ -65,15 +63,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8171239, 0.9235599)
 [node name="CreatureAudioPlayer" type="AudioStreamPlayer3D" parent="." unique_id=266184244]
 unique_name_in_owner = true
 stream = ExtResource("5_8crex")
-
-[node name="RaycastPivot" type="Node3D" parent="." unique_id=1511589285]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-
-[node name="RayCast3D" type="RayCast3D" parent="RaycastPivot" unique_id=236918801]
-transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 0, 0, 0)
-target_position = Vector3(0, 0, 3)
-
-[node name="RayCast3D2" type="RayCast3D" parent="RaycastPivot" unique_id=293532669]
-transform = Transform3D(0.7071067, 0, 0.7071068, 0, 1, 0, -0.7071068, 0, 0.7071067, 0, 0, 0)
-target_position = Vector3(0, 0, 3)

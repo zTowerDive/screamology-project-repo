@@ -713,7 +713,7 @@ mesh = SubResource("PlaneMesh_lstp0")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.53893, -3.8146973e-06, 1.7657738)
 
 [node name="TESTCreature" parent="." index="10" unique_id=455156690 instance=ExtResource("3_q3sy1")]
-transform = Transform3D(0.25881907, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.25881907, -39.50237, 0.56424713, -25.643906)
+transform = Transform3D(1, 0, -5.7620454e-08, 0, 1, 0, 5.7620454e-08, 0, 1, -39.50237, 0.56424713, -25.643906)
 chase_speed = 300.0
 avoidance_strength = 70000.0
 

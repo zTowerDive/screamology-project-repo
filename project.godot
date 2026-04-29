@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="NEIGHbourhood Sewage"
+config/name="A Sewed Neight"
 config/version="0.1"
 run/main_scene="uid://bvvf1paeke0x4"
 config/features=PackedStringArray("4.6", "Forward Plus")

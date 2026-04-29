@@ -15,7 +15,7 @@ signal looked_at
 @onready var _animation_player: AnimationPlayer = %AnimationPlayer
 
 
-@export_range(0.001, 5.0) var look_sensitivty := 0.005
+var look_sensitivty := GameSettings.look_sensitivity
 
 
 @export_category("Ground Movement")
@@ -173,8 +173,6 @@ func walk_towards(target_global_position: Vector3, duration: float) -> void:
 
 #region Setter Functions
 func set_is_crouching(new_value: bool) -> void:
-	if is_crouching == new_value:
-		return
 	
 	if new_value == false:
 		_crouch_ceiling_cast.force_shapecast_update()

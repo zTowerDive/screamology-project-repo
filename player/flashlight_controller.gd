@@ -7,7 +7,7 @@ class_name FlashlightController extends Node3D
 	set = set_projector_texture
 
 ## Chance the light has to deactivate expressed as a percentage
-@export var light_deactivation_chance := 0.9
+@export var light_deactivation_chance := 0.0
 ## Current toggle state of the light as a boolean
 var _is_on := true:
 	set = set_in_on
