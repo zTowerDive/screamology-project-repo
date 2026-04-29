@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dv15hyd7fbf2x"]
+
+[ext_resource type="PackedScene" uid="uid://mlncpfdpq5a0" path="res://Assets/environment/hiding_locker.glb" id="1_k86ra"]
+
+[node name="hiding_locker2" unique_id=943225576 instance=ExtResource("1_k86ra")]
