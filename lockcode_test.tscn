@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://b81416mjotdv2"]
+
+[ext_resource type="PackedScene" uid="uid://ddq1bxgppi13l" path="res://Assets/environment/lockcode.glb" id="1_8f5ey"]
+[ext_resource type="Script" uid="uid://bds3x6egu2gr1" path="res://interactibles/InteractableButton3D.gd" id="2_8fn1d"]
+[ext_resource type="Script" uid="uid://cu3y7kwdpnn8q" path="res://lever_interactable.gd" id="3_qyprg"]
+[ext_resource type="AudioStream" uid="uid://d0khgirktditg" path="res://Assets/Audio/Sfx/bababooey-sound-effect.mp3" id="4_7asue"]
+[ext_resource type="AudioStream" uid="uid://tvrn6uc58oj8" path="res://Assets/Audio/Sfx/Plankton Aughhhhh.mp3" id="5_1q4fn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8f5ey"]
+size = Vector3(0.75268555, 0.5473633, 0.22715187)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8fn1d"]
+size = Vector3(4.8221436, 3.9501953, 5.539978)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8fn1d"]
+radius = 7.926
+height = 38.595043
+
+[node name="lockcode" unique_id=558951865 instance=ExtResource("1_8f5ey")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="0" unique_id=1204520632]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.11073682)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1577499190]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0028076172, 0.27391618, 0.012641013)
+shape = SubResource("BoxShape3D_8f5ey")
+
+[node name="InteractableButton0" type="Area3D" parent="codelock_low_001/buttons_low" parent_id_path=PackedInt32Array(2128694907) index="0" unique_id=1763028282]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7352633, 0, -0.1796875)
+script = ExtResource("2_8fn1d")
+button_name = "Pig"
+prompt = "Pig"
+metadata/_custom_type_script = "uid://cowlmdkp56blu"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="codelock_low_001/buttons_low/InteractableButton0" index="0" unique_id=1821037156]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 2, -3.171)
+shape = SubResource("BoxShape3D_8fn1d")
+
+[node name="InteractableButton1" type="Area3D" parent="codelock_low_001/buttons_low" parent_id_path=PackedInt32Array(2128694907) index="1" unique_id=114958509]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7352633, 0, 5.7105045)
+script = ExtResource("2_8fn1d")
+button_name = "Horse"
+prompt = "Horse"
+metadata/_custom_type_script = "uid://cowlmdkp56blu"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="codelock_low_001/buttons_low/InteractableButton1" index="0" unique_id=1985623453]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.752091, 2.208002, -9.065817)
+shape = SubResource("BoxShape3D_8fn1d")
+
+[node name="InteractableButton2" type="Area3D" parent="codelock_low_001/buttons_low" parent_id_path=PackedInt32Array(2128694907) index="2" unique_id=188105809]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.598756, 0, 0.25574112)
+script = ExtResource("2_8fn1d")
+button_name = "Jiraff"
+prompt = "Jiraff"
+metadata/_custom_type_script = "uid://cowlmdkp56blu"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="codelock_low_001/buttons_low/InteractableButton2" index="0" unique_id=386029445]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.056325912, 2.208002, -3.5722618)
+shape = SubResource("BoxShape3D_8fn1d")
+
+[node name="InteractableButton3" type="Area3D" parent="codelock_low_001/buttons_low" parent_id_path=PackedInt32Array(2128694907) index="3" unique_id=1433499014]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.875512, 0, 5.7495155)
+script = ExtResource("2_8fn1d")
+button_name = "Seahorse"
+prompt = "Seahorse"
+metadata/_custom_type_script = "uid://cowlmdkp56blu"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="codelock_low_001/buttons_low/InteractableButton3" index="0" unique_id=1179631174]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.056326866, 2.208002, -3.0745087)
+shape = SubResource("BoxShape3D_8fn1d")
+
+[node name="InteractableButton4" type="Area3D" parent="codelock_low_001/buttons_low" parent_id_path=PackedInt32Array(2128694907) index="4" unique_id=1575241670]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07756615, 0, 5.7495155)
+script = ExtResource("2_8fn1d")
+button_name = "Spider"
+prompt = "Spider"
+metadata/_custom_type_script = "uid://cowlmdkp56blu"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="codelock_low_001/buttons_low/InteractableButton4" index="0" unique_id=1933808699]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.056326866, 2.208002, -3.0745087)
+shape = SubResource("BoxShape3D_8fn1d")
+
+[node name="InteractableButton5" type="Area3D" parent="codelock_low_001/buttons_low" parent_id_path=PackedInt32Array(2128694907) index="5" unique_id=452647434]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8467093, 0, 5.7495155)
+script = ExtResource("2_8fn1d")
+button_name = "Mare"
+prompt = "Mare"
+metadata/_custom_type_script = "uid://cowlmdkp56blu"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="codelock_low_001/buttons_low/InteractableButton5" index="0" unique_id=1034786903]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.056326866, 2.208002, -3.0745087)
+shape = SubResource("BoxShape3D_8fn1d")
+
+[node name="Lever_Interactable" type="Area3D" parent="codelock_low_001/lever_low" parent_id_path=PackedInt32Array(450905491) index="0" unique_id=72840433 node_paths=PackedStringArray("button_1", "button_2", "button_3", "button_4", "button_5", "button_6")]
+script = ExtResource("3_qyprg")
+button_1 = NodePath("../../buttons_low/InteractableButton0")
+button_2 = NodePath("../../buttons_low/InteractableButton1")
+button_3 = NodePath("../../buttons_low/InteractableButton2")
+button_4 = NodePath("../../buttons_low/InteractableButton3")
+button_5 = NodePath("../../buttons_low/InteractableButton4")
+button_6 = NodePath("../../buttons_low/InteractableButton5")
+prompt = "Pull lever"
+metadata/_custom_type_script = "uid://cowlmdkp56blu"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="codelock_low_001/lever_low/Lever_Interactable" index="0" unique_id=496474530]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.479478, 0)
+shape = SubResource("CapsuleShape3D_8fn1d")
+
+[node name="WRONG" type="AudioStreamPlayer3D" parent="." index="2" unique_id=348793931]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.042795897, 0.42837894, -0.0070581436)
+stream = ExtResource("4_7asue")
+
+[node name="CORRECT" type="AudioStreamPlayer3D" parent="." index="3" unique_id=902320531]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0833236, 0.6468133, 1.6545525)
+stream = ExtResource("5_1q4fn")
+panning_strength = 0.0

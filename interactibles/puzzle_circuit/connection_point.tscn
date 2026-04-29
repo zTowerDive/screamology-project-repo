@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://u85c5e8ak4l1"]
+
+[ext_resource type="Script" uid="uid://d24uo6gb32k" path="res://interactibles/puzzle_circuit2/connectors_source.gd" id="1_hylh4"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1vwni"]
+height = 1.5683594
+
+[node name="connection_point" type="Area3D" unique_id=1364150810]
+transform = Transform3D(-3.278354e-08, -0.75, 0, 0.75, -3.278354e-08, 0, 0, 0, 0.75, 0, 0, 0)
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("1_hylh4")
+metadata/_custom_type_script = "uid://d24uo6gb32k"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=624541101]
+transform = Transform3D(0.050000004, 0, 0, 0, 0.050000004, 0, 0, 0, 0.050000004, 0, 0.010791017, 0)
+shape = SubResource("CapsuleShape3D_1vwni")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=769952419]
+radius = 0.005
+height = 0.05

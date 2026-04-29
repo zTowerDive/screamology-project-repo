@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c5fn77tp6ntus"]
 
 [ext_resource type="PackedScene" uid="uid://j8aqhj2vwmaa" path="res://interactibles/puzzle_circuit/interactable_circuit_cell.tscn" id="1_og4dk"]
+[ext_resource type="PackedScene" uid="uid://cyccg3vp38g7q" path="res://interactibles/puzzle_circuit/interactable_battery_cell.tscn" id="2_fl705"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4xowi"]
 albedo_color = Color(0.39688927, 0.39688927, 0.39688924, 1)
@@ -13,3 +14,6 @@ material = SubResource("StandardMaterial3D_4xowi")
 [node name="Interactable_Circuit_Cell" parent="circuit_breaker" unique_id=1745965749 instance=ExtResource("1_og4dk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
 top_level = false
+
+[node name="Interactable_Battery_Cell" parent="circuit_breaker" unique_id=140041355 instance=ExtResource("2_fl705")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0.5)

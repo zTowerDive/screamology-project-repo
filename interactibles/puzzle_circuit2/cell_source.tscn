@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cyv1syyvj5v4l"]
+
+[ext_resource type="Script" uid="uid://jjardy1byigx" path="res://puzzle_circuit_manager.gd" id="1_4mb71"]
+[ext_resource type="PackedScene" uid="uid://ckcpqxsrrpqx8" path="res://interactibles/puzzle_circuit2/battery_connection_point.tscn" id="2_4mb71"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qvajw"]
+emission_enabled = true
+emission = Color(0, 1, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c275v"]
+
+[node name="Cell_Source" type="Area3D" unique_id=318613818 node_paths=PackedStringArray("connector_1", "connector_2", "connector_3")]
+script = ExtResource("1_4mb71")
+connector_1 = NodePath("battery_connection_point")
+connector_2 = NodePath("battery_connection_point2")
+connector_3 = NodePath("battery_connection_point3")
+metadata/_custom_type_script = "uid://jjardy1byigx"
+
+[node name="circuit_cell" type="CSGBox3D" parent="." unique_id=1634877767]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
+size = Vector3(0.2, 0.2, 0.1)
+material = SubResource("StandardMaterial3D_qvajw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1806850535]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+shape = SubResource("BoxShape3D_c275v")
+
+[node name="battery_connection_point" parent="." unique_id=1697996995 instance=ExtResource("2_4mb71")]
+transform = Transform3D(-3.278354e-08, -0.75, 0, 0.75, -3.278354e-08, 0, 0, 0, 0.75, 0.075, 0, 0.03)
+
+[node name="battery_connection_point2" parent="." unique_id=1028948724 instance=ExtResource("2_4mb71")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, -0.07, 0.03)
+
+[node name="battery_connection_point3" parent="." unique_id=1501529320 instance=ExtResource("2_4mb71")]
+transform = Transform3D(-3.278354e-08, -0.75, 0, 0.75, -3.278354e-08, 0, 0, 0, 0.75, -0.075, 0, 0.03)

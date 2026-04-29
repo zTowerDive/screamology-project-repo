@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://uc32qxswbq8j"]
+
+[ext_resource type="PackedScene" uid="uid://cyv1syyvj5v4l" path="res://interactibles/puzzle_circuit2/cell_source.tscn" id="1_u2o4n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4xowi"]
+albedo_color = Color(0.39688927, 0.39688927, 0.39688924, 1)
+
+[node name="circuit_puzzle_test_2" type="Node3D" unique_id=517431748]
+
+[node name="circuit_breaker" type="CSGBox3D" parent="." unique_id=1808432938]
+material = SubResource("StandardMaterial3D_4xowi")
+
+[node name="Cell_Source" parent="." unique_id=318613818 instance=ExtResource("1_u2o4n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)

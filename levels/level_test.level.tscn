@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://dho6c53sr2gqc"]
 
 [ext_resource type="PackedScene" uid="uid://kuvpnycyrn05" path="res://player/player.tscn" id="1_ellb7"]
-[ext_resource type="PackedScene" path="res://interactibles/puzzle_circuit/circuit_puzzle.tscn" id="1_now56"]
 [ext_resource type="PackedScene" uid="uid://bk71u0t4o8r46" path="res://interactibles/test_door.tscn" id="2_y1qy8"]
 [ext_resource type="PackedScene" uid="uid://w71hw82urkwy" path="res://interactibles/test_key.tscn" id="3_7p8k5"]
 [ext_resource type="PackedScene" uid="uid://4dbt38yy64ny" path="res://interactibles/test_door_locked.tscn" id="4_kqan6"]
+[ext_resource type="PackedScene" uid="uid://uc32qxswbq8j" path="res://interactibles/puzzle_circuit2/circuit_puzzle_test_2.tscn" id="5_now56"]
+[ext_resource type="PackedScene" uid="uid://b81416mjotdv2" path="res://lockcode_test.tscn" id="6_fyp82"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y1qy8"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -23,9 +24,6 @@ glow_enabled = true
 albedo_color = Color(0.19434929, 0.19434926, 0.19434926, 1)
 
 [node name="LevelTEST" type="Node3D" unique_id=354338376]
-
-[node name="circuit_puzzle_test" parent="." unique_id=517431748 instance=ExtResource("1_now56")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8645334, 1.2938671, 5.961649)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=43477658]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
@@ -90,3 +88,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5955215, 0, -11.422611)
 [node name="TESTDoor_locked" parent="." unique_id=919733671 node_paths=PackedStringArray("door_key") instance=ExtResource("4_kqan6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.585445, 0.5, -11.095875)
 door_key = NodePath("../test_key")
+
+[node name="circuit_puzzle_test_2" parent="." unique_id=517431748 instance=ExtResource("5_now56")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.342903, 1.3928434, 5.487933)
+
+[node name="lockcode" parent="." unique_id=558951865 instance=ExtResource("6_fyp82")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.949, 1, 6.139)
