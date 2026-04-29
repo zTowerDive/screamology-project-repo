@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmh1u5vtf1cj3"
-path.s3tc="res://.godot/imported/lockcode_openPBR_shader1_Normal.png-1bf544f37f804ee440bb68fa9a19c4f7.s3tc.ctex"
+uid="uid://de5lmux6t4sks"
+path.s3tc="res://.godot/imported/water_openPBR_shader1_Roughness.png-9ddb259eb399025c62d9bdf3ab4c5a3d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "f4d89491a15d1c20ddedda058b5a454f"
+"md5": "51c2471f5f9e5c73c37ce9a8a78cf64f"
 }
 
 [deps]
 
-source_file="res://Assets/environment/lockcode_openPBR_shader1_Normal.png"
-dest_files=["res://.godot/imported/lockcode_openPBR_shader1_Normal.png-1bf544f37f804ee440bb68fa9a19c4f7.s3tc.ctex"]
+source_file="res://Assets/environment/textures/water_openPBR_shader1_Roughness.png"
+dest_files=["res://.godot/imported/water_openPBR_shader1_Roughness.png-9ddb259eb399025c62d9bdf3ab4c5a3d.s3tc.ctex"]
 
 [params]
 
@@ -25,12 +25,12 @@ compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
-compress/normal_map=1
+compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=1
-roughness/src_normal="res://Assets/environment/lockcode_openPBR_shader1_Normal.png"
+roughness/mode=0
+roughness/src_normal=""
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

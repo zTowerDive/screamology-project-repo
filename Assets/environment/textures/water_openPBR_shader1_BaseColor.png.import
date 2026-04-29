@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsgk7kixb8alh"
-path.s3tc="res://.godot/imported/hiding_locker_lambert3_BaseColor.png-870ef648983f61f817c63e37ad4631b5.s3tc.ctex"
+uid="uid://4r7pmaghyviu"
+path.s3tc="res://.godot/imported/water_openPBR_shader1_BaseColor.png-3bc689e9d23bc7efd4281baec49c0174.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "4a972da6f870787be81dcbe0a2252178"
+"md5": "56a215a6387fa83c796b78ebb15a98ff"
 }
 
 [deps]
 
-source_file="res://Assets/environment/hiding_locker_lambert3_BaseColor.png"
-dest_files=["res://.godot/imported/hiding_locker_lambert3_BaseColor.png-870ef648983f61f817c63e37ad4631b5.s3tc.ctex"]
+source_file="res://Assets/environment/textures/water_openPBR_shader1_BaseColor.png"
+dest_files=["res://.godot/imported/water_openPBR_shader1_BaseColor.png-3bc689e9d23bc7efd4281baec49c0174.s3tc.ctex"]
 
 [params]
 

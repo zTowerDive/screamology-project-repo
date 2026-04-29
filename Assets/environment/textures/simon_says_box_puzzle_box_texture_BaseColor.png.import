@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca5a71hgxysuh"
-path.s3tc="res://.godot/imported/wooden_plank_lambert10_Metallic-lambert10_Roughness.png-7b8c84ca09f19034f929cb11aca9d094.s3tc.ctex"
+uid="uid://dy1auqg6fvm8c"
+path.s3tc="res://.godot/imported/simon_says_box_puzzle_box_texture_BaseColor.png-cde4ebad5b37811606f92ff28fb2c5f7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "284f029bc58fe44e8736a07680be7f9f"
+"md5": "a2c7d4e9ba1a146f07b164caf4b80e7e"
 }
 
 [deps]
 
-source_file="res://Assets/environment/wooden_plank_lambert10_Metallic-lambert10_Roughness.png"
-dest_files=["res://.godot/imported/wooden_plank_lambert10_Metallic-lambert10_Roughness.png-7b8c84ca09f19034f929cb11aca9d094.s3tc.ctex"]
+source_file="res://Assets/environment/textures/simon_says_box_puzzle_box_texture_BaseColor.png"
+dest_files=["res://.godot/imported/simon_says_box_puzzle_box_texture_BaseColor.png-cde4ebad5b37811606f92ff28fb2c5f7.s3tc.ctex"]
 
 [params]
 
