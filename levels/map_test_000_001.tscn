@@ -7,6 +7,7 @@
 [ext_resource type="Material" uid="uid://cfke4e6kbm8qc" path="res://levels/dirty_water.tres" id="4_lstp0"]
 [ext_resource type="AudioStream" uid="uid://uuat8x1gogo0" path="res://Assets/Audio/Ambience/ambience_low_r.ogg" id="5_lstp0"]
 [ext_resource type="PackedScene" uid="uid://de3gp7b1a5yu0" path="res://menu/pause_menu.tscn" id="6_gfe6y"]
+[ext_resource type="Script" uid="uid://bb105xqv32uyu" path="res://kill_box.gd" id="8_vq5cs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_54jcv"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -281,6 +282,9 @@ material = ExtResource("4_lstp0")
 size = Vector2(27, 33)
 subdivide_width = 30
 subdivide_depth = 30
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u0lk2"]
+size = Vector3(26.367188, 1, 29.85376)
 
 [node name="map test000_001" unique_id=194277389 instance=ExtResource("1_a2b7j")]
 
@@ -718,3 +722,11 @@ stream = ExtResource("5_lstp0")
 autoplay = true
 
 [node name="PauseMenu" parent="." index="16" unique_id=1690461535 instance=ExtResource("6_gfe6y")]
+
+[node name="KillBox" type="Area3D" parent="." index="17" unique_id=2124658911]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.701553, 0, -11.380421)
+script = ExtResource("8_vq5cs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KillBox" index="0" unique_id=111775216]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6608887, -3.3154728, 0)
+shape = SubResource("BoxShape3D_u0lk2")

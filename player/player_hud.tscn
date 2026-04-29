@@ -2,17 +2,12 @@
 
 [ext_resource type="Theme" uid="uid://c74vybnpmvy4l" path="res://Assets/UI/player_hud.tres" id="1_r44wa"]
 [ext_resource type="Script" uid="uid://5qvqxj6wncev" path="res://player/player_hud.gd" id="2_2j6sb"]
+[ext_resource type="Texture2D" uid="uid://vmt11rkphrk1" path="res://Assets/UI/images/hud/ui_rectantgle_Tasks.png" id="3_2j6sb"]
+[ext_resource type="Texture2D" uid="uid://diouay7u0etnv" path="res://Assets/UI/images/hud/ui_text_box.png" id="4_80o3q"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_julpx"]
-bg_color = Color(0.11489678, 0.11489683, 0.11489671, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r44wa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hgv4v"]
 
 [node name="PlayerHUD" type="Control" unique_id=57862211]
 layout_mode = 3
@@ -25,38 +20,60 @@ mouse_filter = 1
 theme = ExtResource("1_r44wa")
 script = ExtResource("2_2j6sb")
 
-[node name="CurrentTaskLabel" type="RichTextLabel" parent="." unique_id=122834258]
+[node name="tasksRect" type="TextureRect" parent="." unique_id=1436663767]
+self_modulate = Color(1, 1, 1, 0.5882353)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.1
+anchor_right = 0.2
+anchor_bottom = 0.25
+offset_top = -0.0031967163
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("3_2j6sb")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="CurrentTaskLabel" type="RichTextLabel" parent="tasksRect" unique_id=122834258]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.15
 anchor_right = 1.0
-offset_left = -290.0
-offset_top = 20.0
-offset_right = -18.0
-offset_bottom = 140.0
+anchor_bottom = 1.0
 grow_horizontal = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_julpx")
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r44wa")
 bbcode_enabled = true
 text = "TEXT GOES HERE"
 autowrap_mode = 2
 
-[node name="DialogueLabel" type="RichTextLabel" parent="." unique_id=10232429]
+[node name="dialogueRect" type="TextureRect" parent="." unique_id=60381018]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.75
+anchor_right = 0.8
+anchor_bottom = 0.95
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("4_80o3q")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DialogueLabel" type="RichTextLabel" parent="dialogueRect" unique_id=10232429]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -252.0
-offset_top = -152.0
-offset_right = 252.0
-offset_bottom = -32.0
 grow_horizontal = 2
-grow_vertical = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_julpx")
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hgv4v")
 bbcode_enabled = true
 text = "TEXT GOES HERE"
 autowrap_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
 visible_characters_behavior = 1
