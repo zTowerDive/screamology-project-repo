@@ -281,9 +281,9 @@ isMouse = true
 [node name="FullScreen" type="Control" parent="Options/Canvas/Paper" unique_id=446478336]
 layout_mode = 1
 anchor_left = 0.25
-anchor_top = 0.43
+anchor_top = 0.4
 anchor_right = 0.75
-anchor_bottom = 0.5
+anchor_bottom = 0.48
 pivot_offset_ratio = Vector2(0.5, 0.5)
 
 [node name="AutoSizeLabel" type="Label" parent="Options/Canvas/Paper/FullScreen" unique_id=1267557511]
@@ -294,7 +294,7 @@ anchor_bottom = 1.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_1x3cv")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 31
 text = "Fullscreen"
 vertical_alignment = 1
 autowrap_mode = 3
@@ -338,9 +338,9 @@ stretch_mode = 5
 [node name="Volume" type="Control" parent="Options/Canvas/Paper" unique_id=858592454]
 layout_mode = 1
 anchor_left = 0.13
-anchor_top = 0.55
+anchor_top = 0.5
 anchor_right = 0.93000007
-anchor_bottom = 0.65
+anchor_bottom = 0.6
 pivot_offset_ratio = Vector2(0.5, 0.5)
 
 [node name="AutoSizeLabel" type="Label" parent="Options/Canvas/Paper/Volume" unique_id=18952826]
@@ -368,61 +368,143 @@ anchor_top = 0.5
 anchor_bottom = 1.0
 isVolume = true
 
-[node name="Apply" type="Control" parent="Options/Canvas/Paper" unique_id=1765185234]
+[node name="Credits" type="Control" parent="Options/Canvas/Paper" unique_id=1765185234]
 layout_mode = 1
-anchor_left = 0.25
-anchor_top = 0.8
-anchor_right = 0.75
-anchor_bottom = 0.9
+anchor_left = 0.12
+anchor_top = 0.68
+anchor_right = 0.94
+anchor_bottom = 1.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
 
-[node name="AutoSizeLabel" type="Label" parent="Options/Canvas/Paper/Apply" unique_id=1814834695]
+[node name="Jesse" type="Label" parent="Options/Canvas/Paper/Credits" unique_id=245304348]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.6
-anchor_bottom = 1.0
+anchor_top = 0.12
+anchor_right = 0.52
+anchor_bottom = 0.32
+rotation = -0.036651913
 pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_1x3cv")
-theme_override_font_sizes/font_size = 43
-text = "Apply??"
-vertical_alignment = 1
+theme_override_font_sizes/font_size = 21
+text = "Jesse : Dev <(0v0)>"
 autowrap_mode = 3
 clip_text = true
 text_overrun_behavior = 3
 script = ExtResource("4_jc45y")
-min_font_size = 2
-max_font_size = 158
 metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
 
-[node name="CheckButton" type="TextureButton" parent="Options/Canvas/Paper/Apply" unique_id=1607202524]
-self_modulate = Color(1.61, 1.61, 1.61, 1)
+[node name="Pwancakes" type="Label" parent="Options/Canvas/Paper/Credits" unique_id=648651103]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.6
+anchor_top = -0.05
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.15
+rotation = 0.10995574
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture_normal = ExtResource("8_bnl5v")
-texture_hover = ExtResource("9_qkuil")
-ignore_texture_size = true
-stretch_mode = 5
-script = ExtResource("10_pfmj8")
-_sprite_check = Array[Texture2D]([ExtResource("11_iqufe"), ExtResource("12_8lj81")])
-_sprite_button = Array[Texture2D]([ExtResource("8_bnl5v"), ExtResource("13_lbtey")])
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_1x3cv")
+theme_override_font_sizes/font_size = 20
+text = "Pwancakes : Character(Monster!!) Artist"
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("4_jc45y")
+metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
 
-[node name="Check" type="TextureRect" parent="Options/Canvas/Paper/Apply/CheckButton" unique_id=493065238]
-self_modulate = Color(1.6100625, 1.6100625, 1.6100625, 0)
+[node name="Conantas" type="Label" parent="Options/Canvas/Paper/Credits" unique_id=523402708]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
+anchor_left = 0.48
+anchor_top = 0.25
 anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchor_bottom = 0.45
+rotation = 0.05235988
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("11_iqufe")
-expand_mode = 1
-stretch_mode = 5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_1x3cv")
+theme_override_font_sizes/font_size = 23
+text = "Conantas : Dev 8-)"
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("4_jc45y")
+metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
+
+[node name="Snowl" type="Label" parent="Options/Canvas/Paper/Credits" unique_id=1654435651]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.05
+anchor_top = 0.34
+anchor_right = 0.45
+anchor_bottom = 0.54
+rotation = -0.10995574
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_1x3cv")
+theme_override_font_sizes/font_size = 21
+text = "Snowl : 3D Artist !"
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("4_jc45y")
+metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
+
+[node name="Mochi" type="Label" parent="Options/Canvas/Paper/Credits" unique_id=580779974]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.47
+anchor_right = 1.0
+anchor_bottom = 0.67
+rotation = -0.036651913
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_1x3cv")
+theme_override_font_sizes/font_size = 21
+text = "Mochi : Concept Artist °A°"
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("4_jc45y")
+metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
+
+[node name="NX" type="Label" parent="Options/Canvas/Paper/Credits" unique_id=1771469345]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.67
+anchor_right = 0.7
+anchor_bottom = 0.87
+rotation = 0.10995574
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_1x3cv")
+theme_override_font_sizes/font_size = 19
+text = "NX : Sound Designer \\(+0+)/"
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("4_jc45y")
+metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
+
+[node name="Dialme" type="Label" parent="Options/Canvas/Paper/Credits" unique_id=800438201]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.65
+anchor_top = 0.8
+anchor_right = 1.0
+anchor_bottom = 0.96
+rotation = -0.17976892
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_1x3cv")
+theme_override_font_sizes/font_size = 21
+text = "Dialme : UI/UX"
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("4_jc45y")
+metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
 
 [node name="BackButton" type="TextureButton" parent="Options/Canvas" unique_id=1924160223]
 self_modulate = Color(1.6100625, 1.6100625, 1.6100625, 1)
@@ -459,9 +541,6 @@ autoplay = true
 [connection signal="mouse_entered" from="Options/Canvas/Paper/FullScreen/CheckButton" to="Options/Canvas/Paper/FullScreen/CheckButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Options/Canvas/Paper/FullScreen/CheckButton" to="Options/Canvas/Paper/FullScreen/CheckButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="Options/Canvas/Paper/FullScreen/CheckButton" to="Options/Canvas/Paper/FullScreen/CheckButton" method="_on_pressed"]
-[connection signal="mouse_entered" from="Options/Canvas/Paper/Apply/CheckButton" to="Options/Canvas/Paper/Apply/CheckButton" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Options/Canvas/Paper/Apply/CheckButton" to="Options/Canvas/Paper/Apply/CheckButton" method="_on_mouse_exited"]
-[connection signal="pressed" from="Options/Canvas/Paper/Apply/CheckButton" to="Options/Canvas/Paper/Apply/CheckButton" method="_on_pressed"]
 [connection signal="mouse_entered" from="Options/Canvas/BackButton" to="Options/Canvas/BackButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Options/Canvas/BackButton" to="Options/Canvas/BackButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="Options/Canvas/BackButton" to="Options/Canvas/BackButton" method="_on_pressed"]

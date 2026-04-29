@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://de3gp7b1a5yu0"]
+[gd_scene format=3 uid="uid://dtu27gc0x3fky"]
 
 [ext_resource type="Script" uid="uid://dob7idjvadtyj" path="res://menu/pause_menu.gd" id="1_cdtl2"]
 [ext_resource type="Texture2D" uid="uid://bniouffglnlw7" path="res://Assets/UI/images/pause/ui_pause_bg_0.png" id="1_vy7sn"]
@@ -280,9 +280,9 @@ isMouse = true
 [node name="FullScreen" type="Control" parent="Options/Paper" unique_id=1328884356]
 layout_mode = 1
 anchor_left = 0.25
-anchor_top = 0.43
+anchor_top = 0.4
 anchor_right = 0.75
-anchor_bottom = 0.5
+anchor_bottom = 0.48
 pivot_offset_ratio = Vector2(0.5, 0.5)
 
 [node name="AutoSizeLabel" type="Label" parent="Options/Paper/FullScreen" unique_id=1456014745]
@@ -293,7 +293,7 @@ anchor_bottom = 1.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_5ijvr")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 31
 text = "Fullscreen"
 vertical_alignment = 1
 autowrap_mode = 3
@@ -336,9 +336,9 @@ stretch_mode = 5
 [node name="Volume" type="Control" parent="Options/Paper" unique_id=260535422]
 layout_mode = 1
 anchor_left = 0.13
-anchor_top = 0.55
+anchor_top = 0.5
 anchor_right = 0.93000007
-anchor_bottom = 0.65
+anchor_bottom = 0.6
 pivot_offset_ratio = Vector2(0.5, 0.5)
 
 [node name="AutoSizeLabel" type="Label" parent="Options/Paper/Volume" unique_id=1569977252]
@@ -365,61 +365,143 @@ anchor_top = 0.5
 anchor_bottom = 1.0
 isVolume = true
 
-[node name="Apply" type="Control" parent="Options/Paper" unique_id=824871376]
+[node name="Credits" type="Control" parent="Options/Paper" unique_id=1931890522]
 layout_mode = 1
-anchor_left = 0.25
-anchor_top = 0.8
-anchor_right = 0.75
-anchor_bottom = 0.9
+anchor_left = 0.12
+anchor_top = 0.68
+anchor_right = 0.94
+anchor_bottom = 1.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
 
-[node name="AutoSizeLabel" type="Label" parent="Options/Paper/Apply" unique_id=572774955]
+[node name="Jesse" type="Label" parent="Options/Paper/Credits" unique_id=1058940181]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.6
-anchor_bottom = 1.0
+anchor_top = 0.12
+anchor_right = 0.52
+anchor_bottom = 0.32
+rotation = -0.036651913
 pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_5ijvr")
-theme_override_font_sizes/font_size = 43
-text = "Apply??"
-vertical_alignment = 1
+theme_override_font_sizes/font_size = 21
+text = "Jesse : Dev <(0v0)>"
 autowrap_mode = 3
 clip_text = true
 text_overrun_behavior = 3
 script = ExtResource("2_lgp46")
-min_font_size = 2
-max_font_size = 158
 metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
 
-[node name="CheckButton" type="TextureButton" parent="Options/Paper/Apply" unique_id=1528024194]
-self_modulate = Color(1.61, 1.61, 1.61, 1)
+[node name="Pwancakes" type="Label" parent="Options/Paper/Credits" unique_id=690783148]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.6
+anchor_top = -0.05
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.15
+rotation = 0.10995574
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture_normal = ExtResource("6_85exe")
-texture_hover = ExtResource("7_oavyi")
-ignore_texture_size = true
-stretch_mode = 5
-script = ExtResource("8_nueu6")
-_sprite_check = Array[Texture2D]([ExtResource("9_g47nb"), ExtResource("8_oavyi")])
-_sprite_button = Array[Texture2D]([ExtResource("6_85exe"), ExtResource("6_gulp2")])
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_5ijvr")
+theme_override_font_sizes/font_size = 20
+text = "Pwancakes : Character(Monster!!) Artist"
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("2_lgp46")
+metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
 
-[node name="Check" type="TextureRect" parent="Options/Paper/Apply/CheckButton" unique_id=1873216498]
-self_modulate = Color(1.6100625, 1.6100625, 1.6100625, 0)
+[node name="Conantas" type="Label" parent="Options/Paper/Credits" unique_id=1146395089]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
+anchor_left = 0.48
+anchor_top = 0.25
 anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchor_bottom = 0.45
+rotation = 0.05235988
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("9_g47nb")
-expand_mode = 1
-stretch_mode = 5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_5ijvr")
+theme_override_font_sizes/font_size = 23
+text = "Conantas : Dev 8-)"
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("2_lgp46")
+metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
+
+[node name="Snowl" type="Label" parent="Options/Paper/Credits" unique_id=1916082574]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.05
+anchor_top = 0.34
+anchor_right = 0.45
+anchor_bottom = 0.54
+rotation = -0.10995574
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_5ijvr")
+theme_override_font_sizes/font_size = 21
+text = "Snowl : 3D Artist !"
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("2_lgp46")
+metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
+
+[node name="Mochi" type="Label" parent="Options/Paper/Credits" unique_id=583823048]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.47
+anchor_right = 1.0
+anchor_bottom = 0.67
+rotation = -0.036651913
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_5ijvr")
+theme_override_font_sizes/font_size = 21
+text = "Mochi : Concept Artist °A°"
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("2_lgp46")
+metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
+
+[node name="NX" type="Label" parent="Options/Paper/Credits" unique_id=1576226805]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.67
+anchor_right = 0.7
+anchor_bottom = 0.87
+rotation = 0.10995574
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_5ijvr")
+theme_override_font_sizes/font_size = 19
+text = "NX : Sound Designer \\(+0+)/"
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("2_lgp46")
+metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
+
+[node name="Dialme" type="Label" parent="Options/Paper/Credits" unique_id=482326241]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.65
+anchor_top = 0.8
+anchor_right = 1.0
+anchor_bottom = 0.96
+rotation = -0.17976892
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_5ijvr")
+theme_override_font_sizes/font_size = 21
+text = "Dialme : UI/UX"
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("2_lgp46")
+metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
 
 [node name="BackButton" type="TextureButton" parent="Options" unique_id=151660821]
 self_modulate = Color(1.6100625, 1.6100625, 1.6100625, 1)
@@ -461,9 +543,6 @@ stretch_mode = 5
 [connection signal="mouse_entered" from="Options/Paper/FullScreen/CheckButton" to="Options/Paper/FullScreen/CheckButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Options/Paper/FullScreen/CheckButton" to="Options/Paper/FullScreen/CheckButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="Options/Paper/FullScreen/CheckButton" to="Options/Paper/FullScreen/CheckButton" method="_on_pressed"]
-[connection signal="mouse_entered" from="Options/Paper/Apply/CheckButton" to="Options/Paper/Apply/CheckButton" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Options/Paper/Apply/CheckButton" to="Options/Paper/Apply/CheckButton" method="_on_mouse_exited"]
-[connection signal="pressed" from="Options/Paper/Apply/CheckButton" to="Options/Paper/Apply/CheckButton" method="_on_pressed"]
 [connection signal="mouse_entered" from="Options/BackButton" to="Options/BackButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Options/BackButton" to="Options/BackButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="Options/BackButton" to="Options/BackButton" method="_on_pressed"]
