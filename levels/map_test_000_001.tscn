@@ -696,7 +696,6 @@ shape = SubResource("ConcavePolygonShape3D_iv0kq")
 shape = SubResource("ConcavePolygonShape3D_o0vnt")
 
 [node name="water" type="Node3D" parent="." index="8" unique_id=1674066766]
-visible = false
 
 [node name="water_level_main" type="MeshInstance3D" parent="water" index="0" unique_id=1423969904]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.486103, -0.1662327, -26.462566)
