@@ -1,0 +1,304 @@
+[gd_scene format=3 uid="uid://bf3ovsswm87u3"]
+
+[ext_resource type="Script" uid="uid://b7p37plvxpia4" path="res://menu/end_scene_win_menu.gd" id="1_uujo0"]
+[ext_resource type="Texture2D" uid="uid://mrx8m85c6w5p" path="res://Assets/UI/images/ui_end_bg_1.png" id="1_x7qlx"]
+[ext_resource type="FontFile" uid="uid://beqfgbrn1frs2" path="res://Assets/UI/fonts/!BoH-b.ttf" id="2_uujo0"]
+[ext_resource type="Script" uid="uid://dbn8xadgxcv7x" path="res://pause/script/AutoSizeLabel.gd" id="3_8xwvp"]
+[ext_resource type="FontFile" uid="uid://wc7lmkw5i5rg" path="res://Assets/UI/fonts/Razor Keen.otf" id="4_higke"]
+[ext_resource type="Texture2D" uid="uid://brysulxfgkiaf" path="res://Assets/UI/images/pause/ui_underscore_.png" id="5_wqk5p"]
+
+[node name="EndSceneWinMenu" type="Control" unique_id=1959390318]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uujo0")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=149688094]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("1_x7qlx")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Main" type="Control" parent="." unique_id=945108598]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="Title" type="Label" parent="Main" unique_id=1291549452]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.41
+anchor_top = 0.38
+anchor_right = 0.57000005
+anchor_bottom = 0.58
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("2_uujo0")
+theme_override_font_sizes/font_size = 36
+text = "You Survived"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("3_8xwvp")
+watch_text_change = true
+max_font_size = 156
+metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
+
+[node name="Credits" type="Control" parent="Main" unique_id=1163773659]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 0.68
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="Jesse" type="Label" parent="Main/Credits" unique_id=2084653646]
+self_modulate = Color(1, 1, 1, 0.5294118)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.094000004
+anchor_right = 0.333
+anchor_bottom = 0.312
+rotation = -0.036651913
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_higke")
+theme_override_font_sizes/font_size = 52
+text = "Jesse : Dev <(0v0)>"
+horizontal_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("3_8xwvp")
+max_font_size = 158
+metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
+
+[node name="Pwancakes" type="Label" parent="Main/Credits" unique_id=86436756]
+self_modulate = Color(1, 1, 1, 0.5294118)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47
+anchor_top = 0.1
+anchor_right = 1.0
+anchor_bottom = 0.22900002
+rotation = 0.10995574
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_higke")
+theme_override_font_sizes/font_size = 47
+text = "Pwancakes : Character(Monster!!) Artist"
+horizontal_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("3_8xwvp")
+max_font_size = 158
+metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
+
+[node name="Conantas" type="Label" parent="Main/Credits" unique_id=746835475]
+self_modulate = Color(1, 1, 1, 0.5294118)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.67300004
+anchor_top = 0.36200002
+anchor_right = 0.98300004
+anchor_bottom = 0.48800004
+rotation = 0.05235988
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_higke")
+theme_override_font_sizes/font_size = 46
+text = "Conantas : Dev 8-)"
+horizontal_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("3_8xwvp")
+max_font_size = 158
+metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
+
+[node name="Snowl" type="Label" parent="Main/Credits" unique_id=1669055164]
+self_modulate = Color(1, 1, 1, 0.5294118)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.071
+anchor_top = 0.38000003
+anchor_right = 0.347
+anchor_bottom = 0.503
+rotation = -0.10995574
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_higke")
+theme_override_font_sizes/font_size = 45
+text = "Snowl : 3D Artist !"
+horizontal_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("3_8xwvp")
+max_font_size = 158
+metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
+
+[node name="Mochi" type="Label" parent="Main/Credits" unique_id=1159226393]
+self_modulate = Color(1, 1, 1, 0.5294118)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.61800003
+anchor_top = 0.70100003
+anchor_right = 0.98700005
+anchor_bottom = 0.855
+offset_bottom = -0.3678589
+rotation = -0.21991149
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_higke")
+theme_override_font_sizes/font_size = 50
+text = "Mochi : Concept Artist °A°"
+horizontal_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("3_8xwvp")
+max_font_size = 158
+metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
+
+[node name="NX" type="Label" parent="Main/Credits" unique_id=1080568886]
+self_modulate = Color(1, 1, 1, 0.5294118)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.056
+anchor_top = 0.83100003
+anchor_right = 0.404
+anchor_bottom = 0.95800006
+rotation = 0.21991149
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_higke")
+theme_override_font_sizes/font_size = 46
+text = "NX : Sound Designer \\(+0+)/"
+horizontal_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("3_8xwvp")
+max_font_size = 158
+metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
+
+[node name="Dialme" type="Label" parent="Main/Credits" unique_id=791859865]
+self_modulate = Color(1, 1, 1, 0.5294118)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.739
+anchor_top = 1.014
+anchor_right = 0.92100006
+anchor_bottom = 1.118
+rotation = 0.143117
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_higke")
+theme_override_font_sizes/font_size = 37
+text = "Dialme : UI/UX"
+horizontal_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("3_8xwvp")
+max_font_size = 158
+metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
+
+[node name="PlayButton" type="TextureButton" parent="Main" unique_id=20676399]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.32
+anchor_top = 0.7
+anchor_right = 0.65
+anchor_bottom = 0.9
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="AutoSizeLabel" type="Label" parent="Main/PlayButton" unique_id=234584224]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("4_higke")
+theme_override_font_sizes/font_size = 96
+text = "Back"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("3_8xwvp")
+max_font_size = 158
+metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
+
+[node name="TextureRect" type="TextureRect" parent="Main/PlayButton" unique_id=1178195514]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.7
+anchor_right = 0.8
+anchor_bottom = 1.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("5_wqk5p")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ExitButton" type="TextureButton" parent="Main" unique_id=2138535735]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.85
+anchor_right = 0.275
+anchor_bottom = 0.95000005
+offset_bottom = -6.1035156e-05
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="AutoSizeLabel" type="Label" parent="Main/ExitButton" unique_id=1340810285]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("4_higke")
+theme_override_font_sizes/font_size = 48
+text = "Exit"
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("3_8xwvp")
+max_font_size = 158
+metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
+
+[node name="TextureRect" type="TextureRect" parent="Main/ExitButton" unique_id=1648412747]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.7
+anchor_right = 0.4
+anchor_bottom = 1.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("5_wqk5p")
+expand_mode = 1
+stretch_mode = 5

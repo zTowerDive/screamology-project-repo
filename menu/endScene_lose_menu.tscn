@@ -1,0 +1,158 @@
+[gd_scene format=3 uid="uid://cqvltr50j07cj"]
+
+[ext_resource type="Texture2D" uid="uid://busg7300rs0if" path="res://Assets/UI/images/ui_end_bg_2.png" id="1_7i0r4"]
+[ext_resource type="Script" uid="uid://1xaswfw0hbir" path="res://menu/end_scene_lose_menu.gd" id="1_xacpc"]
+[ext_resource type="Script" uid="uid://dbn8xadgxcv7x" path="res://pause/script/AutoSizeLabel.gd" id="3_xacpc"]
+[ext_resource type="FontFile" uid="uid://wc7lmkw5i5rg" path="res://Assets/UI/fonts/Razor Keen.otf" id="4_bupfr"]
+[ext_resource type="Texture2D" uid="uid://hwncstabwkd2" path="res://Assets/UI/images/ui_end_bg_0.png" id="4_oarfs"]
+[ext_resource type="Texture2D" uid="uid://brysulxfgkiaf" path="res://Assets/UI/images/pause/ui_underscore_.png" id="5_imyra"]
+[ext_resource type="Texture2D" uid="uid://bworts5xafbyj" path="res://Assets/UI/images/pause/ui_underscore_0.png" id="5_oarfs"]
+
+[node name="EndSceneLoseMenu" type="Control" unique_id=2127127215]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xacpc")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=896525430]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("1_7i0r4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Main" type="Control" parent="." unique_id=348786228]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="background" type="TextureRect" parent="Main" unique_id=304829865]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.05
+anchor_right = 0.75
+anchor_bottom = 0.95
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("4_oarfs")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Title" type="Label" parent="Main/background" unique_id=1062608057]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.1
+anchor_right = 0.7
+anchor_bottom = 0.25
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_bupfr")
+theme_override_font_sizes/font_size = 73
+text = "You Died"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("3_xacpc")
+max_font_size = 128
+metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
+
+[node name="PlayButton" type="TextureButton" parent="Main" unique_id=504053645]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.386
+anchor_top = 0.425
+anchor_right = 0.595
+anchor_bottom = 0.6
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="AutoSizeLabel" type="Label" parent="Main/PlayButton" unique_id=799274181]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.95
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_bupfr")
+theme_override_font_sizes/font_size = 75
+text = "Restart"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("3_xacpc")
+max_font_size = 158
+metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
+
+[node name="TextureRect" type="TextureRect" parent="Main/PlayButton" unique_id=1518874897]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.7
+anchor_right = 1.0
+anchor_bottom = 1.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("5_oarfs")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ExitButton" type="TextureButton" parent="Main" unique_id=1616240296]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.85
+anchor_right = 0.5
+anchor_bottom = 0.95
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="AutoSizeLabel" type="Label" parent="Main/ExitButton" unique_id=919512185]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("4_bupfr")
+theme_override_font_sizes/font_size = 48
+text = "Exit"
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("3_xacpc")
+max_font_size = 158
+metadata/_custom_type_script = "uid://dbn8xadgxcv7x"
+
+[node name="TextureRect" type="TextureRect" parent="Main/ExitButton" unique_id=649774807]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.7
+anchor_right = 0.2
+anchor_bottom = 1.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("5_imyra")
+expand_mode = 1
+stretch_mode = 5
