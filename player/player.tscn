@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c6ngnaaugpmtf" path="res://player/player_controller.gd" id="1_oul6g"]
 [ext_resource type="PackedScene" uid="uid://0hjioifqgatd" path="res://interactibles/interact_detection.tscn" id="2_rkbax"]
-[ext_resource type="PackedScene" uid="uid://bhgep7fiog7x7" path="res://assets/environment/flashlight.glb" id="3_g1dw6"]
+[ext_resource type="PackedScene" uid="uid://bhgep7fiog7x7" path="res://Assets/environment/flashlight.glb" id="3_g1dw6"]
 [ext_resource type="Script" uid="uid://ci7sx2i5y5t56" path="res://player/flashlight_controller.gd" id="4_qjkh3"]
 [ext_resource type="PackedScene" uid="uid://dnc76wltq5mm5" path="res://player/player_hud.tscn" id="5_qjkh3"]
 
@@ -97,7 +97,8 @@ wait_time = 60.0
 
 [node name="CrouchCeilingCast" type="ShapeCast3D" parent="." unique_id=271533372]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.60644096, 0)
+enabled = false
 shape = SubResource("CylinderShape3D_oul6g")
 target_position = Vector3(0, 0.8, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)

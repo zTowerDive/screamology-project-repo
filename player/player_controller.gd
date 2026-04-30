@@ -180,7 +180,7 @@ func set_is_crouching(new_value: bool) -> void:
 	if new_value == false:
 		_crouch_ceiling_cast.force_shapecast_update()
 		if _crouch_ceiling_cast.is_colliding():
-			return
+			new_value = true
 	
 	is_crouching = new_value
 	is_visible = !is_crouching
