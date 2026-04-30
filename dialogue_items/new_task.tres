@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogueItem" format=3 uid="uid://7yb1vjmku13a"]
+
+[ext_resource type="Script" uid="uid://c838pqmfd8h22" path="res://dialogue_items/dialogue_item.gd" id="1_cvvw0"]
+
+[resource]
+script = ExtResource("1_cvvw0")
+text = "Task: Find the code to the box"
+metadata/_custom_type_script = "uid://c838pqmfd8h22"

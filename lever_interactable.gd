@@ -4,6 +4,7 @@ class_name LEVER_INTERACTABLE
 @onready var wrong: AudioStreamPlayer3D = %WRONG
 @onready var correct: AudioStreamPlayer3D = %CORRECT
 @onready var _lever_pivot: Node3D = %LeverPivot
+@export var dialogue_item : DialogueItem
 
 var tween_lever : Tween = null
 
@@ -39,6 +40,8 @@ func code_check(input_check):
 		correct.finished.connect(get_tree().change_scene_to_file.bind("res://menu/endScene_win_menu.tscn"))
 	else:
 		wrong.play()
+		var player_hud : PlayerHUD = get_tree().root.get_node("/root/Node3D/Player/PlayerHUD")
+		player_hud.show_task_text(dialogue_item, 3.0)
 	code_input.clear()
 
 func interact():

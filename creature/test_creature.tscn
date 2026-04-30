@@ -11,8 +11,8 @@
 [ext_resource type="AudioStream" uid="uid://ew6pyrfvgkc" path="res://Assets/Audio/Sfx/monsterscream.wav" id="8_axav5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lcr6j"]
-radius = 1.1118164
-height = 6.2387695
+radius = 0.69384766
+height = 4.0300293
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_vnd3a"]
 points = PackedVector3Array(0, 9.375, 0, 7.9549513, -9.375, 7.9549513, 6.888411e-16, -9.375, 11.25, -7.9549513, -9.375, 7.9549513, -11.25, -9.375, 1.3776821e-15, -7.9549513, -9.375, -7.9549513, -2.0665232e-15, -9.375, -11.25, 7.9549513, -9.375, -7.9549513, 11.25, -9.375, -2.7553643e-15)
@@ -496,7 +496,7 @@ bones/394/position = Vector3(-0.36407962, 1.3249238, -0.5014374)
 bones/394/rotation = Quaternion(-0.70710677, 0, 0, 0.70710677)
 
 [node name="BodyCollisionShape" type="CollisionShape3D" parent="." unique_id=497028178]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.11045, -1.0826895)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.6947044, 0.021680593)
 shape = SubResource("CapsuleShape3D_lcr6j")
 
 [node name="VisionArea3D" type="Area3D" parent="." unique_id=209573275]
