@@ -19,11 +19,14 @@
 [ext_resource type="PackedScene" uid="uid://bgdjh6xsqe2en" path="res://Assets/environment/pillar.glb" id="16_bjwr5"]
 [ext_resource type="PackedScene" uid="uid://dv15hyd7fbf2x" path="res://interactibles/interactable_hiding_locker_2.tscn" id="17_5oxy4"]
 [ext_resource type="PackedScene" uid="uid://kuvpnycyrn05" path="res://player/player.tscn" id="17_bjwr5"]
+[ext_resource type="Script" uid="uid://bb105xqv32uyu" path="res://kill_box.gd" id="17_lgkqf"]
 [ext_resource type="PackedScene" uid="uid://vws7rswyujia" path="res://Assets/environment/pipe_walk.glb" id="17_smdtt"]
 [ext_resource type="PackedScene" uid="uid://c4bn8j6du0r4n" path="res://Assets/environment/simon_says_box.glb" id="18_5oxy4"]
 [ext_resource type="PackedScene" uid="uid://yold2e4awwmr" path="res://Assets/environment/water.glb" id="19_elnwr"]
 [ext_resource type="AudioStream" uid="uid://coq0rbquvc4vu" path="res://Assets/Audio/Ambience/lamp_ambience.ogg" id="23_elnwr"]
 [ext_resource type="AudioStream" uid="uid://bgmrjcp3p1ka1" path="res://Assets/Audio/Ambience/ambience_low.ogg" id="24_lgkqf"]
+[ext_resource type="PackedScene" uid="uid://dtu27gc0x3fky" path="res://menu/pause_menu.tscn" id="26_4gmat"]
+[ext_resource type="PackedScene" uid="uid://uw20430w7yy" path="res://creature/test_creature.tscn" id="27_ek74w"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_54jcv"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -110,6 +113,9 @@ points = PackedVector3Array(183.9561, -9.7402115, -42.496914, 89.50185, -85.2897
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1ld40"]
 points = PackedVector3Array(183.95703, 56.394417, -42.486744, 98.95651, 84.71405, -33.050564, 98.95651, 84.71405, -23.603289, 146.1707, 18.604393, -70.82302, 146.1707, 94.1678, -61.375748, 146.1707, 18.604393, -33.050564, 136.74284, 103.621544, -14.150467, 183.95703, 18.604393, -70.82302, 183.95703, 18.604393, -33.050564, 108.40933, 103.621544, -51.92847, 127.29834, 75.27695, -70.82302, 108.40933, 56.394417, -51.92847, 183.95703, 46.94899, -70.82302, 108.40933, 84.71405, -14.150467, 146.1707, 103.621544, -42.486744, 98.95651, 103.621544, -23.603289, 108.40933, 56.394417, -33.050564, 183.95703, 46.94899, -33.050564, 183.95703, 56.394417, -61.375748, 127.29834, 84.71405, -14.150467, 127.29834, 56.394417, -70.82302, 108.40933, 103.621544, -14.150467, 146.1707, 75.27695, -70.82302, 108.40933, 65.83152, -23.603289, 146.1707, 103.621544, -33.050564, 174.5042, 65.83152, -33.050564)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4gmat"]
+size = Vector3(20.14685, 11.633789, 27.402191)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_m754a"]
 points = PackedVector3Array(18.976599, 3.375182, -105.93098, -16.797138, -22.4337, -115.1252, 18.950748, -22.4337, -115.1252, -16.474125, -22.036062, -92.892494, -16.797138, 22.4337, -115.1252, 18.640131, 22.036062, -92.892494, 18.640131, -22.036062, -92.892494, -16.474125, 22.036062, -92.892494, 18.950748, 22.4337, -115.1252, 18.976599, -3.375182, -105.93098, 18.991325, 3.378014, -110.6627)
@@ -1368,6 +1374,14 @@ shape = SubResource("ConvexPolygonShape3D_77jke")
 
 [node name="CollisionShape3D14" type="CollisionShape3D" parent="parkour/pipe_walk2/pipe_walk/StaticBody3D" unique_id=472673057]
 shape = SubResource("ConvexPolygonShape3D_1ld40")
+
+[node name="KillBox" type="Area3D" parent="parkour" unique_id=1856427868]
+script = ExtResource("17_lgkqf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="parkour/KillBox" unique_id=1186579119]
+transform = Transform3D(1, 0, -5.643357e-20, 0, 1, 0, -5.643357e-20, 0, 1, -4.376274, -6.6300597, 10.156601)
+shape = SubResource("BoxShape3D_4gmat")
+debug_color = Color(0.94509804, 0, 0, 1)
 
 [node name="room_1" type="Node3D" parent="." unique_id=1431219088]
 transform = Transform3D(1.4528085, 0, 0, 0, 1.4528085, 0, 0, 0, 1.4528085, 11.409649, 0.29641682, -10.774889)
@@ -3459,6 +3473,11 @@ autoplay = true
 
 [node name="tunnel_audio" type="AudioStreamPlayer" parent="." unique_id=808927525]
 stream = ExtResource("24_lgkqf")
+
+[node name="PauseMenu" parent="." unique_id=1690461535 instance=ExtResource("26_4gmat")]
+
+[node name="TESTCreature" parent="." unique_id=455156690 instance=ExtResource("27_ek74w")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.395692, -0.1747445, 34.996456)
 
 [editable path="parkour/jump_pipe5"]
 [editable path="parkour/jump_pipe3/jump_pipe3"]

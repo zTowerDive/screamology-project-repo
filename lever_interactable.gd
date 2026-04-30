@@ -34,6 +34,7 @@ func button_name(input):
 func code_check(input_check):
 	if input_check == code_lock:
 		correct.play()
+		correct.finished.connect(get_tree().change_scene_to_file.bind("res://menu/endScene_win_menu.tscn"))
 	else:
 		wrong.play()
 	code_input.clear()

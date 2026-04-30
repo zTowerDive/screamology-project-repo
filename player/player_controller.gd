@@ -29,7 +29,7 @@ var look_sensitivty := GameSettings.look_sensitivity
 @export_category("Air Movement")
 @export_range(1.0, 50.0, 0.1) var gravity := 17.0
 @export_range(1.0, 50.0, 0.1) var max_fall_speed := 20.0
-@export_range(1.0, 20.0, 0.1) var jump_velocity := 8.0
+@export_range(1.0, 20.0, 0.1) var jump_velocity := 4.0
 
 var is_visible : bool = true
 var is_crouching : bool = false:
@@ -212,3 +212,11 @@ func set_animation_name(anim_name: String) -> void:
 	
 	_animation_player.current_animation = anim_name
 #endregion
+
+
+func kill() -> void:
+	get_tree().change_scene_to_file("res://menu/endScene_lose_menu.tscn")
+
+
+func win() -> void:
+	get_tree().change_scene_to_file("res://menu/endScene_win_menu.tscn")
