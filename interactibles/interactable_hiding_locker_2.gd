@@ -23,6 +23,8 @@ func animate_door() -> void:
 	tween_door = create_tween().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_QUAD)
 	
 	is_open = not is_open
+	prompt = "Close Locker" if is_open else "Open Locker"
+	
 	body_collision.disabled = is_open
 	door_collision_1.disabled = is_open
 	door_collision_2.disabled = is_open

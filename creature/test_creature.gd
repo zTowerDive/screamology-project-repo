@@ -3,7 +3,7 @@ class_name CreatureController extends CharacterBody3D
 @onready var _vision_area: VisionArea3D = %VisionArea3D
 @onready var _mesh: Creature = %Sewer_Kelpie_30
 @onready var _jump_scare_test: JumpScareTest = %JumpScareTest
-@onready var _creature_audio_player: AudioStreamPlayer3D = %CreatureAudioPlayer
+@onready var _scare_audio: AudioStreamPlayer3D = %ScareAudio
 @onready var _head_marker: Marker3D = $HeadMarker
 @onready var _ray_cast: RayCast3D = %RayCast
 
@@ -114,8 +114,8 @@ func set_current_state(new_state: State) -> void:
 		State.StateScare:
 			velocity = Vector3.ZERO
 			_mesh.animation_player.play("G_Attack")
-			_creature_audio_player.play()
-			_creature_audio_player.finished.connect(get_tree().change_scene_to_file.bind("res://menu/main_menu.tscn"))
+			_scare_audio.play()
+			_scare_audio.finished.connect(get_tree().change_scene_to_file.bind("res://menu/main_menu.tscn"))
 			_vision_area.focused_body.set_physics_process(false)
 			_vision_area.focused_body.global_position.y = _head_marker.global_position.y - 0.9
 
@@ -200,5 +200,5 @@ func clear_signal_connections() -> void:
 	if not _vision_area.player_lost.get_connections().is_empty():
 		_vision_area.player_lost.disconnect(set_current_state)
 	
-	if not _creature_audio_player.finished.get_connections().is_empty():
-		_creature_audio_player.timeout.disconnect(get_tree().change_scene_to_file)
+	if not _scare_audio.finished.get_connections().is_empty():
+		_scare_audio.timeout.disconnect(get_tree().change_scene_to_file)

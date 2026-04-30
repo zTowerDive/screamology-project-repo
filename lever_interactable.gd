@@ -1,8 +1,8 @@
 extends Interactable3D
 class_name LEVER_INTERACTABLE
 
-@onready var wrong: AudioStreamPlayer3D = $"../../../WRONG"
-@onready var correct: AudioStreamPlayer3D = $"../../../CORRECT"
+@onready var wrong: AudioStreamPlayer3D = %WRONG
+@onready var correct: AudioStreamPlayer3D = %CORRECT
 
 
 var code_lock := ["Seahorse", "Mare", "Horse", "Jiraff"]

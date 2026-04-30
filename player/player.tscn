@@ -75,7 +75,6 @@ collision_mask = 1
 [node name="Flashlight" type="Node3D" parent="CameraPivot/Camera" unique_id=1618354]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15823364, -0.09457886, -0.05842927)
 script = ExtResource("4_qjkh3")
-light_deactivation_chance = 0.5
 
 [node name="flashlight" parent="CameraPivot/Camera/Flashlight" unique_id=158668716 instance=ExtResource("3_g1dw6")]
 transform = Transform3D(0.49673137, -0.05707846, -2.957587e-09, 0.0073030223, 0.06355531, 0.4958905, -0.05660933, -0.49264872, 0.063973516, 0, 0, 0)
@@ -98,7 +97,6 @@ wait_time = 60.0
 [node name="CrouchCeilingCast" type="ShapeCast3D" parent="." unique_id=271533372]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.60644096, 0)
-enabled = false
 shape = SubResource("CylinderShape3D_oul6g")
 target_position = Vector3(0, 0.8, 0)
 debug_shape_custom_color = Color(0, 1, 0, 1)
