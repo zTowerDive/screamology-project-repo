@@ -37,7 +37,7 @@ func _exitbuttonMouseOff()->void:
 func _connect_button_signals() -> void:
 	_button_play.pressed.connect(
 		func() -> void:
-			get_tree().change_scene_to_file("res://levels/map_test_000_001.tscn")
+			get_tree().change_scene_to_file("res://levels/test_joel.tscn")
 	)
 	_button_play.mouse_entered.connect(_playbuttonMouseOn)
 	_button_play.mouse_exited.connect(_playbuttonMouseOff)

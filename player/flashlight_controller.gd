@@ -6,20 +6,22 @@ class_name FlashlightController extends Node3D
 @export var projector_texture : Texture2D = null:
 	set = set_projector_texture
 
-## Chance the light has to deactivate expressed as a percentage
-@export var light_deactivation_chance := 0.0
+@export var battery := 300.0
 ## Current toggle state of the light as a boolean
 var _is_on := true:
 	set = set_in_on
 
+
 func _ready() -> void:
 	_is_on = true
+
+
+func _process(delta: float) -> void:
+	battery -= delta
 	
-	_light_toggle_timer.timeout.connect(
-		func() -> void:
-			if _is_on:
-				calculate_light_state()
-	)
+	if battery <= 0.0:
+		_is_on = false
+
 
 ## Toggle the light's visible property when the player presses the "flashlight" input
 func _unhandled_input(event: InputEvent) -> void:
@@ -38,12 +40,7 @@ func set_projector_texture(new_texture: Texture2D) -> void:
 
 ## Function sets the state of the _is_on variable and the _spot_light's visible property
 func set_in_on(new_value: bool) -> void:
+	if battery <= 0.0:
+		new_value = false
 	_is_on = new_value
 	_spot_light.visible = _is_on
-
-## Calculates a random number between 0 and 1 and disables the _spot_light
-func calculate_light_state()-> void:
-	var chance : float = randf()
-	
-	if chance < light_deactivation_chance:
-		set_in_on(false)

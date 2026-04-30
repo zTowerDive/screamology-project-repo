@@ -1,9 +1,12 @@
 extends Interactable3D
 class_name LEVER_INTERACTABLE
 
-@onready var wrong: AudioStreamPlayer3D = $"../../../WRONG"
-@onready var correct: AudioStreamPlayer3D = $"../../../CORRECT"
+@onready var wrong: AudioStreamPlayer3D = %WRONG
+@onready var correct: AudioStreamPlayer3D = %CORRECT
+@onready var _lever_pivot: Node3D = %LeverPivot
+@export var dialogue_item : DialogueItem
 
+var tween_lever : Tween = null
 
 var code_lock := ["Seahorse", "Mare", "Horse", "Jiraff"]
 var code_input := []
@@ -34,10 +37,24 @@ func button_name(input):
 func code_check(input_check):
 	if input_check == code_lock:
 		correct.play()
+		correct.finished.connect(get_tree().change_scene_to_file.bind("res://menu/endScene_win_menu.tscn"))
 	else:
 		wrong.play()
+		var player_hud : PlayerHUD = get_tree().root.get_node("/root/Node3D/Player/PlayerHUD")
+		player_hud.show_task_text(dialogue_item, 3.0)
 	code_input.clear()
-	
+
 func interact():
 	super()
 	code_check(code_input)
+	pull_lever()
+
+
+func pull_lever() -> void:
+	if tween_lever != null:
+		tween_lever.kill()
+	
+	tween_lever = create_tween().set_ease(Tween.EASE_IN)
+	
+	tween_lever.tween_property(_lever_pivot, "rotation_degrees:x", 80.0, .25)
+	tween_lever.tween_property(_lever_pivot, "rotation_degrees:x", 0.0, .25)

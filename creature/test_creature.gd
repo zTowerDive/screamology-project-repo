@@ -3,9 +3,10 @@ class_name CreatureController extends CharacterBody3D
 @onready var _vision_area: VisionArea3D = %VisionArea3D
 @onready var _mesh: Creature = %Sewer_Kelpie_30
 @onready var _jump_scare_test: JumpScareTest = %JumpScareTest
-@onready var _creature_audio_player: AudioStreamPlayer3D = %CreatureAudioPlayer
+@onready var _scare_audio: AudioStreamPlayer3D = %ScareAudio
 @onready var _head_marker: Marker3D = $HeadMarker
 @onready var _ray_cast: RayCast3D = %RayCast
+@onready var _scream_player: AudioStreamPlayer3D = %ScreamPlayer
 
 @onready var _wander_timer: Timer = %WanderTimer
 @onready var _stare_timer: Timer = %StareTimer
@@ -49,7 +50,7 @@ func _physics_process(delta: float) -> void:
 	
 	## Apply Gravity
 	if not is_on_floor():
-		velocity.y -= 17.0 * delta
+		velocity.y -= 60.0 * delta
 	
 	## 
 	
@@ -108,16 +109,18 @@ func set_current_state(new_state: State) -> void:
 		State.StateLookAtPlayer:
 			#print("Now entering State: ", str(State.StateLookAtPlayer))
 			_stare_timer.start()
+			_scream_player.play()
 			_mesh.animation_player.stop()
 			velocity = Vector3.ZERO
 		
 		State.StateScare:
 			velocity = Vector3.ZERO
 			_mesh.animation_player.play("G_Attack")
-			_creature_audio_player.play()
-			_creature_audio_player.finished.connect(get_tree().change_scene_to_file.bind("res://menu/main_menu.tscn"))
+			_scare_audio.play()
 			_vision_area.focused_body.set_physics_process(false)
-			_vision_area.focused_body.global_position.y = _head_marker.global_position.y - 0.9
+			_vision_area.focused_body.global_position.y = _head_marker.global_position.y - 2
+			await get_tree().create_timer(1.883).timeout
+			get_tree().change_scene_to_file("res://menu/endScene_lose_menu.tscn")
 
 #endregion
 
@@ -200,5 +203,5 @@ func clear_signal_connections() -> void:
 	if not _vision_area.player_lost.get_connections().is_empty():
 		_vision_area.player_lost.disconnect(set_current_state)
 	
-	if not _creature_audio_player.finished.get_connections().is_empty():
-		_creature_audio_player.timeout.disconnect(get_tree().change_scene_to_file)
+	if not _scare_audio.finished.get_connections().is_empty():
+		_scare_audio.finished.disconnect(get_tree().change_scene_to_file)
