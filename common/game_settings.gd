@@ -3,7 +3,7 @@ extends Node
 
 var look_sensitivity := 0.005:
 	set = set_look_sensitivity
-var volume := 1.0:
+var volume := 2.0:
 	set = set_game_volume
 var is_fullscreen := true
 
