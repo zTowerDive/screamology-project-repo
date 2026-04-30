@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://b24k5da4ty3bu"]
+
+[ext_resource type="PackedScene" uid="uid://c4bn8j6du0r4n" path="res://Assets/environment/simon_says_box.glb" id="1_4ytmd"]
+[ext_resource type="Script" uid="uid://b1bf3v3s8dspj" path="res://simon_says_box.gd" id="2_tkjwv"]
+[ext_resource type="Script" uid="uid://bds3x6egu2gr1" path="res://interactibles/InteractableButton3D.gd" id="3_sqmq3"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4ytmd"]
+margin = 0.0
+radius = 0.001
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k321e"]
+size = Vector3(0.13867188, 0.27514648, 0.27111816)
+
+[node name="simon_says_box" unique_id=1241101450 instance=ExtResource("1_4ytmd")]
+
+[node name="SimonSaysManager" type="Area3D" parent="." index="0" unique_id=998290538 node_paths=PackedStringArray("button_1", "button_2", "button_3", "button_4", "green_light", "pink_light", "yellow_light", "blue_light")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014337838, 0.4077837, 0)
+monitoring = false
+monitorable = false
+script = ExtResource("2_tkjwv")
+button_1 = NodePath("../InteractableButton3D")
+button_2 = NodePath("../InteractableButton3D2")
+button_3 = NodePath("../InteractableButton3D3")
+button_4 = NodePath("../InteractableButton3D4")
+green_light = NodePath("../InteractableButton3D/GreenLight")
+pink_light = NodePath("../InteractableButton3D2/PinkLight")
+yellow_light = NodePath("../InteractableButton3D3/YellowLight")
+blue_light = NodePath("../InteractableButton3D4/BlueLight")
+prompt = " "
+metadata/_custom_type_script = "uid://cowlmdkp56blu"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SimonSaysManager" index="0" unique_id=1264525812]
+shape = SubResource("SphereShape3D_4ytmd")
+
+[node name="InteractableButton3D" type="Area3D" parent="." index="2" unique_id=1484640391]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0.218)
+monitoring = false
+monitorable = false
+script = ExtResource("3_sqmq3")
+button_name = "0"
+metadata/_custom_type_script = "uid://bds3x6egu2gr1"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractableButton3D" index="0" unique_id=1478235077]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44688416, -0.030151367, -0.051940918)
+shape = SubResource("BoxShape3D_k321e")
+
+[node name="GreenLight" type="OmniLight3D" parent="InteractableButton3D" index="1" unique_id=1910516275]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.52230185, -0.03481525, -0.05252084)
+light_color = Color(1.0588765e-06, 0.6962398, 1.1551381e-06, 1)
+light_energy = 0.0
+light_indirect_energy = 0.0
+omni_range = 0.1
+omni_attenuation = 3.0
+
+[node name="InteractableButton3D2" type="Area3D" parent="." index="3" unique_id=819921392]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, -0.14919448)
+script = ExtResource("3_sqmq3")
+button_name = "1"
+metadata/_custom_type_script = "uid://bds3x6egu2gr1"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractableButton3D2" index="0" unique_id=739565169]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44688416, -0.030151367, -0.051940918)
+shape = SubResource("BoxShape3D_k321e")
+
+[node name="PinkLight" type="OmniLight3D" parent="InteractableButton3D2" index="1" unique_id=533597029]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5052136, -0.028566241, -0.04895535)
+light_color = Color(1, 0, 0.8980392, 1)
+light_energy = 0.0
+omni_range = 0.1
+omni_attenuation = 3.0
+
+[node name="InteractableButton3D3" type="Area3D" parent="." index="4" unique_id=1724519147]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.21978456, 0.218)
+script = ExtResource("3_sqmq3")
+button_name = "2"
+metadata/_custom_type_script = "uid://bds3x6egu2gr1"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractableButton3D3" index="0" unique_id=191470801]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44688416, -0.030151367, -0.051940918)
+shape = SubResource("BoxShape3D_k321e")
+
+[node name="YellowLight" type="OmniLight3D" parent="InteractableButton3D3" index="1" unique_id=845021036]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.50806445, -0.01110661, -0.055811286)
+light_color = Color(1, 1, 0, 1)
+light_energy = 0.0
+omni_range = 0.1
+omni_attenuation = 3.0
+
+[node name="InteractableButton3D4" type="Area3D" parent="." index="5" unique_id=110866645]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.21978456, -0.1596114)
+script = ExtResource("3_sqmq3")
+button_name = "3"
+metadata/_custom_type_script = "uid://bds3x6egu2gr1"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractableButton3D4" index="0" unique_id=1263927523]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44688416, -0.030151367, -0.051940918)
+shape = SubResource("BoxShape3D_k321e")
+
+[node name="BlueLight" type="OmniLight3D" parent="InteractableButton3D4" index="1" unique_id=1928175495]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.51202226, -0.016958982, -0.037207887)
+light_color = Color(0, 0.40784314, 1, 1)
+light_energy = 0.0
+omni_range = 0.1
+omni_attenuation = 3.0

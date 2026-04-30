@@ -5,6 +5,7 @@ class_name InteractableButton3D
 @export var button_name: String = "button"
 
 signal button_pressed(button_name)
+var is_active = true
 
 func interact():
 	super()

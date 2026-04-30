@@ -39,8 +39,8 @@ shape = SubResource("BoxShape3D_8fn1d")
 [node name="InteractableButton1" type="Area3D" parent="codelock_low_001/buttons_low" parent_id_path=PackedInt32Array(2128694907) index="1" unique_id=114958509]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7352633, 0, 5.7105045)
 script = ExtResource("2_8fn1d")
-button_name = "Horse"
-prompt = "Horse"
+button_name = "Mare"
+prompt = "Mare"
 metadata/_custom_type_script = "uid://cowlmdkp56blu"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="codelock_low_001/buttons_low/InteractableButton1" index="0" unique_id=1985623453]

@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://4dbt38yy64ny" path="res://interactibles/test_door_locked.tscn" id="4_kqan6"]
 [ext_resource type="PackedScene" uid="uid://uc32qxswbq8j" path="res://interactibles/puzzle_circuit2/circuit_puzzle_test_2.tscn" id="5_now56"]
 [ext_resource type="PackedScene" uid="uid://b81416mjotdv2" path="res://lockcode_test.tscn" id="6_fyp82"]
+[ext_resource type="PackedScene" uid="uid://b24k5da4ty3bu" path="res://simon_says_box_test.tscn" id="7_oo0k7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y1qy8"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -94,3 +95,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.342903, 1.3928434, 5.487933
 
 [node name="lockcode" parent="." unique_id=558951865 instance=ExtResource("6_fyp82")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.949, 1, 6.139)
+
+[node name="simon_says_box" parent="." unique_id=1241101450 instance=ExtResource("7_oo0k7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.710671, 0.6358783, 11.1514435)
