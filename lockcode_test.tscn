@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://cnym3lafowliu" path="res://Assets/environment/lockcode_openPBR_shader1_Metallic-openPBR_shader1_Roughness.png" id="2_30p11"]
 [ext_resource type="Texture2D" uid="uid://cexbahioojpy3" path="res://Assets/environment/lockcode_openPBR_shader1_Normal.png" id="3_42qys"]
 [ext_resource type="Script" uid="uid://cu3y7kwdpnn8q" path="res://lever_interactable.gd" id="3_qyprg"]
-[ext_resource type="AudioStream" uid="uid://d0khgirktditg" path="res://Assets/Audio/Sfx/bababooey-sound-effect.mp3" id="4_7asue"]
-[ext_resource type="AudioStream" uid="uid://tvrn6uc58oj8" path="res://Assets/Audio/Sfx/Plankton Aughhhhh.mp3" id="5_1q4fn"]
+[ext_resource type="AudioStream" uid="uid://begnl1gtkvl1j" path="res://Assets/Audio/Sfx/freesound_community-metal-clang-sound-81634.mp3" id="6_4np6r"]
+[ext_resource type="AudioStream" uid="uid://dog1iuenigbl4" path="res://Assets/Audio/Sfx/freesound_community-news-ting-6832.mp3" id="7_30p11"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8f5ey"]
 size = Vector3(0.75268555, 0.5473633, 0.22715187)
@@ -419,6 +419,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.479478, 0)
 shape = SubResource("CapsuleShape3D_8fn1d")
 
 [node name="LeverPivot" type="Node3D" parent="codelock_low_001/Lever_Interactable" unique_id=1066294655]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.29179382, 9.104477)
 
 [node name="lever_low" type="MeshInstance3D" parent="codelock_low_001/Lever_Interactable/LeverPivot" unique_id=198726935]
@@ -428,10 +429,10 @@ mesh = SubResource("ArrayMesh_6nfia")
 [node name="WRONG" type="AudioStreamPlayer3D" parent="." unique_id=348793931]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.042795897, 0.42837894, -0.0070581436)
-stream = ExtResource("4_7asue")
+stream = ExtResource("6_4np6r")
 
 [node name="CORRECT" type="AudioStreamPlayer3D" parent="." unique_id=902320531]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0833236, 0.6468133, 1.6545525)
-stream = ExtResource("5_1q4fn")
+stream = ExtResource("7_30p11")
 panning_strength = 0.0

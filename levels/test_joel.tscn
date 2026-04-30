@@ -3464,7 +3464,7 @@ transform = Transform3D(-6.181778e-08, -2.5121697e-15, 1.4142259, 2.5121693e-15,
 shape = SubResource("ConvexPolygonShape3D_i6lep")
 
 [node name="Player" parent="." unique_id=1496450164 instance=ExtResource("17_bjwr5")]
-transform = Transform3D(1, 0, -2.646978e-22, 0, 1, 0, -2.646978e-22, 0, 1, -10.25542, 0.25267988, 17.542845)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 27.28589, 0.25267988, -29.96354)
 
 [node name="lights_audio" type="AudioStreamPlayer" parent="." unique_id=1879049115]
 stream = ExtResource("23_elnwr")
